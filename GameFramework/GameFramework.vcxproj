@@ -128,10 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="RectSize\RectSize.cpp" />
     <ClCompile Include="Window\Window.cpp" />
     <ClCompile Include="Window\WindowParam\WindowParam.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="RectSize\RectSize.h" />
     <ClInclude Include="Window\Window.h" />
     <ClInclude Include="Window\WindowParam\WindowParam.h" />
   </ItemGroup>

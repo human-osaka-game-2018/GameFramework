@@ -11,6 +11,9 @@
     <Filter Include="Window\WindowParam">
       <UniqueIdentifier>{c5fac2a2-557f-48a0-ac92-ec827a0c3861}</UniqueIdentifier>
     </Filter>
+    <Filter Include="RectSize">
+      <UniqueIdentifier>{8c80f513-c847-4728-9e01-b82129cefa60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window\Window.cpp">
@@ -19,6 +22,9 @@
     <ClCompile Include="Window\WindowParam\WindowParam.cpp">
       <Filter>Window\WindowParam</Filter>
     </ClCompile>
+    <ClCompile Include="RectSize\RectSize.cpp">
+      <Filter>RectSize</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -26,6 +32,9 @@
     </ClInclude>
     <ClInclude Include="Window\WindowParam\WindowParam.h">
       <Filter>Window\WindowParam</Filter>
+    </ClInclude>
+    <ClInclude Include="RectSize\RectSize.h">
+      <Filter>RectSize</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
