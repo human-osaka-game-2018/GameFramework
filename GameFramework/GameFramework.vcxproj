@@ -128,6 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Window\Window.cpp" />
+    <ClCompile Include="Window\WindowParam\WindowParam.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Window\Window.h" />
+    <ClInclude Include="Window\WindowParam\WindowParam.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
