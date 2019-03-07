@@ -7,7 +7,7 @@
 
 #include <Windows.h>
 
-#include "../../RectSize/RectSize.h"
+#include "RectSize.h"
 
 /// <summary>
 /// ウィンドウ作成時に必要な情報をまとめたstaticクラス
@@ -17,7 +17,7 @@ class WindowParam
 public:	
 	static inline void GetWindowSize(RectSize* pWindowSize)
 	{
-		pWindowSize = &m_windowSize;
+		*pWindowSize = m_windowSize;
 	}
 
 	static inline void SetWindowSize(const RectSize& windowSize)
@@ -25,9 +25,9 @@ public:
 		m_windowSize = windowSize;
 	}
 	
-	static inline void GetInstanceHandle(HINSTANCE hInstance)
+	static inline void GetInstanceHandle(HINSTANCE* pHInstance)
 	{
-		hInstance = m_hInstance;
+		*pHInstance = m_hInstance;
 	}
 	
 	static inline void SetInstanceHandle(const HINSTANCE& hInstance)
@@ -35,9 +35,9 @@ public:
 		m_hInstance = hInstance;
 	}
 	
-	static inline void GetWindowHandle(HWND hWnd)
+	static inline void GetWindowHandle(HWND* pHWnd)
 	{
-		hWnd = m_hWnd;
+		*pHWnd = m_hWnd;
 	}
 	
 	static inline void SetWindowHandle(const HWND& hWnd)
