@@ -29,12 +29,12 @@ public:
 	/// <summary>
 	/// x成分の長さ
 	/// </summary>
-	float m_width;
+	float m_width = 0.0f;
 	
 	/// <summary>
 	/// y成分の長さ
 	/// </summary>
-	float m_height;
+	float m_height = 0.0f;
 	
 	/// <summary>
 	/// RECT構造体から矩形のサイズを作成する
