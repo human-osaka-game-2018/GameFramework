@@ -11,6 +11,8 @@
 struct RectSize
 {
 public:	
+	RectSize() {};
+
 	RectSize(float width, float height)
 	{
 		m_width = width;
