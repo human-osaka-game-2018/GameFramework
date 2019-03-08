@@ -129,12 +129,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectX9Device.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.cpp" />
     <ClCompile Include="RectSize\RectSize.cpp" />
     <ClCompile Include="Window\Window.cpp" />
     <ClCompile Include="Window\WindowParam\WindowParam.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameFramework\DirectXParam\DirectXDevice\DirectX9Device.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.h" />
     <ClInclude Include="RectSize\RectSize.h" />
     <ClInclude Include="Window\Window.h" />
