@@ -14,6 +14,24 @@
     <Filter Include="RectSize">
       <UniqueIdentifier>{8c80f513-c847-4728-9e01-b82129cefa60}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework">
+      <UniqueIdentifier>{d797c9e3-36f0-4eb0-a417-0ebf5f5e2181}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\DirectXParam">
+      <UniqueIdentifier>{7cace1e7-1e98-4fb7-81b0-9de62b41497c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\DirectXParam\DirectXDevice">
+      <UniqueIdentifier>{fa4d9c19-0a9c-45e4-8b45-91c201771c21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\DirectXParam\DirectXGraphicDevice">
+      <UniqueIdentifier>{3580820d-71ca-4348-bffe-27d15fb2d274}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\GameFrameworkFactory">
+      <UniqueIdentifier>{8af64be1-cc07-4d93-b887-6340cb992ebd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\DirectXParam\DirectXInputDevice">
+      <UniqueIdentifier>{86a477ab-cbf9-41a1-a14a-a4eb06533cf1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window\Window.cpp">
@@ -25,6 +43,9 @@
     <ClCompile Include="RectSize\RectSize.cpp">
       <Filter>RectSize</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.cpp">
+      <Filter>GameFramework\DirectXParam\DirectXDevice</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -35,6 +56,9 @@
     </ClInclude>
     <ClInclude Include="RectSize\RectSize.h">
       <Filter>RectSize</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.h">
+      <Filter>GameFramework\DirectXParam\DirectXDevice</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
