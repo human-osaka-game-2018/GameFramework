@@ -7,6 +7,8 @@
 
 #include "DirectXDevice/DirectXDevice.h"
 #include "DirectXDevice/DirectX9Device.h"
+#include "DirectXGraphicDevice/DirectXGraphicDevice.h"
+#include "DirectXGraphicDevice/DirectX9GraphicDevice.h"
 
 /// <summary>
 /// 基礎構築をに関するものをまとめた名前空間
@@ -29,6 +31,15 @@ namespace BaseFramework
 			pDirectXDevice = nullptr;
 			#else
 			pDirectXDevice = new DirectX9Device();
+			#endif
+		}
+
+		static void Create(DirectXGraphicDevice* pDirectXGraphicDevice, DirectXDevice* pDirectXDevice)
+		{
+			#ifdef DIRECT_X_VERSION_11
+			pDirectXGraphicDevice = nullptr;
+			#else
+			pDirectXGraphicDevice = new DirectX9GraphicDevice(pDirectXDevice);
 			#endif
 		}
 
