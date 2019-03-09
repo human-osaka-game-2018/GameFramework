@@ -1,5 +1,5 @@
 ﻿//----------------------------------------------------------
-// <filename>DirectXDevice.cpp</filename>
+// <filename>DirectX9Device.cpp</filename>
 //----------------------------------------------------------
 
 #include "DirectX9Device.h"
