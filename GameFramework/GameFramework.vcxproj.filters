@@ -49,6 +49,9 @@
     <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectX9Device.cpp">
       <Filter>GameFramework\DirectXParam\DirectXDevice</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.cpp">
+      <Filter>GameFramework\GameFrameworkFactory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -65,6 +68,9 @@
     </ClInclude>
     <ClInclude Include="GameFramework\DirectXParam\DirectXDevice\DirectX9Device.h">
       <Filter>GameFramework\DirectXParam\DirectXDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.h">
+      <Filter>GameFramework\GameFrameworkFactory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
