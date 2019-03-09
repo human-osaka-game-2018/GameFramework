@@ -13,7 +13,7 @@
 /// <summary>
 /// 基礎構築をに関するものをまとめた名前空間
 /// </summary>
-namespace BaseFramework
+namespace gameframework
 {
 	/// <summary>
 	/// ウィンドウ作成時に必要な情報をまとめたstaticクラス

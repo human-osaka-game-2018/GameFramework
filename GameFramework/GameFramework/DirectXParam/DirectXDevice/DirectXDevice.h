@@ -12,7 +12,7 @@
 /// <summary>
 /// 基礎構築をに関するものをまとめた名前空間
 /// </summary>
-namespace BaseFramework
+namespace gameframework
 {
 	#ifdef DIRECT_X_VERSION_11
 	using LPDIRECT3D = ID3D11Device*;

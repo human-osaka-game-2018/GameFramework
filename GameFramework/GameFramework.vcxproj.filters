@@ -32,6 +32,12 @@
     <Filter Include="GameFramework\DirectXParam\DirectXInputDevice">
       <UniqueIdentifier>{86a477ab-cbf9-41a1-a14a-a4eb06533cf1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Algorithm">
+      <UniqueIdentifier>{d525e6a6-1889-4e9d-ada8-2e622849aa2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RotationValue">
+      <UniqueIdentifier>{c1ca2bb6-553c-40d3-96f9-13d9e39f26b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window\Window.cpp">
@@ -64,6 +70,21 @@
     <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectXInputDevice.cpp">
       <Filter>GameFramework\DirectXParam\DirectXInputDevice</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\GameFramework.cpp">
+      <Filter>GameFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="Algorithm\Algorithm.cpp">
+      <Filter>Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="RotationValue\Degree.cpp">
+      <Filter>RotationValue</Filter>
+    </ClCompile>
+    <ClCompile Include="RotationValue\Radian.cpp">
+      <Filter>RotationValue</Filter>
+    </ClCompile>
+    <ClCompile Include="RotationValue\RotationValue.cpp">
+      <Filter>RotationValue</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -95,6 +116,21 @@
     </ClInclude>
     <ClInclude Include="GameFramework\DirectXParam\DirectXInputDevice\DirectXInputDevice.h">
       <Filter>GameFramework\DirectXParam\DirectXInputDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\GameFramework.h">
+      <Filter>GameFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm\Algorithm.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="RotationValue\Degree.h">
+      <Filter>RotationValue</Filter>
+    </ClInclude>
+    <ClInclude Include="RotationValue\Radian.h">
+      <Filter>RotationValue</Filter>
+    </ClInclude>
+    <ClInclude Include="RotationValue\RotationValue.h">
+      <Filter>RotationValue</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

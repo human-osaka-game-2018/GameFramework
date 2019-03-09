@@ -16,7 +16,7 @@
 /// <summary>
 /// 基礎構築をに関するものをまとめた名前空間
 /// </summary>
-namespace BaseFramework
+namespace gameframework
 {
 	/// <summary>
 	/// DirectX8のインプットデバイスクラス

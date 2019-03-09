@@ -12,7 +12,7 @@
 #include "WindowParam/WindowParam.h"
 #include "DirectXInputDevice.h"
 
-namespace BaseFramework
+namespace gameframework
 {
 	void DirectX8InputDevice::Create()
 	{

@@ -10,7 +10,7 @@
 #include "RectSize.h"
 #include "WindowParam/WindowParam.h"
 
-namespace BaseFramework
+namespace gameframework
 {
 	void Window::Create(const TCHAR* pAppName, const WNDPROC pWndProc)
 	{
