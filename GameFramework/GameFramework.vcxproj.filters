@@ -52,6 +52,12 @@
     <ClCompile Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.cpp">
       <Filter>GameFramework\GameFrameworkFactory</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectX9GraphicDevice.cpp">
+      <Filter>GameFramework\DirectXParam\DirectXGraphicDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectXGraphicDevice.cpp">
+      <Filter>GameFramework\DirectXParam\DirectXGraphicDevice</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -71,6 +77,12 @@
     </ClInclude>
     <ClInclude Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.h">
       <Filter>GameFramework\GameFrameworkFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectX9GraphicDevice.h">
+      <Filter>GameFramework\DirectXParam\DirectXGraphicDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectXGraphicDevice.h">
+      <Filter>GameFramework\DirectXParam\DirectXGraphicDevice</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
