@@ -92,7 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>false</ConformanceMode>
       <PreprocessorDefinitions>DIRECTINPUT_VERSION=0x0800;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)GameFramework\Window;$(SolutionDir)GameFramework\RectSize;$(SolutionDir)GameFramework\GameFramework\DirectXParam;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GameFramework\GameFramework\Vertices;$(SolutionDir)GameFramework\GameFramework\Graphic;$(SolutionDir)GameFramework\GameFramework\Input\InputDevice;$(SolutionDir)GameFramework\Algorithm;$(SolutionDir)GameFramework\GameFramework\Input\DirectInput;$(SolutionDir)GameFramework\TextureUVs;$(SolutionDir)GameFramework\Color;$(SolutionDir)GameFramework\GameFramework\GameFrameworkFactory;$(SolutionDir)GameFramework\GameFramework\TimerManager;$(SolutionDir)GameFramework\Singleton;$(SolutionDir)GameFramework\Window;$(SolutionDir)GameFramework\RectSize;$(SolutionDir)GameFramework\GameFramework\DirectXParam;$(SolutionDir)GameFramework\RotationValue;$(SolutionDir)GameFramework\GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>d3dx9.lib;d3d9.lib;dinput8.lib;dxguid.lib;winmm.lib;libfbxsdk-mt.lib;SoundLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -129,26 +129,44 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Algorithm\Algorithm.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectX9Device.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectX9GraphicDevice.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectXGraphicDevice.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectX8InputDevice.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectXInputDevice.cpp" />
+    <ClCompile Include="GameFramework\GameFramework.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.cpp" />
     <ClCompile Include="RectSize\RectSize.cpp" />
+    <ClCompile Include="RotationValue\Degree.cpp" />
+    <ClCompile Include="RotationValue\Radian.cpp" />
+    <ClCompile Include="RotationValue\RotationValue.cpp" />
     <ClCompile Include="Window\Window.cpp" />
     <ClCompile Include="Window\WindowParam\WindowParam.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithm\Algorithm.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="GameFramework\DirectXParam\DirectXDevice\DirectX9Device.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectX9GraphicDevice.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectXGraphicDevice.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXInputDevice\DirectX8InputDevice.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXInputDevice\DirectXInputDevice.h" />
+    <ClInclude Include="GameFramework\GameFramework.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.h" />
     <ClInclude Include="RectSize\RectSize.h" />
+    <ClInclude Include="RotationValue\Degree.h" />
+    <ClInclude Include="RotationValue\Radian.h" />
+    <ClInclude Include="RotationValue\RotationValue.h" />
     <ClInclude Include="Window\Window.h" />
     <ClInclude Include="Window\WindowParam\WindowParam.h" />
   </ItemGroup>

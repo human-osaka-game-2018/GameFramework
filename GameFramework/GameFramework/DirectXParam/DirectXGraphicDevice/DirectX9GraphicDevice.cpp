@@ -14,7 +14,7 @@
 #include "DirectXDevice/DirectXDevice.h"
 #include "DirectXGraphicDevice.h"
 
-namespace BaseFramework
+namespace gameframework
 {
 	void DirectX9GraphicDevice::DirectXPresentParam::FormatUnionParam(D3DPRESENT_PARAMETERS* pD3DPRESENT_PARAMETERS)
 	{

@@ -11,7 +11,7 @@
 
 #include "DirectXDevice.h"
 
-namespace BaseFramework
+namespace gameframework
 {
 	void DirectX9Device::Create()
 	{
