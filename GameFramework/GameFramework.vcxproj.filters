@@ -58,6 +58,12 @@
     <ClCompile Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectXGraphicDevice.cpp">
       <Filter>GameFramework\DirectXParam\DirectXGraphicDevice</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectX8InputDevice.cpp">
+      <Filter>GameFramework\DirectXParam\DirectXInputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectXInputDevice.cpp">
+      <Filter>GameFramework\DirectXParam\DirectXInputDevice</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -83,6 +89,12 @@
     </ClInclude>
     <ClInclude Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectXGraphicDevice.h">
       <Filter>GameFramework\DirectXParam\DirectXGraphicDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\DirectXParam\DirectXInputDevice\DirectX8InputDevice.h">
+      <Filter>GameFramework\DirectXParam\DirectXInputDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\DirectXParam\DirectXInputDevice\DirectXInputDevice.h">
+      <Filter>GameFramework\DirectXParam\DirectXInputDevice</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

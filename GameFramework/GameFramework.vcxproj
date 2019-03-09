@@ -133,6 +133,8 @@
     <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectX9GraphicDevice.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectXGraphicDevice.cpp" />
+    <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectX8InputDevice.cpp" />
+    <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectXInputDevice.cpp" />
     <ClCompile Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.cpp" />
     <ClCompile Include="RectSize\RectSize.cpp" />
     <ClCompile Include="Window\Window.cpp" />
@@ -143,6 +145,8 @@
     <ClInclude Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectX9GraphicDevice.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectXGraphicDevice.h" />
+    <ClInclude Include="GameFramework\DirectXParam\DirectXInputDevice\DirectX8InputDevice.h" />
+    <ClInclude Include="GameFramework\DirectXParam\DirectXInputDevice\DirectXInputDevice.h" />
     <ClInclude Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.h" />
     <ClInclude Include="RectSize\RectSize.h" />
     <ClInclude Include="Window\Window.h" />
