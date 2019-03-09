@@ -48,7 +48,7 @@ namespace BaseFramework
 		/// </summary>
 		/// <param name="rhs">作成するときに扱うRECT構造体</param>
 		/// <returns>自身の参照</returns>
-		RectSize& operator = (const RECT& rhs)
+		RectSize& operator=(const RECT& rhs)
 		{
 			m_width = static_cast<float>(rhs.right - rhs.left);
 			m_height = static_cast<float>(rhs.bottom - rhs.top);
@@ -61,7 +61,7 @@ namespace BaseFramework
 		/// </summary>
 		/// <param name="rhs">自身と足すRectSize構造体</param>
 		/// <returns>足した結果のRectSize構造体</returns>
-		const RectSize operator + (const RectSize& rhs) const
+		const RectSize operator+(const RectSize& rhs) const
 		{
 			return RectSize(m_width + rhs.m_width, m_height + rhs.m_height);
 		}
@@ -71,7 +71,7 @@ namespace BaseFramework
 		/// </summary>
 		/// <param name="rhs">自身と引くRectSize構造体</param>
 		/// <returns>引いた結果のRectSize構造体</returns>
-		const RectSize operator - (const RectSize& rhs) const
+		const RectSize operator-(const RectSize& rhs) const
 		{
 			return RectSize(m_width - rhs.m_width, m_height - rhs.m_height);
 		}
@@ -81,7 +81,7 @@ namespace BaseFramework
 		/// </summary>
 		/// <param name="rhs">割る際の値</param>
 		/// <returns>割った後の結果のRectSize構造体</returns>
-		const RectSize operator / (float rhs) const
+		const RectSize operator/(float rhs) const
 		{
 			return RectSize(m_width / rhs, m_height / rhs);
 		}
@@ -91,7 +91,7 @@ namespace BaseFramework
 		/// </summary>
 		/// <param name="rhs">掛ける際の値</param>
 		/// <returns>掛けた後の結果のRectSize構造体</returns>
-		const RectSize operator * (float rhs) const
+		const RectSize operator*(float rhs) const
 		{
 			return RectSize(m_width * rhs, m_height * rhs);
 		}
