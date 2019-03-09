@@ -32,11 +32,6 @@ namespace BaseFramework
 
 		~DirectX9Device() {};
 
-		inline void Get(LPDIRECT3D* ppDirectXDevice) const
-		{
-			*ppDirectXDevice = m_pDirectXDevice;
-		}
-
 	private:
 		DirectX9Device(const DirectX9Device& rhs) = delete;
 
