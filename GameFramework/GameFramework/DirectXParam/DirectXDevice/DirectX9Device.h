@@ -43,7 +43,7 @@ namespace BaseFramework
 		DirectX9Device& operator=(const DirectX9Device& rhs) = delete;
 		
 		/// <summary>
-		/// DirectXのデバイスを作成する
+		/// DirectX9のデバイスを作成する
 		/// </summary>
 		void Create();
 	};

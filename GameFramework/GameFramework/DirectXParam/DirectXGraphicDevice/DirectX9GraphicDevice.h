@@ -21,7 +21,7 @@
 namespace BaseFramework
 {
 	/// <summary>
-	/// DirectXのグラフィックデバイスクラス
+	/// DirectX9のグラフィックデバイスクラス
 	/// </summary>
 	class DirectX9GraphicDevice :public DirectXGraphicDevice
 	{
@@ -93,7 +93,7 @@ namespace BaseFramework
 		DirectX9GraphicDevice& operator=(const DirectX9GraphicDevice& rhs) = delete;
 
 		/// <summary>
-		/// DirectXのグラフィックデバイスを作成する
+		/// DirectX9のグラフィックデバイスを作成する
 		/// </summary>
 		/// <param name="pDirectXDevice">DirectXのデバイスクラスのポインタ</param>
 		void Create(DirectXDevice* pDirectXDevice);
