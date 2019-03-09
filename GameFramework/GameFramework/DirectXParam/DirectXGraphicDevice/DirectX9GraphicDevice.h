@@ -37,11 +37,6 @@ namespace BaseFramework
 			delete m_pDirectXGraphicDevice;
 		}
 
-		inline void Get(LPDIRECT3DDEVICE* ppDirectXDevice) const
-		{
-			*ppDirectXDevice = m_pDirectXGraphicDevice;
-		}
-
 	private:
 		/// <summary>
 		/// DirectXのバックバッファ等の情報をまとめたクラス
