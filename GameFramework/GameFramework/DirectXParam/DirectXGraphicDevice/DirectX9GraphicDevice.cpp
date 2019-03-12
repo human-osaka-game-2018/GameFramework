@@ -53,7 +53,7 @@ namespace gameframework
 			MB_OK);
 
 		if (SUCCEEDED(pDirect3D->CreateDevice(
-			//! 描画をソフトウェアに依存させる 重い
+			//描画をソフトウェアに依存させる 重い
 			D3DADAPTER_DEFAULT, D3DDEVTYPE_REF,
 			hWnd,
 			D3DCREATE_HARDWARE_VERTEXPROCESSING | D3DCREATE_MULTITHREADED,
