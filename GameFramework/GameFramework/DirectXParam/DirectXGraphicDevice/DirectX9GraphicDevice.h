@@ -20,6 +20,8 @@
 /// </summary>
 namespace gameframework
 {
+	#ifndef DIRECT_X_VERSOIN_11
+
 	/// <summary>
 	/// DirectX9のグラフィックデバイスクラス
 	/// </summary>
@@ -93,6 +95,8 @@ namespace gameframework
 		/// <param name="pDirectXDevice">DirectXのデバイスクラスのポインタ</param>
 		void Create(DirectXDevice* pDirectXDevice);
 	};
+
+	#endif //! DIRECT_X_VERSOIN_11
 }
 
 #endif //! DIRECT_X_GRAPHIC_DEVICE_H

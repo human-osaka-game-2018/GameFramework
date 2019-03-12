@@ -6,6 +6,8 @@
 
 namespace gameframework
 {
+	#ifndef DIRECT_X_VERSOIN_11
+
 	void DirectX8InputDevice::Create()
 	{
 		HINSTANCE hInstance = nullptr;
@@ -28,4 +30,6 @@ namespace gameframework
 
 		PostQuitMessage(0);
 	}
+
+	#endif //! DIRECT_X_VERSOIN_11
 }
