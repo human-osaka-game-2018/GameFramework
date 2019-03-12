@@ -21,15 +21,13 @@ namespace gameframework
 	#else
 	using LPDIRECT3DDEVICE = LPDIRECT3DDEVICE9;
 	#endif //! DIRECT_X_VERSION_11
-		
+
 	/// <summary>
 	/// DirectXのグラフィックデバイスクラス
 	/// </summary>
 	class DirectXGraphicDevice
 	{
 	public:
-		DirectXGraphicDevice() {};
-
 		virtual ~DirectXGraphicDevice()
 		{
 			m_pDirectXGraphicDevice->Release();
@@ -42,6 +40,8 @@ namespace gameframework
 		}
 
 	protected:
+		DirectXGraphicDevice() {};
+
 		/// <summary>
 		/// DirectXのグラフィックデバイスを作成する
 		/// </summary>
