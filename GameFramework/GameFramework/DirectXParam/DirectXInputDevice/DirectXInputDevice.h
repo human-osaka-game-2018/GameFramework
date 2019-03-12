@@ -26,8 +26,6 @@ namespace gameframework
 	class DirectXInputDevice
 	{
 	public:
-		DirectXInputDevice() {};
-
 		virtual ~DirectXInputDevice()
 		{
 			m_pDirectXInputDevice->Release();
@@ -40,6 +38,8 @@ namespace gameframework
 		}
 
 	protected:
+		DirectXInputDevice() {};
+
 		/// <summary>
 		/// DirectXのインプットデバイスを作成する
 		/// </summary>

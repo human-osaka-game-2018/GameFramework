@@ -16,7 +16,7 @@
 /// 基礎構築をに関するものをまとめた名前空間
 /// </summary>
 namespace gameframework
-{	
+{
 	#ifndef DIRECT_X_VERSOIN_11
 
 	/// <summary>
@@ -25,7 +25,7 @@ namespace gameframework
 	class DirectX9Device :public DirectXDevice
 	{
 	public:
-		DirectX9Device() 
+		DirectX9Device()
 		{
 			Create();
 		}
@@ -36,7 +36,7 @@ namespace gameframework
 		DirectX9Device(const DirectX9Device& rhs) = delete;
 
 		DirectX9Device& operator=(const DirectX9Device& rhs) = delete;
-		
+
 		/// <summary>
 		/// DirectX9のデバイスを作成する
 		/// </summary>

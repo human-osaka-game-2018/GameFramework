@@ -26,8 +26,6 @@ namespace gameframework
 	class DirectXDevice
 	{
 	public:
-		DirectXDevice() {};
-
 		virtual ~DirectXDevice()
 		{
 			m_pDirectXDevice->Release();
@@ -40,6 +38,8 @@ namespace gameframework
 		}
 
 	protected:
+		DirectXDevice() {};
+
 		/// <summary>
 		/// DirectXのデバイスを作成する
 		/// </summary>
