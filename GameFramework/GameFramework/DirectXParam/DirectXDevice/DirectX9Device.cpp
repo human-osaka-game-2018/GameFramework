@@ -6,6 +6,8 @@
 
 namespace gameframework
 {
+	#ifndef DIRECT_X_VERSOIN_11
+
 	void DirectX9Device::Create()
 	{
 		if (m_pDirectXDevice = Direct3DCreate9(D3D_SDK_VERSION))
@@ -21,4 +23,6 @@ namespace gameframework
 
 		PostQuitMessage(0);
 	}
+
+	#endif //! DIRECT_X_VERSOIN_11
 }

@@ -6,6 +6,8 @@
 
 namespace gameframework
 {
+	#ifndef DIRECT_X_VERSOIN_11
+
 	void DirectX9GraphicDevice::DirectXPresentParam::FormatUnionParam(D3DPRESENT_PARAMETERS* pD3DPRESENT_PARAMETERS)
 	{
 		ZeroMemory(pD3DPRESENT_PARAMETERS, sizeof(D3DPRESENT_PARAMETERS));
@@ -71,4 +73,6 @@ namespace gameframework
 
 		PostQuitMessage(0);
 	}
+
+	#endif //! DIRECT_X_VERSOIN_11
 }
