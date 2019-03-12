@@ -4,16 +4,6 @@
 
 #include "DirectX9GraphicDevice.h"
 
-#include <Windows.h>
-#include <tchar.h>
-
-#include <d3dx9.h>
-
-#include "RectSize.h"
-#include "WindowParam/WindowParam.h"
-#include "DirectXDevice/DirectXDevice.h"
-#include "DirectXGraphicDevice.h"
-
 namespace gameframework
 {
 	void DirectX9GraphicDevice::DirectXPresentParam::FormatUnionParam(D3DPRESENT_PARAMETERS* pD3DPRESENT_PARAMETERS)

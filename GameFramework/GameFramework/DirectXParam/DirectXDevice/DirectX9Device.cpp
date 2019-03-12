@@ -4,13 +4,6 @@
 
 #include "DirectX9Device.h"
 
-#include <Windows.h>
-#include <tchar.h>
-
-#include <d3dx9.h>
-
-#include "DirectXDevice.h"
-
 namespace gameframework
 {
 	void DirectX9Device::Create()
