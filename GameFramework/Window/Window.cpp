@@ -4,12 +4,6 @@
 
 #include "Window.h"
 
-#include <Windows.h>
-#include <tchar.h>
-
-#include "RectSize.h"
-#include "WindowParam/WindowParam.h"
-
 namespace gameframework
 {
 	void Window::Create(const TCHAR* pAppName, const WNDPROC pWndProc)
