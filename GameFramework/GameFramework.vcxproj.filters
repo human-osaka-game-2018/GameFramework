@@ -38,6 +38,12 @@
     <Filter Include="RotationValue">
       <UniqueIdentifier>{c1ca2bb6-553c-40d3-96f9-13d9e39f26b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Singleton">
+      <UniqueIdentifier>{a3284fef-a0a3-496b-9770-3cde8b2dbc91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Singleton\SingletonHolder">
+      <UniqueIdentifier>{3aff72b4-5652-4826-8c7b-b8c6ef0c7fe4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window\Window.cpp">
@@ -85,6 +91,12 @@
     <ClCompile Include="RotationValue\RotationValue.cpp">
       <Filter>RotationValue</Filter>
     </ClCompile>
+    <ClCompile Include="Singleton\Singleton.cpp">
+      <Filter>Singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="Singleton\SingletonHolder\SingletonHolder.cpp">
+      <Filter>Singleton\SingletonHolder</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -131,6 +143,12 @@
     </ClInclude>
     <ClInclude Include="RotationValue\RotationValue.h">
       <Filter>RotationValue</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton\Singleton.h">
+      <Filter>Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton\SingletonHolder\SingletonHolder.h">
+      <Filter>Singleton\SingletonHolder</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
