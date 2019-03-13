@@ -20,7 +20,7 @@
 /// </summary>
 namespace gameframework
 {
-	#ifndef DIRECT_X_VERSOIN_11
+	#ifdef DIRECT_X_VERSOIN_9
 
 	/// <summary>
 	/// DirectX9のグラフィックデバイスクラス
@@ -96,7 +96,7 @@ namespace gameframework
 		void Create(DirectXDevice* pDirectXDevice);
 	};
 
-	#endif //! DIRECT_X_VERSOIN_11
+	#endif //DIRECT_X_VERSOIN_9
 }
 
-#endif //! DIRECT_X_GRAPHIC_DEVICE_H
+#endif //!DIRECT_X_GRAPHIC_DEVICE_H

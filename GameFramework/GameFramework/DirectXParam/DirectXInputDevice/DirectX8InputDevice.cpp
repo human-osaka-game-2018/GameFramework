@@ -6,7 +6,7 @@
 
 namespace gameframework
 {
-	#ifndef DIRECT_X_VERSOIN_11
+	#ifdef DIRECT_X_VERSOIN_9
 
 	void DirectX8InputDevice::Create()
 	{
@@ -31,5 +31,5 @@ namespace gameframework
 		PostQuitMessage(0);
 	}
 
-	#endif //! DIRECT_X_VERSOIN_11
+	#endif //DIRECT_X_VERSOIN_9
 }

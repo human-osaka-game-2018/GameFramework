@@ -18,7 +18,7 @@
 /// </summary>
 namespace gameframework
 {
-	#ifndef DIRECT_X_VERSOIN_11
+	#ifdef DIRECT_X_VERSOIN_9
 
 	/// <summary>
 	/// DirectX8のインプットデバイスクラス
@@ -48,7 +48,7 @@ namespace gameframework
 		void Create();
 	};
 
-	#endif //! DIRECT_X_VERSOIN_11
+	#endif //DIRECT_X_VERSOIN_9
 }
 
-#endif //! DIRECT_X_8_INPUT_DEVICE_H
+#endif //!DIRECT_X_8_INPUT_DEVICE_H
