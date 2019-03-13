@@ -1,8 +1,4 @@
-﻿//----------------------------------------------------------
-// <filename>Radian.h</filename>
-//----------------------------------------------------------
-
-#ifndef RADIAN_H
+﻿#ifndef RADIAN_H
 #define RADIAN_H
 
 #include <d3dx9.h>
@@ -47,4 +43,4 @@ namespace gameframework
 	};
 }
 
-#endif //! RADIAN_H
+#endif //!RADIAN_H

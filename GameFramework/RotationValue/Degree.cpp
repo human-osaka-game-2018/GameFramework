@@ -1,8 +1,4 @@
-﻿//----------------------------------------------------------
-// <filename>Degree.cpp</filename>
-//----------------------------------------------------------
-
-#include "Degree.h"
+﻿#include "Degree.h"
 
 namespace gameframework
 {

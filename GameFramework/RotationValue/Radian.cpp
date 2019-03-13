@@ -1,8 +1,4 @@
-﻿//----------------------------------------------------------
-// <filename>Radian.cpp</filename>
-//----------------------------------------------------------
-
-#include "Radian.h"
+﻿#include "Radian.h"
 
 namespace gameframework
 {
