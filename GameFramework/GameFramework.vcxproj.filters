@@ -44,6 +44,10 @@
     <Filter Include="Singleton\SingletonHolder">
       <UniqueIdentifier>{3aff72b4-5652-4826-8c7b-b8c6ef0c7fe4}</UniqueIdentifier>
     </Filter>
+    </ClCompile>
+    <Filter Include="Color">
+      <UniqueIdentifier>{0d856c42-ef71-48a1-ad7c-56ba14908a74}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window\Window.cpp">
@@ -149,6 +153,9 @@
     </ClInclude>
     <ClInclude Include="Singleton\SingletonHolder\SingletonHolder.h">
       <Filter>Singleton\SingletonHolder</Filter>
+    </ClInclude>
+    <ClInclude Include="Color\Color.h">
+      <Filter>Color</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
