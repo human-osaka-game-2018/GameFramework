@@ -156,6 +156,7 @@
     <ClInclude Include="Algorithm\Algorithm.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="Color\Color.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXDevice\DirectX9Device.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectX9GraphicDevice.h" />
