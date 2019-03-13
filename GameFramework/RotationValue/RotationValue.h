@@ -1,8 +1,4 @@
-﻿//----------------------------------------------------------
-// <filename>RotationValue.h</filename>
-//----------------------------------------------------------
-
-#ifndef ROTATION_VALUE_H
+﻿#ifndef ROTATION_VALUE_H
 #define ROTATION_VALUE_H
 
 #include <d3dx9.h>
@@ -231,4 +227,4 @@ namespace gameframework
 	};
 }
 
-#endif //! ROTATION_VALUE_H
+#endif //!ROTATION_VALUE_H

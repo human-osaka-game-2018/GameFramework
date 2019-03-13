@@ -1,8 +1,4 @@
-﻿//----------------------------------------------------------
-// <filename>RectSize.h</filename>
-//----------------------------------------------------------
-
-#ifndef RECT_SIZE_H
+﻿#ifndef RECT_SIZE_H
 #define RECT_SIZE_H
 
 /// <summary>
@@ -98,4 +94,4 @@ namespace gameframework
 	};
 }
 
-#endif //! RECT_SIZE_H
+#endif //!RECT_SIZE_H

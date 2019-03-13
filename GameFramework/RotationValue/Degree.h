@@ -1,8 +1,4 @@
-﻿//----------------------------------------------------------
-// <filename>Degree.h</filename>
-//----------------------------------------------------------
-
-#ifndef DEGREE_H
+﻿#ifndef DEGREE_H
 #define DEGREE_H
 
 #include "RotationValue.h"
@@ -45,4 +41,4 @@ namespace gameframework
 	};
 }
 
-#endif //! DEGREE_H
+#endif //!DEGREE_H
