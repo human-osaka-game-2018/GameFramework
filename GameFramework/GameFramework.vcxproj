@@ -39,13 +39,13 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -91,8 +91,8 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>false</ConformanceMode>
-      <PreprocessorDefinitions>DIRECTINPUT_VERSION=0x0800;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)GameFramework\GameFramework\Vertices;$(SolutionDir)GameFramework\GameFramework\Graphic;$(SolutionDir)GameFramework\GameFramework\Input\InputDevice;$(SolutionDir)GameFramework\Algorithm;$(SolutionDir)GameFramework\GameFramework\Input\DirectInput;$(SolutionDir)GameFramework\TextureUVs;$(SolutionDir)GameFramework\Color;$(SolutionDir)GameFramework\GameFramework\GameFrameworkFactory;$(SolutionDir)GameFramework\GameFramework\TimerManager;$(SolutionDir)GameFramework\Singleton;$(SolutionDir)GameFramework\Window;$(SolutionDir)GameFramework\RectSize;$(SolutionDir)GameFramework\GameFramework\DirectXParam;$(SolutionDir)GameFramework\RotationValue;$(SolutionDir)GameFramework\GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DIRECTINPUT_VERSION=0x0800;DIRECT_X_VERSOIN_9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)GameFramework\GameFramework\Stream;$(SolutionDir)GameFramework\tstring;$(SolutionDir)GameFramework\GameFramework\Vertices;$(SolutionDir)GameFramework\GameFramework\Graphic;$(SolutionDir)GameFramework\GameFramework\Input\InputDevice;$(SolutionDir)GameFramework\Algorithm;$(SolutionDir)GameFramework\GameFramework\Input\DirectInput;$(SolutionDir)GameFramework\TextureUVs;$(SolutionDir)GameFramework\Color;$(SolutionDir)GameFramework\GameFramework\GameFrameworkFactory;$(SolutionDir)GameFramework\GameFramework\TimerManager;$(SolutionDir)GameFramework\Singleton;$(SolutionDir)GameFramework\Window;$(SolutionDir)GameFramework\RectSize;$(SolutionDir)GameFramework\GameFramework\DirectXParam;$(SolutionDir)GameFramework\RotationValue;$(SolutionDir)GameFramework\GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>d3dx9.lib;d3d9.lib;dinput8.lib;dxguid.lib;winmm.lib;libfbxsdk-mt.lib;SoundLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
