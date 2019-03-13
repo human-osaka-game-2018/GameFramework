@@ -101,7 +101,7 @@ namespace gameframework
 
 			for (int i = 0; i < COLOR_COMPONENTS_NUM_MAX; ++i)
 			{
-				(*this)[colorComponents[i]] = (colorCode & 0xFF000000) >> ONE_COLOR_BITS * (3 - i);
+				(*this)[colorComponents[i]] = (colorCode & 0xFF000000) >> ONE_COLOR_BITS * (COLOR_COMPONENTS_NUM_MAX - 1 - i);
 			}
 
 			return *this;
