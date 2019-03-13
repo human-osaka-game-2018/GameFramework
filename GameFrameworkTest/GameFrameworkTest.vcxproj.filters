@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="ColorTest.cpp">
+      <Filter>Color</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Color">
+      <UniqueIdentifier>{188e8eda-a217-4743-b665-6ec28984d57f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
