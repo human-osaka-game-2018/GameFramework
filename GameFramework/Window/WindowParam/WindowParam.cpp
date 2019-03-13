@@ -4,8 +4,6 @@
 
 #include "WindowParam.h"
 
-#include <Windows.h>
-
 namespace gameframework
 {
 	RectSize WindowParam::m_windowSize = { 1280.0f, 720.0f };

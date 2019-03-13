@@ -95,4 +95,4 @@ namespace gameframework
 	};
 }
 
-#endif //! WINDOW_H
+#endif //!WINDOW_H
