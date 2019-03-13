@@ -92,7 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>false</ConformanceMode>
       <PreprocessorDefinitions>DIRECTINPUT_VERSION=0x0800;DIRECT_X_VERSOIN_9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)GameFramework\GameFramework\Stream;$(SolutionDir)GameFramework\tstring;$(SolutionDir)GameFramework\GameFramework\Vertices;$(SolutionDir)GameFramework\GameFramework\Graphic;$(SolutionDir)GameFramework\GameFramework\Input\InputDevice;$(SolutionDir)GameFramework\Algorithm;$(SolutionDir)GameFramework\GameFramework\Input\DirectInput;$(SolutionDir)GameFramework\TextureUVs;$(SolutionDir)GameFramework\Color;$(SolutionDir)GameFramework\GameFramework\GameFrameworkFactory;$(SolutionDir)GameFramework\GameFramework\TimerManager;$(SolutionDir)GameFramework\Singleton;$(SolutionDir)GameFramework\Window;$(SolutionDir)GameFramework\RectSize;$(SolutionDir)GameFramework\GameFramework\DirectXParam;$(SolutionDir)GameFramework\RotationValue;$(SolutionDir)GameFramework\GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GameFramework\Singleton;$(SolutionDir)GameFramework\GameFramework\Stream;$(SolutionDir)GameFramework\tstring;$(SolutionDir)GameFramework\GameFramework\Vertices;$(SolutionDir)GameFramework\GameFramework\Graphic;$(SolutionDir)GameFramework\GameFramework\Input\InputDevice;$(SolutionDir)GameFramework\Algorithm;$(SolutionDir)GameFramework\GameFramework\Input\DirectInput;$(SolutionDir)GameFramework\TextureUVs;$(SolutionDir)GameFramework\Color;$(SolutionDir)GameFramework\GameFramework\GameFrameworkFactory;$(SolutionDir)GameFramework\GameFramework\TimerManager;$(SolutionDir)GameFramework\Window;$(SolutionDir)GameFramework\RectSize;$(SolutionDir)GameFramework\GameFramework\DirectXParam;$(SolutionDir)GameFramework\RotationValue;$(SolutionDir)GameFramework\GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>d3dx9.lib;d3d9.lib;dinput8.lib;dxguid.lib;winmm.lib;libfbxsdk-mt.lib;SoundLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -121,6 +121,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>false</ConformanceMode>
       <PreprocessorDefinitions>DIRECTINPUT_VERSION=0x0800;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)GameFramework\Singleton;$(SolutionDir)GameFramework\GameFramework\Stream;$(SolutionDir)GameFramework\tstring;$(SolutionDir)GameFramework\GameFramework\Vertices;$(SolutionDir)GameFramework\GameFramework\Graphic;$(SolutionDir)GameFramework\GameFramework\Input\InputDevice;$(SolutionDir)GameFramework\Algorithm;$(SolutionDir)GameFramework\GameFramework\Input\DirectInput;$(SolutionDir)GameFramework\TextureUVs;$(SolutionDir)GameFramework\Color;$(SolutionDir)GameFramework\GameFramework\GameFrameworkFactory;$(SolutionDir)GameFramework\GameFramework\TimerManager;$(SolutionDir)GameFramework\Window;$(SolutionDir)GameFramework\RectSize;$(SolutionDir)GameFramework\GameFramework\DirectXParam;$(SolutionDir)GameFramework\RotationValue;$(SolutionDir)GameFramework\GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -146,6 +147,8 @@
     <ClCompile Include="RotationValue\Degree.cpp" />
     <ClCompile Include="RotationValue\Radian.cpp" />
     <ClCompile Include="RotationValue\RotationValue.cpp" />
+    <ClCompile Include="Singleton\Singleton.cpp" />
+    <ClCompile Include="Singleton\SingletonHolder\SingletonHolder.cpp" />
     <ClCompile Include="Window\Window.cpp" />
     <ClCompile Include="Window\WindowParam\WindowParam.cpp" />
   </ItemGroup>
@@ -167,6 +170,8 @@
     <ClInclude Include="RotationValue\Degree.h" />
     <ClInclude Include="RotationValue\Radian.h" />
     <ClInclude Include="RotationValue\RotationValue.h" />
+    <ClInclude Include="Singleton\Singleton.h" />
+    <ClInclude Include="Singleton\SingletonHolder\SingletonHolder.h" />
     <ClInclude Include="Window\Window.h" />
     <ClInclude Include="Window\WindowParam\WindowParam.h" />
   </ItemGroup>
