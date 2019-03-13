@@ -16,9 +16,11 @@ namespace gameframework
 {
 	#ifdef DIRECT_X_VERSION_11
 	using LPDIRECT3D = ID3D11Device*;
-	#else
+	#elif defined DIRECT_X_VERSOIN_9
 	using LPDIRECT3D = LPDIRECT3D9;
-	#endif //! DIRECT_X_VERSION_11
+	#else
+	#error "DirectXのバージョンを定義してください"
+	#endif
 		
 	/// <summary>
 	/// DirectXのデバイスクラス
@@ -54,4 +56,4 @@ namespace gameframework
 	};
 }
 
-#endif //! DIRECT_X_DEVICE_H
+#endif //!DIRECT_X_DEVICE_H

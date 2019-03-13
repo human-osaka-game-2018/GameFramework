@@ -15,11 +15,13 @@
 namespace gameframework
 {
 	#ifdef DIRECT_X_VERSION_11
-	//using LPDIRECTINPUT = LPDIRECTINPUT8;
-	#else
+	using LPDIRECTINPUT = LPDIRECT3DDEVICE9;
+	#elif defined DIRECT_X_VERSOIN_9
 	using LPDIRECTINPUT = LPDIRECTINPUT8;
-	#endif //! DIRECT_X_VERSION_11
-		
+	#else
+	#error "DirectXのバージョンを定義してください"
+	#endif
+
 	/// <summary>
 	/// DirectXのインプットデバイスクラス
 	/// </summary>
@@ -54,4 +56,4 @@ namespace gameframework
 	};
 }
 
-#endif //! DIRECT_X_INPUT_DEVICE_H
+#endif //!DIRECT_X_INPUT_DEVICE_H

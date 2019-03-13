@@ -17,10 +17,12 @@
 namespace gameframework
 {
 	#ifdef DIRECT_X_VERSION_11
-	//using LPDIRECT3DDEVICE = LPDIRECT3DDEVICE9;
-	#else
 	using LPDIRECT3DDEVICE = LPDIRECT3DDEVICE9;
-	#endif //! DIRECT_X_VERSION_11
+	#elif defined DIRECT_X_VERSOIN_9
+	using LPDIRECT3DDEVICE = LPDIRECT3DDEVICE9;
+	#else
+	#error "DirectXのバージョンを定義してください"
+	#endif
 
 	/// <summary>
 	/// DirectXのグラフィックデバイスクラス
@@ -57,4 +59,4 @@ namespace gameframework
 	};
 }
 
-#endif //! DIRECT_X_GRAPHIC_DEVICE_H
+#endif //!DIRECT_X_GRAPHIC_DEVICE_H
