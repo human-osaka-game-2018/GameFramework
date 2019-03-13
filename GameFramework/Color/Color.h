@@ -26,7 +26,10 @@ namespace gameframework
 			GREEN,
 			BLUE,
 		};
-
+		
+		/// <remarks>
+		/// 初期値は非透明の白0xFFFFFFFF
+		/// </remarks>
 		Color() {};
 		Color(DWORD colorCode) 
 		{
