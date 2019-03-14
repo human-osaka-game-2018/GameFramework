@@ -38,8 +38,17 @@
     <Filter Include="RotationValue">
       <UniqueIdentifier>{c1ca2bb6-553c-40d3-96f9-13d9e39f26b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\Graphic\TextureManager">
+      <UniqueIdentifier>{a8b3ce71-c44d-44c0-b516-0d23eb70cc30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Graphic\TextureManager\Texture">
+      <UniqueIdentifier>{3ec275e6-78b9-4b2b-8c61-68f6be7e228f}</UniqueIdentifier>
+    </Filter>
     <Filter Include="GameFramework\TimerManager">
       <UniqueIdentifier>{86062bee-6630-49ef-8e39-89595c36058e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TextureUVs">
+      <UniqueIdentifier>{3b4a87ff-c46c-43d6-b217-67d7e48c8312}</UniqueIdentifier>
     </Filter>
     <Filter Include="Singleton">
       <UniqueIdentifier>{a3284fef-a0a3-496b-9770-3cde8b2dbc91}</UniqueIdentifier>
@@ -47,6 +56,9 @@
     <Filter Include="Singleton\SingletonHolder">
       <UniqueIdentifier>{3aff72b4-5652-4826-8c7b-b8c6ef0c7fe4}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp">
+      <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
+    </ClCompile>
     </ClCompile>
     <ClCompile Include="GameFramework\TimerManager\TimerManager.cpp">
       <Filter>GameFramework\TimerManager</Filter>
@@ -104,6 +116,15 @@
     <ClCompile Include="RotationValue\RotationValue.cpp">
       <Filter>RotationValue</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\TextureManager\TextureManager.cpp">
+      <Filter>GameFramework\Graphic\TextureManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp">
+      <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\Texture.cpp">
+      <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
+    </ClCompile>
     <ClCompile Include="TextureUVs\TextureUVs.cpp">
       <Filter>TextureUVs</Filter>
     </ClCompile>
@@ -159,6 +180,30 @@
     </ClInclude>
     <ClInclude Include="RotationValue\RotationValue.h">
       <Filter>RotationValue</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\TextureManager\TextureManager.h">
+      <Filter>GameFramework\Graphic\TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.h">
+      <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\TextureManager\Texture\Texture.h">
+      <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureUVs\TextureUVs.h">
+      <Filter>TextureUVs</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\TextureManager\TextureManager.h">
+      <Filter>GameFramework\Graphic\TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.h">
+      <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\TextureManager\Texture\Texture.h">
+      <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureUVs\TextureUVs.h">
+      <Filter>TextureUVs</Filter>
     </ClInclude>
     <ClInclude Include="Singleton\Singleton.h">
       <Filter>Singleton</Filter>
