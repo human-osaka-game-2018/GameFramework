@@ -120,7 +120,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>false</ConformanceMode>
-      <PreprocessorDefinitions>DIRECTINPUT_VERSION=0x0800;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DIRECTINPUT_VERSION=0x0800;DIRECT_X_VERSOIN_9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)GameFramework\Singleton;$(SolutionDir)GameFramework\GameFramework\Stream;$(SolutionDir)GameFramework\tstring;$(SolutionDir)GameFramework\GameFramework\Vertices;$(SolutionDir)GameFramework\GameFramework\Graphic;$(SolutionDir)GameFramework\GameFramework\Input\InputDevice;$(SolutionDir)GameFramework\Algorithm;$(SolutionDir)GameFramework\GameFramework\Input\DirectInput;$(SolutionDir)GameFramework\TextureUVs;$(SolutionDir)GameFramework\Color;$(SolutionDir)GameFramework\GameFramework\GameFrameworkFactory;$(SolutionDir)GameFramework\GameFramework\TimerManager;$(SolutionDir)GameFramework\Window;$(SolutionDir)GameFramework\RectSize;$(SolutionDir)GameFramework\GameFramework\DirectXParam;$(SolutionDir)GameFramework\RotationValue;$(SolutionDir)GameFramework\GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -139,10 +139,7 @@
     <ClCompile Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectXGraphicDevice.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectX8InputDevice.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectXInputDevice.cpp" />
-    <ClCompile Include="GameFramework\GameFramework.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.cpp" />
+    <ClCompile Include="GameFramework\DirectXParam\DirectXParam.cpp" />
     <ClCompile Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.cpp" />
     <ClCompile Include="GameFramework\Graphic\FontManager\FontManager.cpp" />
     <ClCompile Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.cpp" />
@@ -175,8 +172,10 @@
     <ClInclude Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectXGraphicDevice.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXInputDevice\DirectX8InputDevice.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXInputDevice\DirectXInputDevice.h" />
+    <ClInclude Include="GameFramework\DirectXParam\DirectXParam.h" />
+    <ClInclude Include="GameFramework\DirectXParam\DirectXParamFactory\DirectXParamFactory.h" />
     <ClInclude Include="GameFramework\GameFramework.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.h" />
     <ClInclude Include="GameFramework\Graphic\ColorBlender\ColorBlender.h" />
