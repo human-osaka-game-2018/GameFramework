@@ -45,14 +45,24 @@ namespace gameframework
 		{
 			return D3DCOLOR_ARGB(m_alpha, m_red, m_green, m_blue);
 		}
-
+		
+		/// <summary>
+		/// thisと引数との平均のカラーコードを取得する
+		/// </summary>
+		/// <param name="colorCode">平均をとるカラーコード</param>
+		/// <returns>平均のカラーコード</returns>
 		inline DWORD GetAverageColorCode(DWORD colorCode) const
 		{
 			Color inColor(colorCode);
 
 			return GetAverage(inColor).GetColorCode();
 		}
-
+		
+		/// <summary>
+		/// thisと引数との平均のカラー構造体を返す
+		/// </summary>
+		/// <param name="color">平均をとるカラー構造体</param>
+		/// <returns>平均のカラー</returns>
 		inline Color GetAverage(const Color& color) const
 		{
 			Color average(
