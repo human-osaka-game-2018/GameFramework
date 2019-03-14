@@ -144,7 +144,12 @@ namespace gameframework
 		/// <returns>足した結果のColor構造体</returns>
 		const Color operator+(const Color& rhs) const
 		{
-			return Color(m_alpha + rhs.m_alpha, m_red + rhs.m_red, m_green + rhs.m_green, m_blue + rhs.m_blue);
+			return Color(
+				Normalize(m_alpha + rhs.m_alpha),
+				Normalize(m_red   + rhs.m_red),
+				Normalize(m_green + rhs.m_green),
+				Normalize(m_blue  + rhs.m_blue)
+			);
 		}
 
 		const Color operator+(DWORD rhs) const
@@ -161,7 +166,12 @@ namespace gameframework
 		/// <returns>引いた結果のColor構造体</returns>
 		const Color operator-(const Color& rhs) const
 		{
-			return Color(m_alpha - rhs.m_alpha, m_red - rhs.m_red, m_green - rhs.m_green, m_blue - rhs.m_blue);
+			return Color(
+				Normalize(m_alpha - rhs.m_alpha),
+				Normalize(m_red   - rhs.m_red),
+				Normalize(m_green - rhs.m_green),
+				Normalize(m_blue  - rhs.m_blue)
+			);
 		}
 
 		const Color operator-(DWORD rhs) const
@@ -217,10 +227,11 @@ namespace gameframework
 		const Color operator*(float rhs) const
 		{
 			return Color(
-				static_cast<BYTE>(max(min(m_alpha * rhs, 255), 0)),
-				static_cast<BYTE>(max(min(m_red   * rhs, 255), 0)),
-				static_cast<BYTE>(max(min(m_green * rhs, 255), 0)),
-				static_cast<BYTE>(max(min(m_blue  * rhs, 255), 0)));
+				Normalize(m_alpha * rhs),
+				Normalize(m_red   * rhs),
+				Normalize(m_green * rhs),
+				Normalize(m_blue  * rhs)
+			);
 		}
 
 		/// <summary>
@@ -243,10 +254,11 @@ namespace gameframework
 		const Color operator/(int rhs) const
 		{
 			return Color(
-				static_cast<BYTE>(max(min(m_alpha / rhs, 255), 0)),
-				static_cast<BYTE>(max(min(m_red   / rhs, 255), 0)),
-				static_cast<BYTE>(max(min(m_green / rhs, 255), 0)),
-				static_cast<BYTE>(max(min(m_blue  / rhs, 255), 0)));
+				Normalize(m_alpha / rhs),
+				Normalize(m_red   / rhs),
+				Normalize(m_green / rhs),
+				Normalize(m_blue  / rhs)
+			);
 		}
 
 		/// <summary>
@@ -259,6 +271,21 @@ namespace gameframework
 			(*this) = (*this) / rhs;
 
 			return *this;
+		}
+
+	private:
+		/// <summary>
+		/// 各色の値を0x00～0xFFに正規化する
+		/// </summary>
+		/// <param name="componentValue">各色の値</param>
+		/// <returns>
+		/// <para>・cmponentValue ＜ 0x00の場合は0x00を返す</para>
+		/// <para>・0x00 ≦ componentValue ≦ 0xFFの場合はcomponentValueをそのまま返す</para>
+		/// <para>・0xFF ＜ componentValue 場合は0xFFを返す</para>
+		/// </returns>
+		inline BYTE Normalize(int componentValue) const
+		{
+			return static_cast<BYTE>(max(min(componentValue, 255), 0));
 		}
 	};
 }
