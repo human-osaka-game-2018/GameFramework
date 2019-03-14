@@ -143,6 +143,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.cpp" />
+    <ClCompile Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.cpp" />
+    <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp" />
     <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp" />
     <ClCompile Include="GameFramework\TimerManager\TimerManager.cpp" />
     <ClCompile Include="GameFramework\Vertices\DirectX9Vertices.cpp" />
@@ -171,6 +173,10 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.h" />
+    <ClInclude Include="GameFramework\Graphic\ColorBlender\ColorBlender.h" />
+    <ClInclude Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.h" />
+    <ClInclude Include="GameFramework\Graphic\Renderer\DirectX9Renderer.h" />
+    <ClInclude Include="GameFramework\Graphic\Renderer\Renderer.h" />
     <ClInclude Include="GameFramework\Graphic\TextureManager\TextureManager.h" />
     <ClInclude Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.h" />
     <ClInclude Include="GameFramework\Graphic\TextureManager\Texture\Texture.h" />
