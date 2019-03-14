@@ -114,26 +114,24 @@ namespace gameframework
 		/// </summary>
 		/// <param name="colorCode">代入するカラーコード</param>
 		/// <returns>thisの参照</returns>
+		/// <remarks>
+		/// <para>colorCodeの下位バイトからB→G→R→Aの順に1バイトずつ抜き出し、</para>
+		/// <para>それぞれ対応するメンバに保存する</para>
+		/// </remarks>
 		Color& operator=(DWORD colorCode)
 		{
-			const std::vector<COMPONENTS> colorComponents =
+			const std::vector<COMPONENTS> components =
 			{
-				COMPONENTS::ALPHA,
-				COMPONENTS::RED,
+				COMPONENTS::BLUE,
 				COMPONENTS::GREEN,
-				COMPONENTS::BLUE
+				COMPONENTS::RED,
+				COMPONENTS::ALPHA
 			};
 
-			int componentsMax = static_cast<int>(colorComponents.size());
-
-			for (int i = 0; componentsMax; ++i)
-			{
-				const int ONE_COLOR_BITS = 8;
-
-				int shiftNum = ONE_COLOR_BITS * (componentsMax - 1 - i);
-
-				DWORD componentColor = colorCode & (0xFF << shiftNum);
-				(*this)[colorComponents[i]] = static_cast<BYTE>((componentColor) >> shiftNum);
+			for (auto& component : components) {
+				int index = static_cast<int>(&component - &components[0]);
+				int shiftNum = CHAR_BIT * index;
+				(*this)[component] = (colorCode >> shiftNum) & 0xFF;
 			}
 
 			return *this;
