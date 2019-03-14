@@ -193,26 +193,12 @@
     <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp">
       <Filter>GameFramework\Graphic\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="GameFramework\Input\DirectInput\Direct8Input.cpp">
-      <Filter>GameFramework\Input\DirectInput</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Input\DirectInput\DirectInput.cpp">
-      <Filter>GameFramework\Input\DirectInput</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Keyboard.cpp">
       <Filter>GameFramework\Input\InputDevice</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Mouse.cpp">
       <Filter>GameFramework\Input\InputDevice</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Input\InputDevice\InputDevice.cpp">
-      <Filter>GameFramework\Input\InputDevice</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Input\InputDevice\Direct8InputDevice.cpp">
-      <Filter>GameFramework\Input\InputDevice</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Input\Input.cpp">
-      <Filter>GameFramework\Input</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Vertices\DirectX9Vertices.cpp">
       <Filter>GameFramework\Vertices</Filter>
@@ -223,14 +209,9 @@
     <ClCompile Include="TextureUVs\TextureUVs.cpp">
       <Filter>TextureUVs</Filter>
     </ClCompile>
-    <ClCompile Include="GameFramework\Stream\Stream.cpp">
-      <Filter>GameFramework\Stream</Filter>
-    </ClCompile>
     <ClCompile Include="GameFramework\Stream\DirectX9Stream.cpp">
       <Filter>GameFramework\Stream</Filter>
     </ClCompile>
-    <ClCompile Include="tstring\tstring.cpp">
-      <Filter>GameFramework\tstring</Filter>
     </ClCompile>
     <ClCompile Include="Singleton\Singleton.cpp">
       <Filter>Singleton</Filter>
