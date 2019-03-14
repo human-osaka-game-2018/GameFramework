@@ -36,51 +36,43 @@ namespace gameframework
 			(*this) = colorCode;
 		}
 
-		Color(DWORD alpha, DWORD red, DWORD green, DWORD blue)
-		{
-			m_alpha = alpha;
-			m_red   = red;
-			m_green = green;
-			m_blue  = blue;
-		}
+		Color(BYTE alpha, BYTE red, BYTE green, BYTE blue)
+			:m_alpha(alpha), m_red(red), m_green(green), m_blue(blue)
+		{};
 		
 		inline DWORD GetColorCode() const
 		{
-			return D3DCOLOR_ARGB(
-				static_cast<BYTE>(m_alpha), 
-				static_cast<BYTE>(m_red), 
-				static_cast<BYTE>(m_green), 
-				static_cast<BYTE>(m_blue));
+			return D3DCOLOR_ARGB(m_alpha, m_red, m_green, m_blue);
 		}
 
-		DWORD m_alpha = 255;
-		DWORD m_red   = 255;
-		DWORD m_green = 255;
-		DWORD m_blue  = 255;
+		BYTE m_alpha = 255;
+		BYTE m_red   = 255;
+		BYTE m_green = 255;
+		BYTE m_blue  = 255;
 		
 		/// <summary>
 		/// 添え字でアクセスできる色を変える
 		/// </summary>
-		/// <param name="colorComponent">アクセスする色のCOLOR_COMPONENTS</param>
+		/// <param name="colorComponent">アクセスする色のCOMPONENTS</param>
 		/// <returns>アクセスした色の参照</returns>>
-		DWORD& operator[](COLOR_COMPONENTS colorComponent)
+		BYTE& operator[](COMPONENTS colorComponent)
 		{
 			switch (colorComponent)
 			{
-			case COLOR_COMPONENTS::ALPHA:
+			case COMPONENTS::ALPHA:
 				return m_alpha;
 
-			case COLOR_COMPONENTS::RED:
+			case COMPONENTS::RED:
 				return m_red;
 
-			case COLOR_COMPONENTS::GREEN:
+			case COMPONENTS::GREEN:
 				return m_green;
 
-			case COLOR_COMPONENTS::BLUE:
+			case COMPONENTS::BLUE:
 				return m_blue;
 
 			default:
-				break;
+				return m_blue;
 			}
 		}
 		
@@ -186,10 +178,10 @@ namespace gameframework
 		const Color operator*(float rhs) const
 		{
 			return Color(
-				static_cast<DWORD>(m_alpha * rhs), 
-				static_cast<DWORD>(m_red * rhs), 
-				static_cast<DWORD>(m_green * rhs), 
-				static_cast<DWORD>(m_blue * rhs));
+				static_cast<BYTE>(m_alpha * rhs), 
+				static_cast<BYTE>(m_red * rhs), 
+				static_cast<BYTE>(m_green * rhs), 
+				static_cast<BYTE>(m_blue * rhs));
 		}
 
 		/// <summary>
@@ -211,7 +203,11 @@ namespace gameframework
 		/// <returns>割った後の結果のColor構造体</returns>
 		const Color operator/(int rhs) const
 		{
-			return Color(m_alpha / rhs, m_red / rhs, m_green / rhs, m_blue / rhs);
+			return Color(
+				static_cast<BYTE>(m_alpha / rhs),
+				static_cast<BYTE>(m_red / rhs),
+				static_cast<BYTE>(m_green / rhs),
+				static_cast<BYTE>(m_blue / rhs));
 		}
 
 		/// <summary>
