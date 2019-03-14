@@ -101,7 +101,11 @@ namespace gameframework
 				return m_blue;
 
 			default:
-				return m_blue;
+			{
+				//ここに来ることは基本ない
+				static BYTE errorReturnVal = 0x00;
+				return errorReturnVal;
+			}
 			}
 		}
 		
