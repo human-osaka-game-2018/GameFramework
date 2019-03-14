@@ -19,7 +19,7 @@ namespace gameframework
 		/// <summary>
 		/// 色の構成要素
 		/// </summary>
-		enum class COLOR_COMPONENTS
+		enum class COMPONENTS
 		{
 			ALPHA,
 			RED,
