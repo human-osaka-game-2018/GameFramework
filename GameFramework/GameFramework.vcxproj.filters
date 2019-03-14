@@ -56,6 +56,15 @@
     <Filter Include="GameFramework\Graphic\TextureManager\Texture">
       <UniqueIdentifier>{3ec275e6-78b9-4b2b-8c61-68f6be7e228f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\Input">
+      <UniqueIdentifier>{4483031d-eae3-4c56-b3e5-8c645e242cc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Input\DirectInput">
+      <UniqueIdentifier>{f1b89c86-3eda-4fce-8e28-b77476a607fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Input\InputDevice">
+      <UniqueIdentifier>{e1562cdc-80e7-4fb0-b738-370355b100e2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="GameFramework\Vertices">
       <UniqueIdentifier>{2a2f0c6e-68f5-41f0-b585-c92ed001f1f5}</UniqueIdentifier>
     </Filter>
@@ -94,6 +103,12 @@
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp">
       <Filter>GameFramework\Graphic\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Keyboard.cpp">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Mouse.cpp">
+      <Filter>GameFramework\Input\InputDevice</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Vertices\DirectX9Vertices.cpp">
       <Filter>GameFramework\Vertices</Filter>
@@ -178,6 +193,26 @@
     <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp">
       <Filter>GameFramework\Graphic\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\Input\DirectInput\Direct8Input.cpp">
+      <Filter>GameFramework\Input\DirectInput</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\DirectInput\DirectInput.cpp">
+      <Filter>GameFramework\Input\DirectInput</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Keyboard.cpp">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Mouse.cpp">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\InputDevice\InputDevice.cpp">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\InputDevice\Direct8InputDevice.cpp">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\Input.cpp">
+      <Filter>GameFramework\Input</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Vertices\DirectX9Vertices.cpp">
       <Filter>GameFramework\Vertices</Filter>
@@ -280,6 +315,24 @@
     <ClInclude Include="GameFramework\Graphic\Renderer\Renderer.h">
       <Filter>GameFramework\Graphic\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Input\DirectInput\Direct8Input.h">
+      <Filter>GameFramework\Input\DirectInput</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\InputDevice\DirectX8Keyboard.h">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\InputDevice\DirectX8Mouse.h">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\InputDevice\InputDevice.h">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\InputDevice\Direct8InputDevice.h">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\Input.h">
+      <Filter>GameFramework\Input</Filter>
+    </ClInclude>
     <ClInclude Include="GameFramework\Vertices\DirectX9Vertices.h">
       <Filter>GameFramework\Vertices</Filter>
     </ClInclude>
@@ -331,6 +384,27 @@
     <ClInclude Include="GameFramework\Graphic\Renderer\Renderer.h">
       <Filter>GameFramework\Graphic\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Input\DirectInput\Direct8Input.h">
+      <Filter>GameFramework\Input\DirectInput</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\DirectInput\DirectInput.h">
+      <Filter>GameFramework\Input\DirectInput</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\InputDevice\DirectX8Keyboard.h">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\InputDevice\DirectX8Mouse.h">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\InputDevice\InputDevice.h">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\InputDevice\Direct8InputDevice.h">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\Input.h">
+      <Filter>GameFramework\Input</Filter>
+    </ClInclude>
     <ClInclude Include="GameFramework\Vertices\DirectX9Vertices.h">
       <Filter>GameFramework\Vertices</Filter>
     </ClInclude>
@@ -359,6 +433,9 @@
     </ClInclude>
     <ClInclude Include="Color\Color.h">
       <Filter>Color</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\DirectInput\DirectInput.h">
+      <Filter>GameFramework\Input\DirectInput</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
