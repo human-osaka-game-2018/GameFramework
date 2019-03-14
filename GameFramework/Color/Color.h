@@ -124,12 +124,16 @@ namespace gameframework
 				COMPONENTS::BLUE
 			};
 
-			const int COMPONENTS_MAX = static_cast<int>(colorComponents.size());
+			int componentsMax = static_cast<int>(colorComponents.size());
 
-			for (int i = 0; COMPONENTS_MAX; ++i)
+			for (int i = 0; componentsMax; ++i)
 			{
 				const int ONE_COLOR_BITS = 8;
-				(*this)[colorComponents[i]] = static_cast<BYTE>((colorCode & 0xFF000000) >> ONE_COLOR_BITS * (COMPONENTS_MAX - 1 - i));
+
+				int shiftNum = ONE_COLOR_BITS * (componentsMax - 1 - i);
+
+				DWORD componentColor = colorCode & (0xFF << shiftNum);
+				(*this)[colorComponents[i]] = static_cast<BYTE>((componentColor) >> shiftNum);
 			}
 
 			return *this;
