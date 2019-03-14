@@ -56,10 +56,10 @@ namespace gameframework
 		inline Color GetAverage(const Color& color) const
 		{
 			Color average(
-				m_alpha + color.m_alpha / 2,
-				m_red   + color.m_red   / 2,
-				m_green + color.m_green / 2,
-				m_blue  + color.m_blue  / 2);
+				(m_alpha + color.m_alpha) / 2,
+				(m_red   + color.m_red)   / 2,
+				(m_green + color.m_green) / 2,
+				(m_blue  + color.m_blue)  / 2);
 
 			return average;
 		}
