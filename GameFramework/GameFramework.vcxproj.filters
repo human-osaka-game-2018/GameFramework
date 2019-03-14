@@ -38,12 +38,18 @@
     <Filter Include="RotationValue">
       <UniqueIdentifier>{c1ca2bb6-553c-40d3-96f9-13d9e39f26b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\TimerManager">
+      <UniqueIdentifier>{86062bee-6630-49ef-8e39-89595c36058e}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Singleton">
       <UniqueIdentifier>{a3284fef-a0a3-496b-9770-3cde8b2dbc91}</UniqueIdentifier>
     </Filter>
     <Filter Include="Singleton\SingletonHolder">
       <UniqueIdentifier>{3aff72b4-5652-4826-8c7b-b8c6ef0c7fe4}</UniqueIdentifier>
     </Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\TimerManager\TimerManager.cpp">
+      <Filter>GameFramework\TimerManager</Filter>
     </ClCompile>
     <Filter Include="Color">
       <UniqueIdentifier>{0d856c42-ef71-48a1-ad7c-56ba14908a74}</UniqueIdentifier>
