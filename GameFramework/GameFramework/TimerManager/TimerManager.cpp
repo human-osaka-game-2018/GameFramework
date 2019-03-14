@@ -35,7 +35,7 @@ namespace gameframework
 		m_isRunning = true;
 	}
 
-	LONGLONG TimerManager::Timer::GetTime_s()
+	LONGLONG TimerManager::Timer::GetTime_sec()
 	{
 		if (!IsRunning())
 		{
@@ -46,7 +46,7 @@ namespace gameframework
 		return std::chrono::duration_cast<std::chrono::seconds>(m_elapsedTime).count();
 	}
 
-	LONGLONG TimerManager::Timer::GetTime_ms()
+	LONGLONG TimerManager::Timer::GetTime_msec()
 	{
 		if (!IsRunning())
 		{
@@ -57,7 +57,7 @@ namespace gameframework
 		return std::chrono::duration_cast<std::chrono::milliseconds>(m_elapsedTime).count();
 	}
 
-	LONGLONG TimerManager::Timer::GetTime_µs()
+	LONGLONG TimerManager::Timer::GetTime_µsec()
 	{
 		if (!IsRunning())
 		{
@@ -75,22 +75,22 @@ namespace gameframework
 
 	bool TimerManager::CanStartNextFrame()
 	{
-		LONGLONG currentFrameSyncTime_ms = m_timers[_T("FPS")]->GetTime_ms();
+		LONGLONG currentFrameSyncTime_msec = m_timers[_T("FPS")]->GetTime_msec();
 
-		if (currentFrameSyncTime_ms - m_prevFrameSyncTime_ms < 1000 / m_fPS) return false;
+		if (currentFrameSyncTime_msec - m_prevFrameSyncTime_msec < 1000 / m_fPS) return false;
 
-		//一フレームにかかった時間をDeltaTime_sのため取得する
-		m_processTimeAtPrevFrame_ms = m_prevFrameSyncTime_ms - currentFrameSyncTime_ms;
+		//一フレームにかかった時間をdeltaTime_secのため取得する
+		m_processTimeAtPrevFrame_msec = m_prevFrameSyncTime_msec - currentFrameSyncTime_msec;
 
-		m_prevFrameSyncTime_ms = currentFrameSyncTime_ms;
+		m_prevFrameSyncTime_msec = currentFrameSyncTime_msec;
 
 		return true;
 	}
 
-	float TimerManager::DeltaTime_s() const
+	float TimerManager::deltaTime_sec() const
 	{
-		float deltaTime_s = static_cast<float>(m_processTimeAtPrevFrame_ms) / 1000.0f;
+		float deltaTime_sec = static_cast<float>(m_processTimeAtPrevFrame_msec) / 1000.0f;
 
-		return deltaTime_s;
+		return deltaTime_sec;
 	}
 }
