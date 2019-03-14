@@ -46,6 +46,24 @@ namespace gameframework
 			return D3DCOLOR_ARGB(m_alpha, m_red, m_green, m_blue);
 		}
 
+		inline DWORD GetAverageColorCode(DWORD colorCode) const
+		{
+			Color inColor(colorCode);
+
+			return GetAverage(inColor).GetColorCode();
+		}
+
+		inline Color GetAverage(const Color& color) const
+		{
+			Color average(
+				m_alpha + color.m_alpha / 2,
+				m_red   + color.m_red   / 2,
+				m_green + color.m_green / 2,
+				m_blue  + color.m_blue  / 2);
+
+			return average;
+		}
+
 		BYTE m_alpha = 255;
 		BYTE m_red   = 255;
 		BYTE m_green = 255;
