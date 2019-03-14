@@ -114,7 +114,9 @@ namespace gameframework
 
 		const Color operator+(DWORD rhs) const
 		{
-			return Color(GetColorCode() + rhs);
+			Color rhsColor(GetColorCode());
+
+			return Color((*this) + rhsColor);
 		}
 
 		/// <summary>
@@ -129,7 +131,9 @@ namespace gameframework
 
 		const Color operator-(DWORD rhs) const
 		{
-			return Color(GetColorCode() - rhs);
+			Color rhsColor(GetColorCode());
+
+			return Color((*this) - rhsColor);
 		}
 
 		/// <summary>
