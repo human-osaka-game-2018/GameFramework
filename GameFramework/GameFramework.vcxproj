@@ -150,6 +150,7 @@
     <ClCompile Include="RotationValue\RotationValue.cpp" />
     <ClCompile Include="Singleton\Singleton.cpp" />
     <ClCompile Include="Singleton\SingletonHolder\SingletonHolder.cpp" />
+    <ClCompile Include="TextureUVs\TextureUVs.cpp" />
     <ClCompile Include="Window\Window.cpp" />
     <ClCompile Include="Window\WindowParam\WindowParam.cpp" />
   </ItemGroup>
@@ -175,6 +176,7 @@
     <ClInclude Include="RotationValue\RotationValue.h" />
     <ClInclude Include="Singleton\Singleton.h" />
     <ClInclude Include="Singleton\SingletonHolder\SingletonHolder.h" />
+    <ClInclude Include="TextureUVs\TextureUVs.h" />
     <ClInclude Include="Window\Window.h" />
     <ClInclude Include="Window\WindowParam\WindowParam.h" />
   </ItemGroup>

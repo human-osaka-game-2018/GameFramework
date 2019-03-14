@@ -51,6 +51,9 @@
     <ClCompile Include="GameFramework\TimerManager\TimerManager.cpp">
       <Filter>GameFramework\TimerManager</Filter>
     </ClCompile>
+    <ClCompile Include="TextureUVs\TextureUVs.cpp">
+      <Filter>TextureUVs</Filter>
+    </ClCompile>
     <Filter Include="Color">
       <UniqueIdentifier>{0d856c42-ef71-48a1-ad7c-56ba14908a74}</UniqueIdentifier>
     </Filter>
@@ -100,6 +103,9 @@
     </ClCompile>
     <ClCompile Include="RotationValue\RotationValue.cpp">
       <Filter>RotationValue</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureUVs\TextureUVs.cpp">
+      <Filter>TextureUVs</Filter>
     </ClCompile>
     <ClCompile Include="Singleton\Singleton.cpp">
       <Filter>Singleton</Filter>
