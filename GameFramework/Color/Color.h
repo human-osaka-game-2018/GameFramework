@@ -110,12 +110,12 @@ namespace gameframework
 				COMPONENTS::BLUE
 			};
 
-			const int COMPONENTS_MAX = colorComponents.size();
+			const int COMPONENTS_MAX = static_cast<int>(colorComponents.size());
 
 			for (int i = 0; COMPONENTS_MAX; ++i)
 			{
 				const int ONE_COLOR_BITS = 8;
-				(*this)[colorComponents[i]] = (colorCode & 0xFF000000) >> ONE_COLOR_BITS * (COMPONENTS_MAX - 1 - i);
+				(*this)[colorComponents[i]] = static_cast<BYTE>((colorCode & 0xFF000000) >> ONE_COLOR_BITS * (COMPONENTS_MAX - 1 - i));
 			}
 
 			return *this;
@@ -202,9 +202,9 @@ namespace gameframework
 		{
 			return Color(
 				static_cast<BYTE>(m_alpha * rhs), 
-				static_cast<BYTE>(m_red * rhs), 
+				static_cast<BYTE>(m_red   * rhs), 
 				static_cast<BYTE>(m_green * rhs), 
-				static_cast<BYTE>(m_blue * rhs));
+				static_cast<BYTE>(m_blue  * rhs));
 		}
 
 		/// <summary>
@@ -228,9 +228,9 @@ namespace gameframework
 		{
 			return Color(
 				static_cast<BYTE>(m_alpha / rhs),
-				static_cast<BYTE>(m_red / rhs),
+				static_cast<BYTE>(m_red   / rhs),
 				static_cast<BYTE>(m_green / rhs),
-				static_cast<BYTE>(m_blue / rhs));
+				static_cast<BYTE>(m_blue  / rhs));
 		}
 
 		/// <summary>
