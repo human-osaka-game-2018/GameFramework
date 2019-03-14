@@ -48,7 +48,7 @@ namespace gameframework
 		/// 一フレームにかかった時間(秒)を取得する
 		/// </summary>
 		/// <returns>経過時間(秒)</returns>
-		float DeltaTime_s() const;
+		float deltaTime_sec() const;
 
 		/// <summary>
 		/// タイマーの作成を行う
@@ -122,27 +122,27 @@ namespace gameframework
 		/// 計測時間を返す(秒)
 		/// </summary>
 		/// <param name="pKey">タイマーのキー</param>
-		inline LONGLONG GetTime_s(const TCHAR* pKey)
+		inline LONGLONG GetTime_sec(const TCHAR* pKey)
 		{
-			return m_timers[pKey]->GetTime_s();
+			return m_timers[pKey]->GetTime_sec();
 		}
 
 		/// <summary>
 		/// 計測時間を返す(ミリ秒)
 		/// </summary>
 		/// <param name="pKey">タイマーのキー</param>
-		inline LONGLONG GetTime_ms(const TCHAR* pKey)
+		inline LONGLONG GetTime_msec(const TCHAR* pKey)
 		{
-			return m_timers[pKey]->GetTime_ms();
+			return m_timers[pKey]->GetTime_msec();
 		}
 
 		/// <summary>
 		/// 計測時間を返す(マイクロ秒)
 		/// </summary>
 		/// <param name="pKey">タイマーのキー</param>
-		LONGLONG GetTime_µs(const TCHAR* pKey)
+		LONGLONG GetTime_µsec(const TCHAR* pKey)
 		{
-			return m_timers[pKey]->GetTime_µs();
+			return m_timers[pKey]->GetTime_µsec();
 		}
 
 		/// <summary>
@@ -189,17 +189,17 @@ namespace gameframework
 			/// <summary>
 			/// 計測時間を返す秒
 			/// </summary>
-			LONGLONG GetTime_s();
+			LONGLONG GetTime_sec();
 
 			/// <summary>
 			/// 計測時間を返すミリ秒
 			/// </summary>
-			LONGLONG GetTime_ms();
+			LONGLONG GetTime_msec();
 
 			/// <summary>
 			/// 計測時間を返すマイクロ秒
 			/// </summary>
-			LONGLONG GetTime_µs();
+			LONGLONG GetTime_µsec();
 
 			/// <summary>
 			/// 現在計測が止まっているかを返す
@@ -234,7 +234,7 @@ namespace gameframework
 			Create(_T("FPS"));
 
 			m_timers[_T("FPS")]->Start();
-			m_prevFrameSyncTime_ms = m_timers[_T("FPS")]->GetTime_ms();
+			m_prevFrameSyncTime_msec = m_timers[_T("FPS")]->GetTime_msec();
 		}
 
 		TimerManager(const TimerManager& rhs) = delete;
@@ -254,8 +254,8 @@ namespace gameframework
 
 		int m_fPS = 60;
 
-		LONGLONG m_prevFrameSyncTime_ms = 0;
-		LONGLONG m_processTimeAtPrevFrame_ms = 0;
+		LONGLONG m_prevFrameSyncTime_msec = 0;
+		LONGLONG m_processTimeAtPrevFrame_msec = 0;
 
 		std::map<const TCHAR*, Timer*> m_timers;
 	};
