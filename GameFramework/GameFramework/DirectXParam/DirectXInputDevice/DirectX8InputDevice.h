@@ -14,7 +14,7 @@
 #include "DirectXInputDevice.h"
 
 /// <summary>
-/// 基礎構築をに関するものをまとめた名前空間
+/// 基礎構築に関するものをまとめた名前空間
 /// </summary>
 namespace gameframework
 {
