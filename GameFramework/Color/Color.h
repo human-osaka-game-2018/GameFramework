@@ -211,10 +211,10 @@ namespace gameframework
 		const Color operator*(float rhs) const
 		{
 			return Color(
-				max(min(m_alpha * rhs, 255), 0),
-				max(min(m_red   * rhs, 255), 0), 
-				max(min(m_green * rhs, 255), 0), 
-				max(min(m_blue  * rhs, 255), 0));
+				static_cast<BYTE>(max(min(m_alpha * rhs, 255), 0)),
+				static_cast<BYTE>(max(min(m_red   * rhs, 255), 0)),
+				static_cast<BYTE>(max(min(m_green * rhs, 255), 0)),
+				static_cast<BYTE>(max(min(m_blue  * rhs, 255), 0)));
 		}
 
 		/// <summary>
@@ -237,10 +237,10 @@ namespace gameframework
 		const Color operator/(int rhs) const
 		{
 			return Color(
-				max(min(m_alpha / rhs, 255), 0),
-				max(min(m_red   / rhs, 255), 0),
-				max(min(m_green / rhs, 255), 0),
-				max(min(m_blue  / rhs, 255), 0));
+				static_cast<BYTE>(max(min(m_alpha / rhs, 255), 0)),
+				static_cast<BYTE>(max(min(m_red   / rhs, 255), 0)),
+				static_cast<BYTE>(max(min(m_green / rhs, 255), 0)),
+				static_cast<BYTE>(max(min(m_blue  / rhs, 255), 0)));
 		}
 
 		/// <summary>
