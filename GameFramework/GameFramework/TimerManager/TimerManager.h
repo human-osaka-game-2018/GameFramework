@@ -48,7 +48,7 @@ namespace gameframework
 		/// 一フレームにかかった時間(秒)を取得する
 		/// </summary>
 		/// <returns>経過時間(秒)</returns>
-		float deltaTime_sec() const;
+		float DeltaTime_sec() const;
 
 		/// <summary>
 		/// タイマーの作成を行う
