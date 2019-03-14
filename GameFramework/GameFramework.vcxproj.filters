@@ -38,6 +38,9 @@
     <Filter Include="RotationValue">
       <UniqueIdentifier>{c1ca2bb6-553c-40d3-96f9-13d9e39f26b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\Graphic">
+      <UniqueIdentifier>{6285a04b-e4e3-4d4a-ab81-f5db4fde242b}</UniqueIdentifier>
+    </Filter>
     <Filter Include="GameFramework\Graphic\FontManager">
       <UniqueIdentifier>{21ff4867-de85-4bff-b9c4-9066ecf8d21f}</UniqueIdentifier>
     </Filter>
@@ -303,6 +306,9 @@
     <ClInclude Include="GameFramework\Graphic\Renderer\Renderer.h">
       <Filter>GameFramework\Graphic\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\Graphic.h">
+      <Filter>GameFramework\Graphic</Filter>
+    </ClInclude>
     <ClInclude Include="GameFramework\Input\DirectInput\Direct8Input.h">
       <Filter>GameFramework\Input\DirectInput</Filter>
     </ClInclude>
@@ -377,6 +383,9 @@
     </ClInclude>
     <ClInclude Include="GameFramework\Graphic\Renderer\Renderer.h">
       <Filter>GameFramework\Graphic\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\Graphic.h">
+      <Filter>GameFramework\Graphic</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Input\DirectInput\Direct8Input.h">
       <Filter>GameFramework\Input\DirectInput</Filter>
