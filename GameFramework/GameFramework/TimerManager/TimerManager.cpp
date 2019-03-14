@@ -75,14 +75,14 @@ namespace gameframework
 
 	bool TimerManager::CanStartNextFrame()
 	{
-		LONGLONG currenFrameSynctTime_ms = m_timers[_T("FPS")]->GetTime_ms();
+		LONGLONG currentFrameSyncTime_ms = m_timers[_T("FPS")]->GetTime_ms();
 
-		if (currenFrameSynctTime_ms - m_prevFrameSyncTime_ms < 1000 / m_fPS) return false;
+		if (currentFrameSyncTime_ms - m_prevFrameSyncTime_ms < 1000 / m_fPS) return false;
 
 		//一フレームにかかった時間をDeltaTime_sのため取得する
-		m_processTimeAtPrevFrame_ms = m_prevFrameSyncTime_ms - currenFrameSynctTime_ms;
+		m_processTimeAtPrevFrame_ms = m_prevFrameSyncTime_ms - currentFrameSyncTime_ms;
 
-		m_prevFrameSyncTime_ms = currenFrameSynctTime_ms;
+		m_prevFrameSyncTime_ms = currentFrameSyncTime_ms;
 
 		return true;
 	}
