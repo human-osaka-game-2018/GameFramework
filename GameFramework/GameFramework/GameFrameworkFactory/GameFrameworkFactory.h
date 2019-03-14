@@ -1,16 +1,20 @@
-﻿//----------------------------------------------------------
-// <filename>GameFrameworkFactory.h</filename>
-//----------------------------------------------------------
-
-#ifndef GAME_FRAMEWORK_FACTORY_H
+﻿#ifndef GAME_FRAMEWORK_FACTORY_H
 #define GAME_FRAMEWORK_FACTORY_H
 
-#include "DirectXDevice/DirectXDevice.h"
-#include "DirectXDevice/DirectX9Device.h"
-#include "DirectXGraphicDevice/DirectXGraphicDevice.h"
-#include "DirectXGraphicDevice/DirectX9GraphicDevice.h"
-#include "DirectXInputDevice/DirectXInputDevice.h"
-#include "DirectXInputDevice/DirectX8InputDevice.h"
+#include "FontManager/Font/Font.h"
+#include "FontManager/Font/DirectX9Font.h"
+#include "ColorBlender/ColorBlender.h"
+#include "ColorBlender/DirectX9ColorBlender.h"
+#include "Texture/Texture.h"
+#include "Texture/DirectX9Texture.h"
+#include "Renderer/Renderer.h"
+#include "Renderer/DirectX9Renderer.h"
+#include "DirectInput.h"
+#include "Direct8Input.h"
+#include "Stream.h"
+#include "DirectX9Stream.h"
+#include "Vertices.h"
+#include "DirectX9Vertices.h"
 
 /// <summary>
 /// 基礎構築に関するものをまとめた名前空間
@@ -27,31 +31,85 @@ namespace gameframework
 		}
 
 		template<>
-		static void Create<DirectXDevice>(DirectXDevice** ppDirectXDevice)
+		static void Create<Font>(Font** ppFont)
 		{
 			#ifdef DIRECT_X_VERSION_11
-			*ppDirectXDevice = nullptr;
+			*ppFont = nullptr;
+			#elif defined DIRECT_X_VERSOIN_9
+			*ppFont = new DirectX9Font();
 			#else
-			*ppDirectXDevice = new DirectX9Device();
-			#endif
-		}
-
-		static void Create(DirectXGraphicDevice** ppDirectXGraphicDevice, DirectXDevice* pDirectXDevice)
-		{
-			#ifdef DIRECT_X_VERSION_11
-			ppDirectXDevice = nullptr;
-			#else
-			*ppDirectXGraphicDevice = new DirectX9GraphicDevice(pDirectXDevice);
+			#error "DirectXのバージョンを定義してください"
 			#endif
 		}
 
 		template<>
-		static void Create<DirectXInputDevice>(DirectXInputDevice** ppDirectXInputDevice)
+		static void Create<ColorBlender>(ColorBlender** ppColorBlender)
 		{
 			#ifdef DIRECT_X_VERSION_11
-			pDirectXInputDevice = nullptr;
+			*ppColorBlender = nullptr;
+			#elif defined DIRECT_X_VERSOIN_9
+			*ppColorBlender = new DirectX9ColorBlender();
 			#else
-			*ppDirectXInputDevice = new DirectX8InputDevice();
+			#error "DirectXのバージョンを定義してください"
+			#endif
+		}
+
+		template<>
+		static void Create<Renderer>(Renderer** ppRenderer)
+		{
+			#ifdef DIRECT_X_VERSION_11
+			*ppRenderer = nullptr;
+			#elif defined DIRECT_X_VERSOIN_9
+			*ppRenderer = new DirectX9Renderer();
+			#else
+			#error "DirectXのバージョンを定義してください"
+			#endif
+		}
+
+		template<>
+		static void Create<DirectInput>(DirectInput** ppDirectInput)
+		{
+			#ifdef DIRECT_X_VERSION_11
+			*ppDirectInput = nullptr;
+			#elif defined DIRECT_X_VERSOIN_9
+			*ppDirectInput = new Direct8Input();
+			#else
+			#error "DirectXのバージョンを定義してください"
+			#endif
+		}
+
+		template<>
+		static void Create<Stream>(Stream** ppStream)
+		{
+			#ifdef DIRECT_X_VERSION_11
+			*ppStream = nullptr;
+			#elif defined DIRECT_X_VERSOIN_9
+			*ppStream = new DirectX9Stream();
+			#else
+			#error "DirectXのバージョンを定義してください"
+			#endif
+		}
+
+		template<>
+		static void Create<Vertices>(Vertices** ppVertices)
+		{
+			#ifdef DIRECT_X_VERSION_11
+			*ppVertices = nullptr;
+			#elif defined DIRECT_X_VERSOIN_9
+			*ppVertices = new DirectX9Vertices();
+			#else
+			#error "DirectXのバージョンを定義してください"
+			#endif
+		}
+
+		static void Create<Texture>(Texture** ppTexture)
+		{
+			#ifdef DIRECT_X_VERSION_11
+			*ppTexture = nullptr;
+			#elif defined DIRECT_X_VERSOIN_9
+			*ppTexture = new DirectX9Texture();
+			#else
+			#error "DirectXのバージョンを定義してください"
 			#endif
 		}
 
@@ -65,4 +123,4 @@ namespace gameframework
 	};
 }
 
-#endif //! GAME_FRAMEWORK_FACTORY_H
+#endif //!GAME_FRAMEWORK_FACTORY_H

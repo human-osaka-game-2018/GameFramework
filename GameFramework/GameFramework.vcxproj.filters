@@ -80,12 +80,104 @@
     <Filter Include="GameFramework\Stream">
       <UniqueIdentifier>{a465f0b4-2a21-4fde-b92e-0d4eab029c8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\DirectXParam\DirectXParamFactory">
+      <UniqueIdentifier>{cb77a7f6-6c57-4367-a4e3-30081ba04b9c}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Singleton">
       <UniqueIdentifier>{a3284fef-a0a3-496b-9770-3cde8b2dbc91}</UniqueIdentifier>
     </Filter>
     <Filter Include="Singleton\SingletonHolder">
       <UniqueIdentifier>{3aff72b4-5652-4826-8c7b-b8c6ef0c7fe4}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.cpp">
+      <Filter>GameFramework\Graphic\ColorBlender</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\FontManager\FontManager.cpp">
+      <Filter>GameFramework\Graphic\FontManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.cpp">
+      <Filter>GameFramework\Graphic\FontManager\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\FontManager\Font\Font.cpp">
+      <Filter>GameFramework\Graphic\FontManager\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp">
+      <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp">
+      <Filter>GameFramework\Graphic\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Keyboard.cpp">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Mouse.cpp">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Keyboard.cpp">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Mouse.cpp">
+      <Filter>GameFramework\Input\InputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Vertices\DirectX9Vertices.cpp">
+      <Filter>GameFramework\Vertices</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\TimerManager\TimerManager.cpp">
+      <Filter>GameFramework\TimerManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureUVs\TextureUVs.cpp">
+      <Filter>TextureUVs</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Stream\DirectX9Stream.cpp">
+      <Filter>GameFramework\Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXParam.cpp">
+      <Filter>GameFramework\DirectXParam</Filter>
+    </ClCompile>
+    <Filter Include="Color">
+      <UniqueIdentifier>{0d856c42-ef71-48a1-ad7c-56ba14908a74}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Window\Window.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\WindowParam\WindowParam.cpp">
+      <Filter>Window\WindowParam</Filter>
+    </ClCompile>
+    <ClCompile Include="RectSize\RectSize.cpp">
+      <Filter>RectSize</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.cpp">
+      <Filter>GameFramework\DirectXParam\DirectXDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectX9Device.cpp">
+      <Filter>GameFramework\DirectXParam\DirectXDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectX9GraphicDevice.cpp">
+      <Filter>GameFramework\DirectXParam\DirectXGraphicDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectXGraphicDevice.cpp">
+      <Filter>GameFramework\DirectXParam\DirectXGraphicDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectX8InputDevice.cpp">
+      <Filter>GameFramework\DirectXParam\DirectXInputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectXInputDevice.cpp">
+      <Filter>GameFramework\DirectXParam\DirectXInputDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="Algorithm\Algorithm.cpp">
+      <Filter>Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="RotationValue\Degree.cpp">
+      <Filter>RotationValue</Filter>
+    </ClCompile>
+    <ClCompile Include="RotationValue\Radian.cpp">
+      <Filter>RotationValue</Filter>
+    </ClCompile>
+    <ClCompile Include="RotationValue\RotationValue.cpp">
+      <Filter>RotationValue</Filter>
+    </ClCompile>
     <ClCompile Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.cpp">
       <Filter>GameFramework\Graphic\ColorBlender</Filter>
     </ClCompile>
@@ -125,93 +217,8 @@
     <ClCompile Include="GameFramework\DirectXParam\DirectXParamFactory\DirectXParamFactory.cpp">
       <Filter>GameFramework\DirectXParam\DirectXParamFactory</Filter>
     </ClCompile>
-    <Filter Include="Color">
-      <UniqueIdentifier>{0d856c42-ef71-48a1-ad7c-56ba14908a74}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Window\Window.cpp">
-      <Filter>Window</Filter>
-    </ClCompile>
-    <ClCompile Include="Window\WindowParam\WindowParam.cpp">
-      <Filter>Window\WindowParam</Filter>
-    </ClCompile>
-    <ClCompile Include="RectSize\RectSize.cpp">
-      <Filter>RectSize</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.cpp">
-      <Filter>GameFramework\DirectXParam\DirectXDevice</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectX9Device.cpp">
-      <Filter>GameFramework\DirectXParam\DirectXDevice</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.cpp">
-      <Filter>GameFramework\GameFrameworkFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectX9GraphicDevice.cpp">
-      <Filter>GameFramework\DirectXParam\DirectXGraphicDevice</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectXGraphicDevice.cpp">
-      <Filter>GameFramework\DirectXParam\DirectXGraphicDevice</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectX8InputDevice.cpp">
-      <Filter>GameFramework\DirectXParam\DirectXInputDevice</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectXInputDevice.cpp">
-      <Filter>GameFramework\DirectXParam\DirectXInputDevice</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\GameFramework.cpp">
-      <Filter>GameFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="Algorithm\Algorithm.cpp">
-      <Filter>Algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="RotationValue\Degree.cpp">
-      <Filter>RotationValue</Filter>
-    </ClCompile>
-    <ClCompile Include="RotationValue\Radian.cpp">
-      <Filter>RotationValue</Filter>
-    </ClCompile>
-    <ClCompile Include="RotationValue\RotationValue.cpp">
-      <Filter>RotationValue</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.cpp">
-      <Filter>GameFramework\Graphic\ColorBlender</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\FontManager\FontManager.cpp">
-      <Filter>GameFramework\Graphic\FontManager</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.cpp">
-      <Filter>GameFramework\Graphic\FontManager\Font</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\FontManager\Font\Font.cpp">
-      <Filter>GameFramework\Graphic\FontManager\Font</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp">
-      <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp">
-      <Filter>GameFramework\Graphic\Renderer</Filter>
-    </ClCompile>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Keyboard.cpp">
-      <Filter>GameFramework\Input\InputDevice</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Mouse.cpp">
-      <Filter>GameFramework\Input\InputDevice</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Vertices\DirectX9Vertices.cpp">
-      <Filter>GameFramework\Vertices</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\TimerManager\TimerManager.cpp">
-      <Filter>GameFramework\TimerManager</Filter>
-    </ClCompile>
-    <ClCompile Include="TextureUVs\TextureUVs.cpp">
-      <Filter>TextureUVs</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFramework\Stream\DirectX9Stream.cpp">
-      <Filter>GameFramework\Stream</Filter>
-    </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXParam.cpp">
+      <Filter>GameFramework\DirectXParam</Filter>
     </ClCompile>
     <ClCompile Include="Singleton\Singleton.cpp">
       <Filter>Singleton</Filter>
@@ -335,6 +342,12 @@
     <ClInclude Include="tstring\tstring.h">
       <Filter>GameFramework\tstring</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\DirectXParam\DirectXParamFactory\DirectXParamFactory.h">
+      <Filter>GameFramework\DirectXParam\DirectXParamFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\DirectXParam\DirectXParam.h">
+      <Filter>GameFramework\DirectXParam</Filter>
+    </ClInclude>
     <ClInclude Include="GameFramework\Graphic\ColorBlender\ColorBlender.h">
       <Filter>GameFramework\Graphic\ColorBlender</Filter>
     </ClInclude>
@@ -406,6 +419,13 @@
     </ClInclude>
     <ClInclude Include="tstring\tstring.h">
       <Filter>GameFramework\tstring</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\DirectXParam\DirectXParamFactory\DirectXParamFactory.h">
+      <Filter>GameFramework\DirectXParam\DirectXParamFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\DirectXParam\DirectXParam.h">
+      <Filter>GameFramework\DirectXParam</Filter>
+    </ClInclude>
     <ClInclude Include="Singleton\Singleton.h">
       <Filter>Singleton</Filter>
     </ClInclude>
