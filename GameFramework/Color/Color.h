@@ -2,6 +2,7 @@
 #define COLOR_H
 
 #include <Windows.h>
+#include <vector>
 
 #include <d3dx9.h>
 
@@ -83,20 +84,20 @@ namespace gameframework
 		/// <returns>thisの参照</returns>
 		Color& operator=(DWORD colorCode)
 		{
-			const int COLOR_COMPONENTS_NUM_MAX = 4;
-			const COLOR_COMPONENTS colorComponents[COLOR_COMPONENTS_NUM_MAX] =
+			const std::vector<COMPONENTS> colorComponents =
 			{
-				COLOR_COMPONENTS::ALPHA,
-				COLOR_COMPONENTS::RED,
-				COLOR_COMPONENTS::GREEN,
-				COLOR_COMPONENTS::BLUE
+				COMPONENTS::ALPHA,
+				COMPONENTS::RED,
+				COMPONENTS::GREEN,
+				COMPONENTS::BLUE
 			};
 
-			const int ONE_COLOR_BITS = 8;
+			const int COMPONENTS_MAX = colorComponents.size();
 
-			for (int i = 0; i < COLOR_COMPONENTS_NUM_MAX; ++i)
+			for (int i = 0; COMPONENTS_MAX; ++i)
 			{
-				(*this)[colorComponents[i]] = (colorCode & 0xFF000000) >> ONE_COLOR_BITS * (COLOR_COMPONENTS_NUM_MAX - 1 - i);
+				const int ONE_COLOR_BITS = 8;
+				(*this)[colorComponents[i]] = (colorCode & 0xFF000000) >> ONE_COLOR_BITS * (COMPONENTS_MAX - 1 - i);
 			}
 
 			return *this;
