@@ -38,6 +38,9 @@
     <Filter Include="RotationValue">
       <UniqueIdentifier>{c1ca2bb6-553c-40d3-96f9-13d9e39f26b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\Graphic\Renderer">
+      <UniqueIdentifier>{bca77c5c-0e4a-4b34-ab5e-6b7c75f6fc7d}</UniqueIdentifier>
+    </Filter>
     <Filter Include="GameFramework\Graphic\TextureManager">
       <UniqueIdentifier>{a8b3ce71-c44d-44c0-b516-0d23eb70cc30}</UniqueIdentifier>
     </Filter>
@@ -59,6 +62,8 @@
     <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp">
       <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp">
+      <Filter>GameFramework\Graphic\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\TimerManager\TimerManager.cpp">
       <Filter>GameFramework\TimerManager</Filter>
@@ -116,14 +121,15 @@
     <ClCompile Include="RotationValue\RotationValue.cpp">
       <Filter>RotationValue</Filter>
     </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\TextureManager\TextureManager.cpp">
-      <Filter>GameFramework\Graphic\TextureManager</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp">
       <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
     </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\Texture.cpp">
-      <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
+    <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp">
+      <Filter>GameFramework\Graphic\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\Renderer\Renderer.cpp">
+      <Filter>GameFramework\Graphic\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="TextureUVs\TextureUVs.cpp">
       <Filter>TextureUVs</Filter>
@@ -190,6 +196,12 @@
     <ClInclude Include="GameFramework\Graphic\TextureManager\Texture\Texture.h">
       <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\Renderer\DirectX9Renderer.h">
+      <Filter>GameFramework\Graphic\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\Renderer\Renderer.h">
+      <Filter>GameFramework\Graphic\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="TextureUVs\TextureUVs.h">
       <Filter>TextureUVs</Filter>
     </ClInclude>
@@ -202,6 +214,11 @@
     <ClInclude Include="GameFramework\Graphic\TextureManager\Texture\Texture.h">
       <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\Renderer\DirectX9Renderer.h">
+      <Filter>GameFramework\Graphic\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\Renderer\Renderer.h">
+      <Filter>GameFramework\Graphic\Renderer</Filter>
     <ClInclude Include="TextureUVs\TextureUVs.h">
       <Filter>TextureUVs</Filter>
     </ClInclude>
