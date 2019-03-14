@@ -87,7 +87,7 @@ namespace gameframework
 		return true;
 	}
 
-	float TimerManager::deltaTime_sec() const
+	float TimerManager::DeltaTime_sec() const
 	{
 		float deltaTime_sec = static_cast<float>(m_processTimeAtPrevFrame_msec) / 1000.0f;
 
