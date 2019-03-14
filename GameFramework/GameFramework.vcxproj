@@ -143,6 +143,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.cpp" />
+    <ClCompile Include="GameFramework\TimerManager\TimerManager.cpp" />
     <ClCompile Include="RectSize\RectSize.cpp" />
     <ClCompile Include="RotationValue\Degree.cpp" />
     <ClCompile Include="RotationValue\Radian.cpp" />
@@ -167,6 +168,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.h" />
+    <ClInclude Include="GameFramework\TimerManager\TimerManager.h" />
     <ClInclude Include="RectSize\RectSize.h" />
     <ClInclude Include="RotationValue\Degree.h" />
     <ClInclude Include="RotationValue\Radian.h" />
