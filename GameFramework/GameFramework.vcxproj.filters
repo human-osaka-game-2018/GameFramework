@@ -38,6 +38,9 @@
     <Filter Include="RotationValue">
       <UniqueIdentifier>{c1ca2bb6-553c-40d3-96f9-13d9e39f26b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\Graphic\FontManager">
+      <UniqueIdentifier>{21ff4867-de85-4bff-b9c4-9066ecf8d21f}</UniqueIdentifier>
+    </Filter>
     <Filter Include="GameFramework\Graphic\ColorBlender">
       <UniqueIdentifier>{0446de25-4340-48ec-a612-d2ba8507e05a}</UniqueIdentifier>
     </Filter>
@@ -46,6 +49,9 @@
     </Filter>
     <Filter Include="GameFramework\Graphic\TextureManager">
       <UniqueIdentifier>{a8b3ce71-c44d-44c0-b516-0d23eb70cc30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Graphic\FontManager\Font">
+      <UniqueIdentifier>{417e9e9a-f1ac-4681-b630-a44aff102159}</UniqueIdentifier>
     </Filter>
     <Filter Include="GameFramework\Graphic\TextureManager\Texture">
       <UniqueIdentifier>{3ec275e6-78b9-4b2b-8c61-68f6be7e228f}</UniqueIdentifier>
@@ -59,6 +65,12 @@
     <Filter Include="TextureUVs">
       <UniqueIdentifier>{3b4a87ff-c46c-43d6-b217-67d7e48c8312}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\tstring">
+      <UniqueIdentifier>{6b68c291-95ad-4f97-ade6-d6a93b55ab0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Stream">
+      <UniqueIdentifier>{a465f0b4-2a21-4fde-b92e-0d4eab029c8f}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Singleton">
       <UniqueIdentifier>{a3284fef-a0a3-496b-9770-3cde8b2dbc91}</UniqueIdentifier>
     </Filter>
@@ -67,6 +79,15 @@
     </Filter>
     <ClCompile Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.cpp">
       <Filter>GameFramework\Graphic\ColorBlender</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\FontManager\FontManager.cpp">
+      <Filter>GameFramework\Graphic\FontManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.cpp">
+      <Filter>GameFramework\Graphic\FontManager\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\FontManager\Font\Font.cpp">
+      <Filter>GameFramework\Graphic\FontManager\Font</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp">
       <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
@@ -82,6 +103,12 @@
     </ClCompile>
     <ClCompile Include="TextureUVs\TextureUVs.cpp">
       <Filter>TextureUVs</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Stream\DirectX9Stream.cpp">
+      <Filter>GameFramework\Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\DirectXParam\DirectXParamFactory\DirectXParamFactory.cpp">
+      <Filter>GameFramework\DirectXParam\DirectXParamFactory</Filter>
     </ClCompile>
     <Filter Include="Color">
       <UniqueIdentifier>{0d856c42-ef71-48a1-ad7c-56ba14908a74}</UniqueIdentifier>
@@ -133,11 +160,17 @@
     <ClCompile Include="RotationValue\RotationValue.cpp">
       <Filter>RotationValue</Filter>
     </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\ColorBlender\ColorBlender.cpp">
-      <Filter>GameFramework\Graphic\ColorBlender</Filter>
-    </ClCompile>
     <ClCompile Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.cpp">
       <Filter>GameFramework\Graphic\ColorBlender</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\FontManager\FontManager.cpp">
+      <Filter>GameFramework\Graphic\FontManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.cpp">
+      <Filter>GameFramework\Graphic\FontManager\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\FontManager\Font\Font.cpp">
+      <Filter>GameFramework\Graphic\FontManager\Font</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp">
       <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
@@ -145,8 +178,6 @@
     <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp">
       <Filter>GameFramework\Graphic\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\Renderer\Renderer.cpp">
-      <Filter>GameFramework\Graphic\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Vertices\DirectX9Vertices.cpp">
       <Filter>GameFramework\Vertices</Filter>
@@ -156,6 +187,15 @@
     </ClCompile>
     <ClCompile Include="TextureUVs\TextureUVs.cpp">
       <Filter>TextureUVs</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Stream\Stream.cpp">
+      <Filter>GameFramework\Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Stream\DirectX9Stream.cpp">
+      <Filter>GameFramework\Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="tstring\tstring.cpp">
+      <Filter>GameFramework\tstring</Filter>
     </ClCompile>
     <ClCompile Include="Singleton\Singleton.cpp">
       <Filter>Singleton</Filter>
@@ -216,8 +256,17 @@
     <ClInclude Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.h">
       <Filter>GameFramework\Graphic\ColorBlender</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\FontManager\FontManager.h">
+      <Filter>GameFramework\Graphic\FontManager</Filter>
+    </ClInclude>
     <ClInclude Include="GameFramework\Graphic\TextureManager\TextureManager.h">
       <Filter>GameFramework\Graphic\TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.h">
+      <Filter>GameFramework\Graphic\FontManager\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\FontManager\Font\Font.h">
+      <Filter>GameFramework\Graphic\FontManager\Font</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.h">
       <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
@@ -242,6 +291,15 @@
     </ClInclude>
     <ClInclude Include="TextureUVs\TextureUVs.h">
       <Filter>TextureUVs</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Stream\Stream.h">
+      <Filter>GameFramework\Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Stream\DirectX9Stream.h">
+      <Filter>GameFramework\Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="tstring\tstring.h">
+      <Filter>GameFramework\tstring</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Graphic\ColorBlender\ColorBlender.h">
       <Filter>GameFramework\Graphic\ColorBlender</Filter>
@@ -249,8 +307,17 @@
     <ClInclude Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.h">
       <Filter>GameFramework\Graphic\ColorBlender</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\FontManager\FontManager.h">
+      <Filter>GameFramework\Graphic\FontManager</Filter>
+    </ClInclude>
     <ClInclude Include="GameFramework\Graphic\TextureManager\TextureManager.h">
       <Filter>GameFramework\Graphic\TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.h">
+      <Filter>GameFramework\Graphic\FontManager\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\FontManager\Font\Font.h">
+      <Filter>GameFramework\Graphic\FontManager\Font</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.h">
       <Filter>GameFramework\Graphic\TextureManager\Texture</Filter>
@@ -276,6 +343,14 @@
     <ClInclude Include="TextureUVs\TextureUVs.h">
       <Filter>TextureUVs</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Stream\Stream.h">
+      <Filter>GameFramework\Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Stream\DirectX9Stream.h">
+      <Filter>GameFramework\Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="tstring\tstring.h">
+      <Filter>GameFramework\tstring</Filter>
     <ClInclude Include="Singleton\Singleton.h">
       <Filter>Singleton</Filter>
     </ClInclude>

@@ -131,7 +131,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Algorithm\Algorithm.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectX9Device.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.cpp" />
@@ -144,8 +144,12 @@
     </ClCompile>
     <ClCompile Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.cpp" />
     <ClCompile Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.cpp" />
+    <ClCompile Include="GameFramework\Graphic\FontManager\FontManager.cpp" />
+    <ClCompile Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.cpp" />
+    <ClCompile Include="GameFramework\Graphic\FontManager\Font\Font.cpp" />
     <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp" />
     <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp" />
+    <ClCompile Include="GameFramework\Stream\DirectX9Stream.cpp" />
     <ClCompile Include="GameFramework\TimerManager\TimerManager.cpp" />
     <ClCompile Include="GameFramework\Vertices\DirectX9Vertices.cpp" />
     <ClCompile Include="RectSize\RectSize.cpp" />
@@ -175,11 +179,16 @@
     <ClInclude Include="GameFramework\GameFrameworkFactory\GameFrameworkFactory.h" />
     <ClInclude Include="GameFramework\Graphic\ColorBlender\ColorBlender.h" />
     <ClInclude Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.h" />
+    <ClInclude Include="GameFramework\Graphic\FontManager\FontManager.h" />
+    <ClInclude Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.h" />
+    <ClInclude Include="GameFramework\Graphic\FontManager\Font\Font.h" />
     <ClInclude Include="GameFramework\Graphic\Renderer\DirectX9Renderer.h" />
     <ClInclude Include="GameFramework\Graphic\Renderer\Renderer.h" />
     <ClInclude Include="GameFramework\Graphic\TextureManager\TextureManager.h" />
     <ClInclude Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.h" />
     <ClInclude Include="GameFramework\Graphic\TextureManager\Texture\Texture.h" />
+    <ClInclude Include="GameFramework\Stream\DirectX9Stream.h" />
+    <ClInclude Include="GameFramework\Stream\Stream.h" />
     <ClInclude Include="GameFramework\TimerManager\TimerManager.h" />
     <ClInclude Include="GameFramework\Vertices\DirectX9Vertices.h" />
     <ClInclude Include="GameFramework\Vertices\Vertices.h" />
@@ -190,6 +199,7 @@
     <ClInclude Include="Singleton\Singleton.h" />
     <ClInclude Include="Singleton\SingletonHolder\SingletonHolder.h" />
     <ClInclude Include="TextureUVs\TextureUVs.h" />
+    <ClInclude Include="tstring\tstring.h" />
     <ClInclude Include="Window\Window.h" />
     <ClInclude Include="Window\WindowParam\WindowParam.h" />
   </ItemGroup>
