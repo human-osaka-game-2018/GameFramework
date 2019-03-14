@@ -140,7 +140,7 @@ namespace gameframework
 		/// 計測時間を返す(マイクロ秒)
 		/// </summary>
 		/// <param name="pKey">タイマーのキー</param>
-		LONGLONG GetTime_µsec(const TCHAR* pKey)
+		inline LONGLONG GetTime_µsec(const TCHAR* pKey)
 		{
 			return m_timers[pKey]->GetTime_µsec();
 		}
