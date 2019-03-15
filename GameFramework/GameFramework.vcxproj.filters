@@ -217,9 +217,6 @@
     <ClCompile Include="GameFramework\Stream\DirectX9Stream.cpp">
       <Filter>GameFramework\Stream</Filter>
     </ClCompile>
-    <ClCompile Include="GameFramework\DirectXParam\DirectXParamFactory\DirectXParamFactory.cpp">
-      <Filter>GameFramework\DirectXParam\DirectXParamFactory</Filter>
-    </ClCompile>
     <ClCompile Include="GameFramework\DirectXParam\DirectXParam.cpp">
       <Filter>GameFramework\DirectXParam</Filter>
     </ClCompile>
