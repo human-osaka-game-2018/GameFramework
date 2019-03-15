@@ -219,3 +219,93 @@ TEST(ColorTest, OperatorMinus3) {
 	BYTE b = result[COMPONENTS::BLUE];
 	EXPECT_EQ(0x11, b);
 }
+
+// const Color operator*(float rhs) const
+TEST(ColorTest, OperatorMultiply1) {
+	// Arrange
+	Color color1(0x12223242);
+
+	// Act
+	Color result = color1 * 2.0f;
+
+	// Assert
+	BYTE a = result[COMPONENTS::ALPHA];
+	EXPECT_EQ(0x24, a);
+
+	BYTE r = result[COMPONENTS::RED];
+	EXPECT_EQ(0x44, r);
+
+	BYTE g = result[COMPONENTS::GREEN];
+	EXPECT_EQ(0x64, g);
+
+	BYTE b = result[COMPONENTS::BLUE];
+	EXPECT_EQ(0x84, b);
+}
+
+// const Color operator*(float rhs) const
+TEST(ColorTest, OperatorMultiply2) {
+	// Arrange
+	Color color1(0x11213141);
+
+	// Act
+	Color result = color1 * 2.5;
+
+	// Assert
+	BYTE a = result[COMPONENTS::ALPHA];
+	EXPECT_EQ(0x2A, a);
+
+	BYTE r = result[COMPONENTS::RED];
+	EXPECT_EQ(0x52, r);
+
+	BYTE g = result[COMPONENTS::GREEN];
+	EXPECT_EQ(0x7A, g);
+
+	BYTE b = result[COMPONENTS::BLUE];
+	EXPECT_EQ(0xA2, b);
+}
+
+// const Color operator*(float rhs) const
+TEST(ColorTest, OperatorMultiply3) {
+	// Arrange
+	Color color1(0x12345678);
+
+	// Act
+	Color result = color1 * (-0.5);
+
+	// Assert
+	// 全色アンダーフローして0x00になることを確認
+	BYTE a = result[COMPONENTS::ALPHA];
+	EXPECT_EQ(0x00, a);
+
+	BYTE r = result[COMPONENTS::RED];
+	EXPECT_EQ(0x00, r);
+
+	BYTE g = result[COMPONENTS::GREEN];
+	EXPECT_EQ(0x00, g);
+
+	BYTE b = result[COMPONENTS::BLUE];
+	EXPECT_EQ(0x00, b);
+}
+
+// const Color operator*(float rhs) const
+TEST(ColorTest, OperatorMultiply4) {
+	// Arrange
+	Color color1(0x12345678);
+
+	// Act
+	Color result = color1 * 100.0f;
+
+	// Assert
+	// 全色オーバーフローして0xFFになることを確認
+	BYTE a = result[COMPONENTS::ALPHA];
+	EXPECT_EQ(0xFF, a);
+
+	BYTE r = result[COMPONENTS::RED];
+	EXPECT_EQ(0xFF, r);
+
+	BYTE g = result[COMPONENTS::GREEN];
+	EXPECT_EQ(0xFF, g);
+
+	BYTE b = result[COMPONENTS::BLUE];
+	EXPECT_EQ(0xFF, b);
+}
