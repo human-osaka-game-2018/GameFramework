@@ -271,7 +271,7 @@ namespace gameframework
 
 	private:
 		/// <summary>
-		/// 各色の値を0x00～0xFFに正規化する
+		/// 各色(int)の値を0x00～0xFFに正規化する
 		/// </summary>
 		/// <param name="componentValue">各色の値</param>
 		/// <returns>
@@ -282,6 +282,20 @@ namespace gameframework
 		inline BYTE Normalize(int componentValue) const
 		{
 			return static_cast<BYTE>(max(min(componentValue, 255), 0));
+		}
+
+		/// <summary>
+		/// 各色(float)の値を0x00～0xFFに正規化する
+		/// </summary>
+		/// <param name="componentValue">各色の値</param>
+		/// <returns>
+		/// <para>・cmponentValue ＜ 0x00の場合は0x00を返す</para>
+		/// <para>・0x00 ≦ componentValue ≦ 0xFFの場合はcomponentValueをそのまま返す</para>
+		/// <para>・0xFF ＜ componentValue 場合は0xFFを返す</para>
+		/// </returns>
+		inline BYTE Normalize(float componentValue) const
+		{
+			return Normalize(static_cast<int>(componentValue));
 		}
 	};
 }
