@@ -129,6 +129,28 @@ TEST(ColorTest, OperatorPlus2) {
 	EXPECT_EQ(0xFF, b);
 }
 
+// const Color operator+(DWORD rhs) const
+TEST(ColorTest, OperatorPlus3) {
+	// Arrange
+	Color color1(0x12345678);
+
+	// Act
+	Color result = color1 + 0x01234567;
+
+	// Assert
+	BYTE a = result[COMPONENTS::ALPHA];
+	EXPECT_EQ(0x13, a);
+
+	BYTE r = result[COMPONENTS::RED];
+	EXPECT_EQ(0x57, r);
+
+	BYTE g = result[COMPONENTS::GREEN];
+	EXPECT_EQ(0x9B, g);
+
+	BYTE b = result[COMPONENTS::BLUE];
+	EXPECT_EQ(0xDF, b);
+}
+
 // const Color operator-(const Color& rhs) const
 TEST(ColorTest, OperatorMinus1) {
 	// Arrange
@@ -174,4 +196,26 @@ TEST(ColorTest, OperatorMinus2) {
 
 	BYTE b = result[COMPONENTS::BLUE];
 	EXPECT_EQ(0x00, b);
+}
+
+// const Color operator-(DWORD rhs) const
+TEST(ColorTest, OperatorMinus3) {
+	// Arrange
+	Color color1(0x12345678);
+
+	// Act
+	Color result = color1 - 0x01234567;
+
+	// Assert
+	BYTE a = result[COMPONENTS::ALPHA];
+	EXPECT_EQ(0x11, a);
+
+	BYTE r = result[COMPONENTS::RED];
+	EXPECT_EQ(0x11, r);
+
+	BYTE g = result[COMPONENTS::GREEN];
+	EXPECT_EQ(0x11, g);
+
+	BYTE b = result[COMPONENTS::BLUE];
+	EXPECT_EQ(0x11, b);
 }
