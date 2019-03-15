@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="ColorTest.cpp">
+    <ClCompile Include="Color\ColorTest.cpp">
       <Filter>Color</Filter>
     </ClCompile>
     <ClCompile Include="Algorithm\AlgorithmTest.cpp">
@@ -28,6 +28,9 @@
     <Filter Include="GameFramework\Vertices">
       <UniqueIdentifier>{f1f34190-5988-4f88-9d01-60c67ae31966}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
