@@ -49,6 +49,11 @@ namespace gameframework
 		/// </summary>
 		/// <param name="pDirectXDevice">DirectXのデバイスクラスのポインタ</param>
 		virtual void Create(DirectXDevice* pDirectXDevice) = 0;
+		
+		/// <summary>
+		/// ビューポートを初期化する
+		/// </summary>
+		virtual void InitializeViewPort() = 0;
 
 		LPDIRECT3DDEVICE m_pDirectXGraphicDevice = nullptr;
 

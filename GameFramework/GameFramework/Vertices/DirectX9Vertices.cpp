@@ -128,6 +128,8 @@ namespace gameframework
 
 		m_pDirectXGraphicDevice->SetTexture(0, pTexture);
 
+		Normalize();
+
 		m_pDirectXGraphicDevice->DrawPrimitiveUP(
 			D3DPT_TRIANGLEFAN,
 			2,
