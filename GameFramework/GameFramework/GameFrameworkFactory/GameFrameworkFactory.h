@@ -27,7 +27,7 @@ namespace gameframework
 		template<typename T>
 		static void Create(T** ppT)
 		{
-			pT = new T();
+			*ppT = new T();
 		}
 
 		template<>
@@ -102,6 +102,7 @@ namespace gameframework
 			#endif
 		}
 
+		template<>
 		static void Create<Texture>(Texture** ppTexture)
 		{
 			#ifdef DIRECT_X_VERSION_11
