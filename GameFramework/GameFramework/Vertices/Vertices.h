@@ -241,7 +241,7 @@ namespace gameframework
 		/// 描画を行う
 		/// </summary>
 		/// <param name="pTexture">描画する際に扱うテクスチャ</param>
-		virtual void Render(const Texture* pTexture) = 0;
+		virtual void Render(const LPTEXTURE pTexture) = 0;
 
 	protected:
 		/// <summary>
