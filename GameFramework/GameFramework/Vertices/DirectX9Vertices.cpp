@@ -119,14 +119,14 @@ namespace gameframework
 		}
 	}
 
-	void DirectX9Vertices::Render(const Texture* pTexture)
+	void DirectX9Vertices::Render(const LPTEXTURE pTexture)
 	{
 		m_pDirectXGraphicDevice->SetFVF(
 			D3DFVF_XYZRHW |
 			D3DFVF_DIFFUSE |
 			D3DFVF_TEX1);
 
-		m_pDirectXGraphicDevice->SetTexture(0, pTexture->Get());
+		m_pDirectXGraphicDevice->SetTexture(0, pTexture);
 
 		m_pDirectXGraphicDevice->DrawPrimitiveUP(
 			D3DPT_TRIANGLEFAN,
