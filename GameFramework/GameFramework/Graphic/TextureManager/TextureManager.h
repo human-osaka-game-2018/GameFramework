@@ -87,7 +87,7 @@ namespace gameframework
 		/// <returns>テクスチャのポインタ</returns>
 		inline LPTEXTURE Get(const TCHAR* pTextureKey)
 		{
-			if (!Exists(pTextureKey)) return;
+			if (!Exists(pTextureKey)) return nullptr;
 
 			return m_textures[pTextureKey]->Get(); 
 		}

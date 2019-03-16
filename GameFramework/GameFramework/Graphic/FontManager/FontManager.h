@@ -84,7 +84,7 @@ namespace gameframework
 		/// <returns>フォントのポインタ</returns>
 		inline LPFONT Get(const TCHAR* pFontKey)
 		{
-			if (!Exists(pFontKey)) return;
+			if (!Exists(pFontKey)) return nullptr;
 
 			return m_fonts[pFontKey]->Get(); 
 		}
