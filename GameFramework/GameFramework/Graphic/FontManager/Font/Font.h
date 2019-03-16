@@ -39,9 +39,11 @@ namespace gameframework
 
 		inline void Release()
 		{
-			m_pFont->Release();
-			delete m_pFont;
-			m_pFont = nullptr;
+			if (m_pFont)
+			{
+				m_pFont->Release();
+				m_pFont = nullptr;
+			}
 		}
 		
 		/// <summary>

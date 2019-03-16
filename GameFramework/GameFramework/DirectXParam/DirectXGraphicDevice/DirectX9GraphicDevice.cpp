@@ -14,15 +14,20 @@ namespace gameframework
 
 		RectSize windowSize;
 		WindowParam::GetWindowSize(&windowSize);
-		pD3DPRESENT_PARAMETERS->BackBufferWidth = static_cast<UINT>(windowSize.m_width);
+		pD3DPRESENT_PARAMETERS->BackBufferWidth  = static_cast<UINT>(windowSize.m_width);
 		pD3DPRESENT_PARAMETERS->BackBufferHeight = static_cast<UINT>(windowSize.m_height);
 
-		pD3DPRESENT_PARAMETERS->BackBufferFormat = D3DFMT_X8R8G8B8;
+		HWND hWnd = nullptr;
+		WindowParam::GetWindowHandle(&hWnd);
+		pD3DPRESENT_PARAMETERS->hDeviceWindow = hWnd;
+
+		pD3DPRESENT_PARAMETERS->BackBufferFormat = D3DFMT_UNKNOWN;
 		pD3DPRESENT_PARAMETERS->BackBufferCount = 1;
 
 		pD3DPRESENT_PARAMETERS->SwapEffect = D3DSWAPEFFECT_DISCARD;
 
 		pD3DPRESENT_PARAMETERS->EnableAutoDepthStencil = true;
+		pD3DPRESENT_PARAMETERS->AutoDepthStencilFormat = D3DFMT_D16;
 	}
 
 	void DirectX9GraphicDevice::Create(DirectXDevice* pDirectXDevice)

@@ -106,7 +106,7 @@ namespace gameframework
 
 		inline void SetHalfScale(const RectSize& halfScale)
 		{
-			m_baseHalfScale = halfScale;
+			m_halfScale = m_baseHalfScale = halfScale;
 		}
 
 		inline void SetColor(const Color& color)

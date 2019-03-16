@@ -1,8 +1,4 @@
-﻿//----------------------------------------------------------
-// <filename>Window.cpp</filename>
-//----------------------------------------------------------
-
-#include "Window.h"
+﻿#include "Window.h"
 
 namespace gameframework
 {
@@ -13,13 +9,10 @@ namespace gameframework
 		HINSTANCE hInstance = nullptr;
 		WindowParam::GetInstanceHandle(&hInstance);
 
-		HWND hWnd = nullptr;
-		WindowParam::GetWindowHandle(&hWnd);
-
 		RectSize windowSize;
 		WindowParam::GetWindowSize(&windowSize);
 
-		hWnd = CreateWindow(
+		HWND hWnd = CreateWindow(
 			pAppName, pAppName,
 			WS_OVERLAPPEDWINDOW | WS_VISIBLE,
 			CW_USEDEFAULT, CW_USEDEFAULT,
