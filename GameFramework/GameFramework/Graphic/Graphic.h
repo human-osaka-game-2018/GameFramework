@@ -23,8 +23,8 @@ namespace gameframework
 	public:
 		Graphic() 
 		{
-			GameFrameFactory::Create(&m_pRenderer);
-			GameFrameFactory::Create(&m_pColorBlender);
+			GameFrameworkFactory::Create(&m_pRenderer);
+			GameFrameworkFactory::Create(&m_pColorBlender);
 		}
 
 		~Graphic()
