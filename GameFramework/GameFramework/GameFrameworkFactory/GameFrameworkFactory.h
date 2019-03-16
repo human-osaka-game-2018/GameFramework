@@ -21,7 +21,7 @@
 /// </summary>
 namespace gameframework
 {
-	class GameFrameFactory
+	class GameFrameworkFactory
 	{
 	public:
 		template<typename T>
@@ -114,12 +114,12 @@ namespace gameframework
 		}
 
 	private:
-		GameFrameFactory() {};
-		GameFrameFactory(const GameFrameFactory& rhs) = delete;
+		GameFrameworkFactory() {};
+		GameFrameworkFactory(const GameFrameworkFactory& rhs) = delete;
 
-		~GameFrameFactory() {};
+		~GameFrameworkFactory() {};
 
-		GameFrameFactory& operator=(const GameFrameFactory& rhs) = delete;
+		GameFrameworkFactory& operator=(const GameFrameworkFactory& rhs) = delete;
 	};
 }
 

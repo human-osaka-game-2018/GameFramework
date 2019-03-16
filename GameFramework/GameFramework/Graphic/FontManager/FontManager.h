@@ -38,7 +38,7 @@ namespace gameframework
 		{
 			if (!Exists(pFontKey)) return;
 
-			GameFrameFactory::Create(&m_fonts[pFontKey]);
+			GameFrameworkFactory::Create(&m_fonts[pFontKey]);
 
 			m_fonts[pFontKey]->Reset(scale, pFontName, thickness);
 		}

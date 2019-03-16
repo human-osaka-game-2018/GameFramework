@@ -39,7 +39,7 @@ namespace gameframework
 		{
 			if (Exists(pTextureKey)) return;
 
-			GameFrameFactory::Create(&m_textures[pTextureKey]);
+			GameFrameworkFactory::Create(&m_textures[pTextureKey]);
 
 			m_textures[pTextureKey]->Reset(pTexturePath);
 		}
