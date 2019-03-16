@@ -28,6 +28,8 @@ namespace gameframework
 			hInstance,
 			NULL);
 
+		WindowParam::SetWindowHandle(hWnd);
+
 		ResizeWindow();
 
 		return;
