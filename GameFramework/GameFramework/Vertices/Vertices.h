@@ -169,7 +169,7 @@ namespace gameframework
 			return m_color;
 		}
 
-		inline TextureUVs& SetTextureUVs()
+		inline TextureUVs& GetTextureUVs()
 		{
 			return m_textureUVs;
 		}
