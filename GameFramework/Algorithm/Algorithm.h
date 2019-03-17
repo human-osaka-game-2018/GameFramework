@@ -88,8 +88,8 @@ namespace gameframework
 		{
 			float progressRatio = static_cast<float>(val) / static_cast<float>(cycleVal);
 
-			//!cos波を調整し0~1を行き来する値を作成
-			return (cos(2.0f * D3DX_PI * progressRatio) + 1.0f) * 0.5f;
+			//sin波を調整し0~1を行き来する値を作成
+			return absf(sin(2.0f * D3DX_PI * progressRatio));
 		}
 
 		/// <summary>
