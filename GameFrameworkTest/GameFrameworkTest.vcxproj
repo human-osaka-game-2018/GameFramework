@@ -38,6 +38,7 @@
   <ItemGroup>
     <ClCompile Include="Algorithm\AlgorithmTest.cpp" />
     <ClCompile Include="ColorTest.cpp" />
+    <ClCompile Include="GameFramework\Vertices\VerticesTest.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -68,7 +69,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>$(DXSDK_DIR)include;$(SolutionDir)GameFramework\Color;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -80,16 +81,18 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>X64;_DEBUG;_CONSOLE;DIRECTINPUT_VERSION=0x0800;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>X64;_DEBUG;_CONSOLE;DIRECT_X_VERSOIN_9;DIRECTINPUT_VERSION=0x0800;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>$(DXSDK_DIR)include;$(ProjectDir);$(SolutionDir)GameFramework\Algorithm;$(SolutionDir)GameFramework\Color;$(SolutionDir)GameFramework\GameFramework\TimerManager;$(SolutionDir)GameFramework\RotationValue;$(SolutionDir)GameFramework\Singleton;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(DXSDK_DIR)include;$(SolutionDir)GameFramework\Algorithm;$(SolutionDir)GameFramework\Color;$(SolutionDir)GameFramework\GameFramework\DirectXParam;$(SolutionDir)GameFramework\GameFramework\DirectXParam\DirectXGraphicDevices;$(SolutionDir)GameFramework\GameFramework\Graphic\TextureManager;$(SolutionDir)GameFramework\GameFramework\TimerManager;$(SolutionDir)GameFramework\GameFramework\Vertices;$(SolutionDir)GameFramework\RectSize;$(SolutionDir)GameFramework\RotationValue;$(SolutionDir)GameFramework\Singleton;$(SolutionDir)GameFramework\TextureUVs;$(SolutionDir)GameFramework\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;dinput8.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
