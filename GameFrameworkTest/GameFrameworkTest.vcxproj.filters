@@ -5,6 +5,9 @@
     <ClCompile Include="ColorTest.cpp">
       <Filter>Color</Filter>
     </ClCompile>
+    <ClCompile Include="Algorithm\AlgorithmTest.cpp">
+      <Filter>Algorithm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -13,5 +16,11 @@
     <Filter Include="Color">
       <UniqueIdentifier>{188e8eda-a217-4743-b665-6ec28984d57f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Algorithm">
+      <UniqueIdentifier>{587564c7-af2a-4928-a38c-a03b4eac9eae}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
