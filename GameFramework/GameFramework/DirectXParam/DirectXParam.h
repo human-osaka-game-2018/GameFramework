@@ -6,6 +6,7 @@
 #include "DirectXDevice/DirectXDevice.h" 
 #include "DirectXGraphicDevice/DirectXGraphicDevice.h"
 #include "DirectXInputDevice/DirectXInputDevice.h"
+#include "WindowParam/WindowParam.h"
 #include "DirectXParamFactory/DirectXParamFactory.h"
 
 /// <summary>
@@ -24,6 +25,9 @@ namespace gameframework
 		/// </remarks>
 		static inline void Create()
 		{
+			HINSTANCE hInstance = GetModuleHandle(nullptr);
+			WindowParam::SetInstanceHandle(hInstance);
+
 			DirectXParamFactory::Create(&m_pDirectXDevice);
 			DirectXParamFactory::Create(&m_pDirectXGraphicDevice, m_pDirectXDevice);
 			DirectXParamFactory::Create(&m_pDirectXInputDevice);

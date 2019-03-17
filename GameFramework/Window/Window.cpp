@@ -6,8 +6,8 @@ namespace gameframework
 	{
 		RegisterWindowClass(pAppName, pWndProc);
 
-		HINSTANCE hInstance = nullptr;
-		WindowParam::GetInstanceHandle(&hInstance);
+		HINSTANCE hInstance = GetModuleHandle(nullptr);
+		WindowParam::SetInstanceHandle(hInstance);
 
 		RectSize windowSize;
 		WindowParam::GetWindowSize(&windowSize);
