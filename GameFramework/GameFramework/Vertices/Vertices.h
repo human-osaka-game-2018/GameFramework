@@ -96,7 +96,7 @@ namespace gameframework
 
 		void SetPosBybottomRight(const D3DXVECTOR3& topLeft, const RectSize& size);
 
-		inline void Setsize(const RectSize& size)
+		inline void SetSize(const RectSize& size)
 		{
 			m_baseSize = size;
 		}
@@ -138,7 +138,7 @@ namespace gameframework
 			return	m_center;
 		}
 
-		inline RectSize& Getsize()
+		inline RectSize& GetSize()
 		{
 			return m_baseSize;
 		}
