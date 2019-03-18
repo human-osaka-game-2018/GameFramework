@@ -8,8 +8,8 @@ using namespace gameframework;
 namespace {
 	class VerticesSpy : public DirectX9Vertices {
 	public:
-		RectSize GetBaseHalfScale() { return m_baseHalfScale; }
-		RectSize GetHalfScale() { return m_halfScale; }
+		RectSize GetBaseSize() { return m_baseSize; }
+		RectSize GetSize() { return m_sizeForRender; }
 	};
 
 	class VerticesTest : public ::testing::Test {
@@ -18,7 +18,7 @@ namespace {
 			Window window(_T("VerticesTest"));
 			DirectXParam::Create();
 			pVertices = new VerticesSpy();
-			pVertices->SetHalfScale(RectSize(WIDTH, HEIGHT));
+			pVertices->SetSize(RectSize(WIDTH, HEIGHT));
 			pVertices->SetCenter(D3DXVECTOR3(100.0f, 50.0f, 25.0f));
 		}
 
@@ -44,11 +44,11 @@ TEST_F(VerticesTest, Ctor0) {
 	for (int i = 0; i < frames; ++i) {
 		pVertices->ScalingX(frames, initialScale, finalScale);
 		if (i == 0) {
-			initialWidth = pVertices->GetBaseHalfScale().m_width;
+			initialWidth = pVertices->GetBaseSize().m_width;
 		}
 	}
 
-	float result = pVertices->GetBaseHalfScale().m_width;
+	float result = pVertices->GetBaseSize().m_width;
 
 	// Assert
 	EXPECT_FLOAT_EQ(WIDTH * initialScale, initialWidth);
