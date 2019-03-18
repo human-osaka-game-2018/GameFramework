@@ -90,11 +90,11 @@ namespace gameframework
 
 		void SetPosByTopLeft(const D3DXVECTOR3& topLeft, const RectSize& size);
 
-		void SetPosBybottomLeft(const D3DXVECTOR3& topLeft, const RectSize& size);
+		void SetPosBybottomLeft(const D3DXVECTOR3& bottomLeft, const RectSize& size);
 
-		void SetPosByTopRight(const D3DXVECTOR3& topLeft, const RectSize& size);
+		void SetPosByTopRight(const D3DXVECTOR3& topRight, const RectSize& size);
 
-		void SetPosBybottomRight(const D3DXVECTOR3& topLeft, const RectSize& size);
+		void SetPosBybottomRight(const D3DXVECTOR3& bottomRight, const RectSize& size);
 
 		inline void SetSize(const RectSize& size)
 		{

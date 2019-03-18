@@ -36,32 +36,32 @@ namespace gameframework
 
 	void Vertices::SetPosByTopLeft(const D3DXVECTOR3& topLeft, const RectSize& size)
 	{
-		m_center.x = topLeft.x * 0.5f + size.m_width;
-		m_center.y = topLeft.y * 0.5f + size.m_height;
+		m_center.x = topLeft.x + 0.5f * size.m_width;
+		m_center.y = topLeft.y + 0.5f * size.m_height;
 
 		m_baseSize = size;
 	}
 
-	void Vertices::SetPosBybottomLeft(const D3DXVECTOR3& topLeft, const RectSize& size)
+	void Vertices::SetPosBybottomLeft(const D3DXVECTOR3& bottomLeft, const RectSize& size)
 	{
-		m_center.x = topLeft.x * 0.5f + size.m_width;
-		m_center.y = topLeft.y * 0.5f - size.m_height;
+		m_center.x = bottomLeft.x + 0.5f * size.m_width;
+		m_center.y = bottomLeft.y - 0.5f * size.m_height;
 
 		m_baseSize = size;
 	}
 
-	void Vertices::SetPosByTopRight(const D3DXVECTOR3& topLeft, const RectSize& size)
+	void Vertices::SetPosByTopRight(const D3DXVECTOR3& topRight, const RectSize& size)
 	{
-		m_center.x = topLeft.x * 0.5f - size.m_width;
-		m_center.y = topLeft.y * 0.5f + size.m_height;
+		m_center.x = topRight.x - 0.5f * size.m_width;
+		m_center.y = topRight.y + 0.5f * size.m_height;
 
 		m_baseSize = size;
 	}
 
-	void Vertices::SetPosBybottomRight(const D3DXVECTOR3& topLeft, const RectSize& size)
+	void Vertices::SetPosBybottomRight(const D3DXVECTOR3& bottmRight, const RectSize& size)
 	{
-		m_center.x = topLeft.x * 0.5f - size.m_width;
-		m_center.y = topLeft.y * 0.5f - size.m_height;
+		m_center.x = bottmRight.x - 0.5f * size.m_width;
+		m_center.y = bottmRight.y - 0.5f * size.m_height;
 
 		m_baseSize = size;
 	}
