@@ -170,10 +170,10 @@ namespace gameframework
 		Color& operator/=(int rhs);
 
 	private:
-		BYTE m_alpha = 255;
-		BYTE m_red = 255;
-		BYTE m_green = 255;
-		BYTE m_blue = 255;
+		BYTE m_alpha;
+		BYTE m_red;
+		BYTE m_green;
+		BYTE m_blue;
 
 		BYTE Normalize(int componentValue) const;
 		BYTE Normalize(float componentValue) const;

@@ -4,7 +4,9 @@ namespace gameframework {
 	//-----------------------------------------------------------------
 	// Constructors
 	//-----------------------------------------------------------------
-	Color::Color() {}
+	Color::Color()
+		:m_alpha(0xFF), m_red(0xFF), m_green(0xFF), m_blue(0xFF)
+	{}
 
 	Color::Color(DWORD colorCode)
 	{
