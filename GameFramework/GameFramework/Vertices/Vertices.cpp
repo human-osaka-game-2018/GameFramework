@@ -58,10 +58,10 @@ namespace gameframework
 		m_baseSize = size;
 	}
 
-	void Vertices::SetPosBybottomRight(const D3DXVECTOR3& bottmRight, const RectSize& size)
+	void Vertices::SetPosBybottomRight(const D3DXVECTOR3& bottomRight, const RectSize& size)
 	{
-		m_center.x = bottmRight.x - 0.5f * size.m_width;
-		m_center.y = bottmRight.y - 0.5f * size.m_height;
+		m_center.x = bottomRight.x - 0.5f * size.m_width;
+		m_center.y = bottomRight.y - 0.5f * size.m_height;
 
 		m_baseSize = size;
 	}
