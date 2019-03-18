@@ -133,6 +133,7 @@
     <ClCompile Include="Algorithm\Algorithm.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Color\Color.cpp" />
     <ClCompile Include="GameFramework\Collision\Collision.cpp" />
     <ClCompile Include="GameFramework\Collision\RectVectors.cpp" />
     <ClCompile Include="GameFramework\Collision\SideVectors.cpp" />

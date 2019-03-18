@@ -247,6 +247,9 @@
     <ClCompile Include="GameFramework\Collision\RectVectors.cpp">
       <Filter>GameFramework\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="Color\Color.cpp">
+      <Filter>Color</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">

@@ -12,9 +12,9 @@
 namespace gameframework
 {
 	/// <summary>
-	/// 色保存するための構造体
+	/// 色保存するためのクラス
 	/// </summary>
-	struct Color
+	class Color
 	{
 	public:
 		/// <summary>
@@ -28,19 +28,36 @@ namespace gameframework
 			BLUE,
 		};
 		
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
 		/// <remarks>
 		/// 初期値は非透明の白0xFFFFFFFF
 		/// </remarks>
-		Color() {};
-		Color(DWORD colorCode) 
-		{
-			(*this) = colorCode;
-		}
+		Color();
 
-		Color(BYTE alpha, BYTE red, BYTE green, BYTE blue)
-			:m_alpha(alpha), m_red(red), m_green(green), m_blue(blue)
-		{};
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		/// <param name="colorCode">カラーコード</param>
+		Color(DWORD colorCode);
+
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		/// <param name="alpha">透過度</param>
+		/// <param name="red">赤</param>
+		/// <param name="green">緑</param>
+		/// <param name="blue">青</param>
+		Color(BYTE alpha, BYTE red, BYTE green, BYTE blue);
+
+		/// <summary>デストラクタ</summary>
+		~Color();
 		
+		/// <summary>
+		/// カラーコードを取得する
+		/// </summary>
+		/// <returns>現在設定されているカラーコード</returns>
 		inline DWORD GetColorCode() const
 		{
 			return D3DCOLOR_ARGB(m_alpha, m_red, m_green, m_blue);
@@ -51,63 +68,21 @@ namespace gameframework
 		/// </summary>
 		/// <param name="colorCode">平均をとるカラーコード</param>
 		/// <returns>平均のカラーコード</returns>
-		inline DWORD GetAverageColorCode(DWORD colorCode) const
-		{
-			Color inColor(colorCode);
-
-			return GetAverage(inColor).GetColorCode();
-		}
+		DWORD GetAverageColorCode(DWORD colorCode) const;
 		
 		/// <summary>
-		/// thisと引数との平均のカラー構造体を返す
+		/// thisと引数との平均のColorクラスを返す
 		/// </summary>
-		/// <param name="color">平均をとるカラー構造体</param>
+		/// <param name="color">平均をとるColorクラス</param>
 		/// <returns>平均のカラー</returns>
-		inline Color GetAverage(const Color& color) const
-		{
-			Color average(
-				(m_alpha + color.m_alpha) / 2,
-				(m_red   + color.m_red)   / 2,
-				(m_green + color.m_green) / 2,
-				(m_blue  + color.m_blue)  / 2);
+		Color GetAverage(const Color& color) const;
 
-			return average;
-		}
-
-		BYTE m_alpha = 255;
-		BYTE m_red   = 255;
-		BYTE m_green = 255;
-		BYTE m_blue  = 255;
-		
 		/// <summary>
 		/// 添え字でアクセスできる色を変える
 		/// </summary>
 		/// <param name="colorComponent">アクセスする色のCOMPONENTS</param>
 		/// <returns>アクセスした色の参照</returns>>
-		BYTE& operator[](COMPONENTS colorComponent)
-		{
-			switch (colorComponent)
-			{
-			case COMPONENTS::ALPHA:
-				return m_alpha;
-
-			case COMPONENTS::RED:
-				return m_red;
-
-			case COMPONENTS::GREEN:
-				return m_green;
-
-			case COMPONENTS::BLUE:
-				return m_blue;
-
-			default:
-			{
-				//ここに来ることは基本ない
-				static BYTE errorReturnVal = 0x00;
-				return errorReturnVal;
-			}
-			}
-		}
+		BYTE& operator[](COMPONENTS colorComponent);
 		
 		/// <summary>
 		/// カラーコードを分解し保存する
@@ -118,185 +93,90 @@ namespace gameframework
 		/// <para>colorCodeの下位バイトからB→G→R→Aの順に1バイトずつ抜き出し、</para>
 		/// <para>それぞれ対応するメンバに保存する</para>
 		/// </remarks>
-		Color& operator=(DWORD colorCode)
-		{
-			const std::vector<COMPONENTS> components =
-			{
-				COMPONENTS::BLUE,
-				COMPONENTS::GREEN,
-				COMPONENTS::RED,
-				COMPONENTS::ALPHA
-			};
-
-			for (auto& component : components) {
-				int index = static_cast<int>(&component - &components[0]);
-				int shiftNum = CHAR_BIT * index;
-				(*this)[component] = (colorCode >> shiftNum) & 0xFF;
-			}
-
-			return *this;
-		}
+		Color& operator=(DWORD colorCode);
 
 		/// <summary>
 		/// 引数の色と自身の色を足しその値を返す
 		/// </summary>
-		/// <param name="rhs">自身と足すColor構造体</param>
-		/// <returns>足した結果のColor構造体</returns>
-		const Color operator+(const Color& rhs) const
-		{
-			return Color(
-				Normalize(m_alpha + rhs.m_alpha),
-				Normalize(m_red   + rhs.m_red),
-				Normalize(m_green + rhs.m_green),
-				Normalize(m_blue  + rhs.m_blue)
-			);
-		}
+		/// <param name="rhs">自身と足すColorクラス</param>
+		/// <returns>足した結果のColorクラス</returns>
+		const Color operator+(const Color& rhs) const;
 
-		const Color operator+(DWORD rhs) const
-		{
-			return Color((*this) + Color(rhs));
-		}
+		/// <summary>
+		/// 引数の色と自身の色を足しその値を返す
+		/// </summary>
+		/// <param name="rhs">自身と足すヵラーコード</param>
+		/// <returns>足した結果のColorクラス</returns>
+		const Color operator+(DWORD rhs) const;
 
 		/// <summary>
 		/// 引数の色と自身の色を引きその値を返す
 		/// </summary>
-		/// <param name="rhs">自身と引くColor構造体</param>
-		/// <returns>引いた結果のColor構造体</returns>
-		const Color operator-(const Color& rhs) const
-		{
-			return Color(
-				Normalize(m_alpha - rhs.m_alpha),
-				Normalize(m_red   - rhs.m_red),
-				Normalize(m_green - rhs.m_green),
-				Normalize(m_blue  - rhs.m_blue)
-			);
-		}
+		/// <param name="rhs">自身と引くColorクラス</param>
+		/// <returns>引いた結果のColorクラス</returns>
+		const Color operator-(const Color& rhs) const;
 
-		const Color operator-(DWORD rhs) const
-		{
-			return Color((*this) - Color(rhs));
-		}
+		const Color operator-(DWORD rhs) const;
 
 		/// <summary>
 		/// 引数の色と自身の色を足しその値を代入する
 		/// </summary>
-		/// <param name="rhs">自身と足すColor構造体</param>
+		/// <param name="rhs">自身と足すColorクラス</param>
 		/// <returns>thisの参照</returns>
-		const Color operator+=(const Color& rhs)
-		{
-			(*this) = (*this) + rhs;
+		const Color operator+=(const Color& rhs);
 
-			return *this;
-		}
-
-		const Color operator+=(DWORD rhs)
-		{
-			(*this) = (*this) + rhs;
-
-			return *this;
-		}
+		/// <summary>
+		/// 引数の色と自身の色を足しその値を代入する
+		/// </summary>
+		/// <param name="rhs">自身と足すカラーコード</param>
+		/// <returns>thisの参照</returns>
+		const Color operator+=(DWORD rhs);
 
 		/// <summary>
 		/// 引数の色と自身の色を引きその値を代入する
 		/// </summary>
-		/// <param name="rhs">自身と引くColor構造体</param>
+		/// <param name="rhs">自身と引くColorクラス</param>
 		/// <returns>thisの参照</returns>
-		const Color operator-=(const Color& rhs)
-		{
-			(*this) = (*this) - rhs;
+		const Color operator-=(const Color& rhs);
 
-			return *this;
-		}
-
-		const Color operator-=(DWORD rhs)
-		{
-			(*this) = (*this) - rhs;
-
-			return *this;
-		}
+		const Color operator-=(DWORD rhs);
 
 		/// <summary>
 		/// 引数の値でメンバを掛ける
 		/// </summary>
 		/// <param name="rhs">掛ける際の値</param>
-		/// <returns>掛けた後の結果のColor構造体</returns>
-		const Color operator*(float rhs) const
-		{
-			return Color(
-				Normalize(m_alpha * rhs),
-				Normalize(m_red   * rhs),
-				Normalize(m_green * rhs),
-				Normalize(m_blue  * rhs)
-			);
-		}
+		/// <returns>掛けた後の結果のColorクラス</returns>
+		const Color operator*(float rhs) const;
 
 		/// <summary>
 		/// 引数の値でメンバを掛けその値を代入する
 		/// </summary>
 		/// <param name="rhs">掛ける際の値</param>
 		/// <returns>thisの参照</returns>
-		Color& operator*=(float rhs)
-		{
-			(*this) = (*this) * rhs;
-
-			return *this;
-		}
+		Color& operator*=(float rhs);
 
 		/// <summary>
 		/// 引数の値でメンバを割る
 		/// </summary>
 		/// <param name="rhs">割る際の値</param>
-		/// <returns>割った後の結果のColor構造体</returns>
-		const Color operator/(int rhs) const
-		{
-			return Color(
-				Normalize(m_alpha / rhs),
-				Normalize(m_red   / rhs),
-				Normalize(m_green / rhs),
-				Normalize(m_blue  / rhs)
-			);
-		}
+		/// <returns>割った後の結果のColorクラス</returns>
+		const Color operator/(int rhs) const;
 
 		/// <summary>
 		/// 引数の値でメンバを割りその値を代入する
 		/// </summary>
 		/// <param name="rhs">割る際の値</param>
 		/// <returns>thisの参照</returns>
-		Color& operator/=(int rhs)
-		{
-			(*this) = (*this) / rhs;
-
-			return *this;
-		}
+		Color& operator/=(int rhs);
 
 	private:
-		/// <summary>
-		/// 各色(int)の値を0x00～0xFFに正規化する
-		/// </summary>
-		/// <param name="componentValue">各色の値</param>
-		/// <returns>
-		/// <para>・cmponentValue ＜ 0x00の場合は0x00を返す</para>
-		/// <para>・0x00 ≦ componentValue ≦ 0xFFの場合はcomponentValueをそのまま返す</para>
-		/// <para>・0xFF ＜ componentValue 場合は0xFFを返す</para>
-		/// </returns>
-		inline BYTE Normalize(int componentValue) const
-		{
-			return static_cast<BYTE>(max(min(componentValue, 255), 0));
-		}
+		BYTE m_alpha = 255;
+		BYTE m_red = 255;
+		BYTE m_green = 255;
+		BYTE m_blue = 255;
 
-		/// <summary>
-		/// 各色(float)の値を0x00～0xFFに正規化する
-		/// </summary>
-		/// <param name="componentValue">各色の値</param>
-		/// <returns>
-		/// <para>・cmponentValue ＜ 0x00の場合は0x00を返す</para>
-		/// <para>・0x00 ≦ componentValue ≦ 0xFFの場合はcomponentValueをそのまま返す</para>
-		/// <para>・0xFF ＜ componentValue 場合は0xFFを返す</para>
-		/// </returns>
-		inline BYTE Normalize(float componentValue) const
-		{
-			return Normalize(static_cast<int>(componentValue));
-		}
+		BYTE Normalize(int componentValue) const;
+		BYTE Normalize(float componentValue) const;
 	};
 }
 

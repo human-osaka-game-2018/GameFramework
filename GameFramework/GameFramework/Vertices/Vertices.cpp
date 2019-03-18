@@ -87,7 +87,7 @@ namespace gameframework
 
 	void Vertices::Flash(int flashFrameMax, BYTE alphaMin, BYTE alphaMax)
 	{
-		m_color.m_alpha = static_cast<BYTE>(algorithm::SwitchMinBetweenMax(m_flashFrameCount, flashFrameMax, alphaMin, alphaMax));
+		m_color[Color::COMPONENTS::ALPHA] = static_cast<BYTE>(algorithm::SwitchMinBetweenMax(m_flashFrameCount, flashFrameMax, alphaMin, alphaMax));
 		algorithm::CountUp(&m_flashFrameCount, flashFrameMax);
 	}
 
