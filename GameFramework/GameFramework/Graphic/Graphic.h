@@ -183,7 +183,7 @@ namespace gameframework
 		/// <returns>フォントのポインタ</returns>
 		inline LPFONT GetFont(const TCHAR* pFontKey)
 		{
-			m_fontManager.Get(pFontKey);
+			return m_fontManager.Get(pFontKey);
 		}
 
 		/// <summary>
