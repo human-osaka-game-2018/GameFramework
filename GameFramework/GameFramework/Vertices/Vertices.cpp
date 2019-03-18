@@ -69,7 +69,7 @@ namespace gameframework
 	void Vertices::SetCenterAndSize(const D3DXVECTOR3& center, const RectSize& size)
 	{
 		SetCenter(center);
-		Setsize(size);
+		SetSize(size);
 	}
 
 	void Vertices::SetCenterAndSizeAndColor(const D3DXVECTOR3& center, const RectSize& size, const Color& color)

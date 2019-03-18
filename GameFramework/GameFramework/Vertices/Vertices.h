@@ -138,7 +138,7 @@ namespace gameframework
 			return	m_center;
 		}
 
-		inline RectSize& Getsize()
+		inline RectSize& GetSize()
 		{
 			return m_baseSize;
 		}
