@@ -16,7 +16,7 @@ namespace gameframework
 
 		D3DXCreateFont(
 			m_pDirectXGraphicDevice,
-			static_cast<int>(scale.m_width), static_cast<int>(scale.m_height),
+			static_cast<int>(scale.m_height), static_cast<int>(scale.m_width),
 			thickness,
 			0,
 			0,
