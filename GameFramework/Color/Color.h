@@ -27,7 +27,7 @@ namespace gameframework
 			GREEN,
 			BLUE,
 		};
-		
+
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
@@ -51,9 +51,11 @@ namespace gameframework
 		/// <param name="blue">青</param>
 		Color(BYTE alpha, BYTE red, BYTE green, BYTE blue);
 
-		/// <summary>デストラクタ</summary>
-		~Color();
-		
+		// コピーコンストラクタ、代入演算子、デストラクタは自動生成されるものを使用する
+		Color(const Color&) = default;
+		Color& operator=(const Color&) = default;
+		~Color() = default;
+
 		/// <summary>
 		/// カラーコードを取得する
 		/// </summary>
@@ -69,7 +71,7 @@ namespace gameframework
 		/// <param name="colorCode">平均をとるカラーコード</param>
 		/// <returns>平均のカラーコード</returns>
 		DWORD GetAverageColorCode(DWORD colorCode) const;
-		
+
 		/// <summary>
 		/// thisと引数との平均のColorクラスを返す
 		/// </summary>
