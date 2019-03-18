@@ -27,19 +27,19 @@ namespace gameframework
 	public:
 		DirectX9Vertices() {};
 
-		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& halfScale) :Vertices(center, halfScale) {};
+		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size) :Vertices(center, size) {};
 
-		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& halfScale, const Color& color)
-			: Vertices(center, halfScale, color)
+		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color)
+			: Vertices(center, size, color)
 		{};
 
-		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& halfScale, const Color& color, const TextureUVs& textureUVs)
-			: Vertices(center, halfScale, color, textureUVs)
+		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color, const TextureUVs& textureUVs)
+			: Vertices(center, size, color, textureUVs)
 		{};
 
-		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& halfScale, const Color& color, const TextureUVs& textureUVs,
+		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color, const TextureUVs& textureUVs,
 			const Degree& rotationX_deg, const Degree& rotationY_deg, const Degree& rotationZ_deg)
-			: Vertices(center, halfScale, color, textureUVs, rotationX_deg, rotationY_deg, rotationZ_deg)
+			: Vertices(center, size, color, textureUVs, rotationX_deg, rotationY_deg, rotationZ_deg)
 		{};
 
 		~DirectX9Vertices() {};
