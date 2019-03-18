@@ -134,7 +134,7 @@ TEST(ColorTest, OperatorIndexer2) {
 	ASSERT_EQ(0x00, ret);
 }
 
-// const Color operator+(const Color& rhs) const
+// Color operator+(const Color& lhs, const Color& rhs)
 TEST(ColorTest, OperatorPlus1) {
 	// Arrange
 	Color color1(0x12, 0x34, 0x56, 0x78);
@@ -157,7 +157,7 @@ TEST(ColorTest, OperatorPlus1) {
 	EXPECT_EQ(0xF0, b);
 }
 
-// const Color operator+(const Color& rhs) const
+// Color operator+(const Color& lhs, const Color& rhs)
 TEST(ColorTest, OperatorPlus2) {
 	// Arrange
 	Color color1(0x89, 0xAB, 0xCD, 0xEF);
@@ -181,7 +181,7 @@ TEST(ColorTest, OperatorPlus2) {
 	EXPECT_EQ(0xFF, b);
 }
 
-// const Color operator+(DWORD rhs) const
+// Color operator+(const Color& lhs, DWORD rhs)
 TEST(ColorTest, OperatorPlus3) {
 	// Arrange
 	Color color(0x12, 0x34, 0x56, 0x78);
@@ -203,7 +203,29 @@ TEST(ColorTest, OperatorPlus3) {
 	EXPECT_EQ(0xDF, b);
 }
 
-// const Color operator-(const Color& rhs) const
+// Color operator+(DWORD lhs, const Color& rhs)
+TEST(ColorTest, OperatorPlus4) {
+	// Arrange
+	Color color(0x12, 0x34, 0x56, 0x78);
+
+	// Act
+	Color result = 0x01234567 + color;
+
+	// Assert
+	BYTE a = result[COMPONENTS::ALPHA];
+	EXPECT_EQ(0x13, a);
+
+	BYTE r = result[COMPONENTS::RED];
+	EXPECT_EQ(0x57, r);
+
+	BYTE g = result[COMPONENTS::GREEN];
+	EXPECT_EQ(0x9B, g);
+
+	BYTE b = result[COMPONENTS::BLUE];
+	EXPECT_EQ(0xDF, b);
+}
+
+// Color operator-(const Color& lhs, const Color& rhs)
 TEST(ColorTest, OperatorMinus1) {
 	// Arrange
 	Color color1(0x89, 0xAB, 0xCD, 0xEF);
@@ -226,7 +248,7 @@ TEST(ColorTest, OperatorMinus1) {
 	EXPECT_EQ(0x77, b);
 }
 
-// const Color operator-(const Color& rhs) const
+// Color operator-(const Color& lhs, const Color& rhs)
 TEST(ColorTest, OperatorMinus2) {
 	// Arrange
 	Color color1(0x12, 0x34, 0x56, 0x78);
@@ -250,13 +272,35 @@ TEST(ColorTest, OperatorMinus2) {
 	EXPECT_EQ(0x00, b);
 }
 
-// const Color operator-(DWORD rhs) const
+// Color operator-(const Color& lhs, DWORD rhs)
 TEST(ColorTest, OperatorMinus3) {
 	// Arrange
 	Color color(0x12, 0x34, 0x56, 0x78);
 
 	// Act
 	Color result = color - 0x01234567;
+
+	// Assert
+	BYTE a = result[COMPONENTS::ALPHA];
+	EXPECT_EQ(0x11, a);
+
+	BYTE r = result[COMPONENTS::RED];
+	EXPECT_EQ(0x11, r);
+
+	BYTE g = result[COMPONENTS::GREEN];
+	EXPECT_EQ(0x11, g);
+
+	BYTE b = result[COMPONENTS::BLUE];
+	EXPECT_EQ(0x11, b);
+}
+
+// Color operator-(const Color& lhs, DWORD rhs)
+TEST(ColorTest, OperatorMinus4) {
+	// Arrange
+	Color color(0x01, 0x23, 0x45, 0x67);
+
+	// Act
+	Color result = 0x12345678 - color;
 
 	// Assert
 	BYTE a = result[COMPONENTS::ALPHA];

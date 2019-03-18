@@ -5,146 +5,96 @@ namespace gameframework {
 	// Constructors
 	//-----------------------------------------------------------------
 	Color::Color()
-		:m_alpha(0xFF), m_red(0xFF), m_green(0xFF), m_blue(0xFF)
-	{}
+	{
+		m_components[COMPONENTS::ALPHA] = 0xFF;
+		m_components[COMPONENTS::RED] = 0xFF;
+		m_components[COMPONENTS::GREEN] = 0xFF;
+		m_components[COMPONENTS::BLUE] = 0xFF;
+	}
 
 	Color::Color(DWORD colorCode)
 	{
-		(*this) = colorCode;
+		ParseColorCode(colorCode, &m_components);
 	}
 
 	Color::Color(BYTE alpha, BYTE red, BYTE green, BYTE blue)
-		:m_alpha(alpha), m_red(red), m_green(green), m_blue(blue)
-	{}
+	{
+		m_components[COMPONENTS::ALPHA] = alpha;
+		m_components[COMPONENTS::RED] = red;
+		m_components[COMPONENTS::GREEN] = green;
+		m_components[COMPONENTS::BLUE] = blue;
+	}
 
 	//-----------------------------------------------------------------
 	// Public operators
 	//-----------------------------------------------------------------
 	BYTE& Color::operator[](COMPONENTS colorComponent)
 	{
-		switch (colorComponent)
-		{
-		case COMPONENTS::ALPHA:
-			return m_alpha;
+		return m_components[colorComponent];
+	}
 
-		case COMPONENTS::RED:
-			return m_red;
-
-		case COMPONENTS::GREEN:
-			return m_green;
-
-		case COMPONENTS::BLUE:
-			return m_blue;
-
-		default:
-		{
-			//ここに来ることは基本ない
-			static BYTE errorReturnVal = 0x00;
-			return errorReturnVal;
-		}
-		}
+	BYTE Color::operator[](COMPONENTS colorComponent) const
+	{
+		// constメンバ関数なのでstd::map::operator[]は使えない
+		// 代わりにstd::map::at()を使う
+		return m_components.at(colorComponent);
 	}
 
 	Color& Color::operator=(DWORD colorCode)
 	{
-		const std::vector<COMPONENTS> components =
-		{
-			COMPONENTS::BLUE,
-			COMPONENTS::GREEN,
-			COMPONENTS::RED,
-			COMPONENTS::ALPHA
-		};
+		ParseColorCode(colorCode, &m_components);
+		return *this;
+	}
 
-		for (auto& component : components) {
-			int index = static_cast<int>(&component - &components[0]);
-			int shiftNum = CHAR_BIT * index;
-			(*this)[component] = (colorCode >> shiftNum) & 0xFF;
+	Color& Color::operator+=(const Color& rhs)
+	{
+		for (auto& component : m_components) {
+			component.second = Normalize(component.second + rhs[component.first]);
 		}
 
 		return *this;
 	}
 
-	const Color Color::operator+(const Color& rhs) const
+	Color& Color::operator+=(DWORD rhs)
 	{
-		return Color(
-			Normalize(m_alpha + rhs.m_alpha),
-			Normalize(m_red + rhs.m_red),
-			Normalize(m_green + rhs.m_green),
-			Normalize(m_blue + rhs.m_blue)
-		);
+		AddColorCode(rhs);
+		return *this;
 	}
 
-	const Color Color::operator+(DWORD rhs) const
+	Color& Color::operator-=(const Color& rhs)
 	{
-		return Color((*this) + Color(rhs));
-	}
-
-	const Color Color::operator-(const Color& rhs) const
-	{
-		return Color(
-			Normalize(m_alpha - rhs.m_alpha),
-			Normalize(m_red - rhs.m_red),
-			Normalize(m_green - rhs.m_green),
-			Normalize(m_blue - rhs.m_blue)
-		);
-	}
-
-	const Color Color::operator-(DWORD rhs) const
-	{
-		return Color((*this) - Color(rhs));
-	}
-
-	const Color Color::operator+=(const Color& rhs)
-	{
-		(*this) = (*this) + rhs;
+		for (auto& component : m_components) {
+			component.second = Normalize(component.second - rhs[component.first]);
+		}
 
 		return *this;
 	}
 
-	const Color Color::operator+=(DWORD rhs)
+	Color& Color::operator-=(DWORD rhs)
 	{
-		(*this) = (*this) + rhs;
-
-		return *this;
-	}
-
-	const Color Color::operator-=(const Color& rhs)
-	{
-		(*this) = (*this) - rhs;
-
-		return *this;
-	}
-
-	const Color Color::operator-=(DWORD rhs)
-	{
-		(*this) = (*this) - rhs;
-
+		AddColorCode(rhs, false);
 		return *this;
 	}
 
 	Color& Color::operator*=(float rhs)
 	{
-		m_alpha = Normalize(m_alpha * rhs);
-		m_red = Normalize(m_red * rhs);
-		m_green = Normalize(m_green * rhs);
-		m_blue = Normalize(m_blue * rhs);
+		for (auto& component : m_components) {
+			component.second = Normalize(component.second * rhs);
+		}
 
 		return *this;
 	}
 
 	const Color Color::operator/(int rhs) const
 	{
-		return Color(
-			Normalize(m_alpha / rhs),
-			Normalize(m_red / rhs),
-			Normalize(m_green / rhs),
-			Normalize(m_blue / rhs)
-		);
+		return Color(*this) /= rhs;
 	}
 
 	Color& Color::operator/=(int rhs)
 	{
-		(*this) = (*this) / rhs;
+		for (auto& component : m_components) {
+			component.second = Normalize(component.second / rhs);
+		}
 
 		return *this;
 	}
@@ -152,24 +102,35 @@ namespace gameframework {
 	//-----------------------------------------------------------------
 	// Public methods
 	//-----------------------------------------------------------------
-	DWORD Color::GetAverageColorCode(DWORD colorCode) const
+	DWORD Color::GetColorCode() const
 	{
-		Color inColor(colorCode);
-
-		return GetAverage(inColor).GetColorCode();
+		return D3DCOLOR_ARGB(
+			m_components.at(COMPONENTS::ALPHA),
+			m_components.at(COMPONENTS::RED),
+			m_components.at(COMPONENTS::GREEN),
+			m_components.at(COMPONENTS::BLUE));
 	}
 
-	Color Color::GetAverage(const Color & color) const
+	DWORD Color::GetAverageColorCode(DWORD colorCode) const
 	{
-		Color average(
-			(m_alpha + color.m_alpha) / 2,
-			(m_red + color.m_red) / 2,
-			(m_green + color.m_green) / 2,
-			(m_blue + color.m_blue) / 2);
+		Color color(colorCode);
+		return GetAverage(color).GetColorCode();
+	}
+
+	Color Color::GetAverage(const Color& color) const
+	{
+		Color average;
+		for (auto& component : m_components) {
+			COMPONENTS argb = component.first;
+			average[argb] = (m_components.at(argb) + color[argb]) / 2;
+		}
 
 		return average;
 	}
 
+	//-----------------------------------------------------------------
+	// Private methods
+	//-----------------------------------------------------------------
 	/// <summary>
 	/// 各色(int)の値を0x00～0xFFに正規化する
 	/// </summary>
@@ -198,9 +159,78 @@ namespace gameframework {
 		return Normalize(static_cast<int>(componentValue));
 	}
 
+	/// <summary>
+	/// カラーコードをparseしARGBに分解する
+	/// </summary>
+	/// <param name="colorCode">カラーコード</param>
+	/// <param name="pMap">解析結果を詰めるmap</param>
+	void Color::ParseColorCode(DWORD colorCode, std::map<COMPONENTS, BYTE>* pMap)
+	{
+		const std::vector<COMPONENTS> components =
+		{
+			COMPONENTS::BLUE,
+			COMPONENTS::GREEN,
+			COMPONENTS::RED,
+			COMPONENTS::ALPHA
+		};
+
+		for (auto& component : components) {
+			int index = static_cast<int>(&component - &components[0]);
+			int shiftNum = CHAR_BIT * index;
+			(*pMap)[component] = (colorCode >> shiftNum) & 0xFF;
+		}
+	}
+
+	/// <summary>
+	/// カラーコードを加える
+	/// </summary>
+	/// <param name="colorCode">カラーコード</param>
+	/// <param name="isPositive">true:加算、false:減算</param>
+	void Color::AddColorCode(DWORD colorCode, bool isPositive)
+	{
+		std::map<COMPONENTS, BYTE> components;
+		ParseColorCode(colorCode, &components);
+
+		for (auto& component : m_components) {
+			COMPONENTS color = component.first;
+			int value = components[color] * (isPositive ? 1 : -1);
+			m_components[color] = Normalize(m_components[color] + value);
+		}
+	}
+
 	//-----------------------------------------------------------------
 	// Global operators
 	//-----------------------------------------------------------------
+	Color operator+(const Color& lhs, const Color& rhs)
+	{
+		return Color(lhs) += rhs;
+	}
+
+	Color operator+(const Color& lhs, DWORD rhs)
+	{
+		return Color(lhs) += rhs;
+	}
+
+	Color operator+(DWORD lhs, const Color& rhs)
+	{
+		return Color(lhs) += rhs;
+	}
+
+	Color operator-(const Color& lhs, const Color& rhs)
+	{
+		return Color(lhs) -= rhs;
+	}
+
+	Color operator-(const Color& lhs, DWORD rhs)
+	{
+		return Color(lhs) -= rhs;
+	}
+
+	Color operator-(DWORD lhs, const Color& rhs)
+	{
+		return Color(lhs) -= rhs;
+	}
+
 	Color operator*(const Color& lhs, float rhs)
 	{
 		return Color(lhs) *= rhs;
@@ -208,7 +238,7 @@ namespace gameframework {
 
 	Color operator*(float lhs, const Color& rhs)
 	{
-		return rhs * lhs;
+		return Color(rhs) *= lhs;
 	}
 }
 

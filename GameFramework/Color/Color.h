@@ -3,6 +3,7 @@
 
 #include <Windows.h>
 #include <vector>
+#include <map>
 
 #include <d3dx9.h>
 
@@ -60,11 +61,8 @@ namespace gameframework
 		/// カラーコードを取得する
 		/// </summary>
 		/// <returns>現在設定されているカラーコード</returns>
-		inline DWORD GetColorCode() const
-		{
-			return D3DCOLOR_ARGB(m_alpha, m_red, m_green, m_blue);
-		}
-		
+		DWORD GetColorCode() const;
+
 		/// <summary>
 		/// thisと引数との平均のカラーコードを取得する
 		/// </summary>
@@ -85,7 +83,8 @@ namespace gameframework
 		/// <param name="colorComponent">アクセスする色のCOMPONENTS</param>
 		/// <returns>アクセスした色の参照</returns>>
 		BYTE& operator[](COMPONENTS colorComponent);
-		
+		BYTE operator[](COMPONENTS colorComponent) const;
+
 		/// <summary>
 		/// カラーコードを分解し保存する
 		/// </summary>
@@ -98,50 +97,27 @@ namespace gameframework
 		Color& operator=(DWORD colorCode);
 
 		/// <summary>
-		/// 引数の色と自身の色を足しその値を返す
-		/// </summary>
-		/// <param name="rhs">自身と足すColorクラス</param>
-		/// <returns>足した結果のColorクラス</returns>
-		const Color operator+(const Color& rhs) const;
-
-		/// <summary>
-		/// 引数の色と自身の色を足しその値を返す
-		/// </summary>
-		/// <param name="rhs">自身と足すヵラーコード</param>
-		/// <returns>足した結果のColorクラス</returns>
-		const Color operator+(DWORD rhs) const;
-
-		/// <summary>
-		/// 引数の色と自身の色を引きその値を返す
-		/// </summary>
-		/// <param name="rhs">自身と引くColorクラス</param>
-		/// <returns>引いた結果のColorクラス</returns>
-		const Color operator-(const Color& rhs) const;
-
-		const Color operator-(DWORD rhs) const;
-
-		/// <summary>
 		/// 引数の色と自身の色を足しその値を代入する
 		/// </summary>
 		/// <param name="rhs">自身と足すColorクラス</param>
 		/// <returns>thisの参照</returns>
-		const Color operator+=(const Color& rhs);
+		Color& operator+=(const Color& rhs);
 
 		/// <summary>
 		/// 引数の色と自身の色を足しその値を代入する
 		/// </summary>
 		/// <param name="rhs">自身と足すカラーコード</param>
 		/// <returns>thisの参照</returns>
-		const Color operator+=(DWORD rhs);
+		Color& operator+=(DWORD rhs);
 
 		/// <summary>
 		/// 引数の色と自身の色を引きその値を代入する
 		/// </summary>
 		/// <param name="rhs">自身と引くColorクラス</param>
 		/// <returns>thisの参照</returns>
-		const Color operator-=(const Color& rhs);
+		Color& operator-=(const Color& rhs);
 
-		const Color operator-=(DWORD rhs);
+		Color& operator-=(DWORD rhs);
 
 		/// <summary>
 		/// 引数の値でメンバを掛けその値を代入する
@@ -165,16 +141,20 @@ namespace gameframework
 		Color& operator/=(int rhs);
 
 	private:
-		BYTE m_alpha;
-		BYTE m_red;
-		BYTE m_green;
-		BYTE m_blue;
-
+		std::map<COMPONENTS, BYTE> m_components;
 		BYTE Normalize(int componentValue) const;
 		BYTE Normalize(float componentValue) const;
+		void ParseColorCode(DWORD colorCode, std::map<COMPONENTS, BYTE>* pMap);
+		void AddColorCode(DWORD colorCode, bool isPositive = true);
 	};
 
 
+	Color operator+(const Color& lhs, const Color& rhs);
+	Color operator+(const Color& lhs, DWORD rhs);
+	Color operator+(DWORD lhs, const Color& rhs);
+	Color operator-(const Color& lhs, const Color& rhs);
+	Color operator-(const Color& lhs, DWORD rhs);
+	Color operator-(DWORD lhs, const Color& rhs);
 	Color operator*(const Color& lhs, float rhs);
 	Color operator*(float lhs, const Color& rhs);
 }
