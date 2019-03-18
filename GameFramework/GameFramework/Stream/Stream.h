@@ -1,8 +1,4 @@
-﻿//----------------------------------------------------------
-// <filename>Stream.h</filename>
-//----------------------------------------------------------
-
-#ifndef STREAM_H
+﻿#ifndef STREAM_H
 #define STREAM_H
 
 #include <d3dx9.h>
@@ -48,6 +44,30 @@ namespace gameframework
 		/// </summary>
 		/// <param name="pFont">描画する際に扱うフォント</param>
 		virtual void Render(const LPFONT pFont, UINT format) = 0;
+		
+		/// <summary>
+		/// 文字列を代入する
+		/// </summary>
+		/// <param name="rhs">代入するTCHARのポインタ</param>
+		/// <returns>thisの参照</returns>
+		Stream& operator=(const TCHAR* rhs)
+		{
+			tstring* pThisString = static_cast<tstring*>(this);
+
+			(*pThisString) = rhs;
+		}
+		
+		/// <summary>
+		/// 文字列を代入する
+		/// </summary>
+		/// <param name="rhs">代入する文字列</param>
+		/// <returns>thisの参照</returns>
+		Stream& operator=(const tstring& rhs)
+		{
+			tstring* pThisString = static_cast<tstring*>(this);
+
+			(*pThisString) = rhs;
+		}
 
 	protected:
 		Stream() 
