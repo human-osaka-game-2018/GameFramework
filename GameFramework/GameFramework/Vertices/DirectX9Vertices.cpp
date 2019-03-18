@@ -8,6 +8,14 @@ namespace gameframework
 	{
 		const std::vector<D3DXVECTOR2>* pTextureUVs = m_textureUVs.Get();
 
+		if (!m_hasUpdatedHalfScale)
+		{
+			m_halfScale = m_baseHalfScale;
+
+		}
+
+		m_hasUpdatedHalfScale = false;
+		
 		int index = 0;
 		for (auto& vertex : m_vertices)
 		{

@@ -106,7 +106,7 @@ namespace gameframework
 
 		inline void SetHalfScale(const RectSize& halfScale)
 		{
-			m_halfScale = m_baseHalfScale = halfScale;
+			m_baseHalfScale = halfScale;
 		}
 
 		inline void SetColor(const Color& color)
@@ -182,44 +182,50 @@ namespace gameframework
 		/// <param name="alphaMax">点滅のアルファ値の最小値</param>
 		inline void Flash(int flashFrameMax, BYTE alphaMin, BYTE alphaMax)
 		{
-			algorithm::CountUp(&m_flashFrameCount, flashFrameMax);
 			m_color.m_alpha = static_cast<BYTE>(algorithm::SwitchMinBetweenMax(m_flashFrameCount, flashFrameMax, alphaMin, alphaMax));
+			algorithm::CountUp(&m_flashFrameCount, flashFrameMax);
 		}
 		
 		/// <summary>
 		/// 矩形を拡縮させる
 		/// </summary>
-		/// <param name="flashFrameMax">拡縮にかかるカウント数</param>
+		/// <param name="scalingFrameMax">拡縮にかかるカウント数</param>
 		/// <param name="scaleRateMin">拡縮の最大倍率</param>
 		/// <param name="scaleRateMax">拡縮の最小倍率</param>
-		inline void Scaling(int flashFrameMax, float scaleRateMin, float scaleRateMax)
+		inline void Scaling(int scalingFrameMax, float scaleRateMin, float scaleRateMax)
 		{
-			algorithm::CountUp(&m_flashFrameCount, flashFrameMax);
-			float scaleRate = algorithm::SwitchMinBetweenMax(m_flashFrameCount, flashFrameMax, scaleRateMin, scaleRateMax);
+			float scaleRate = algorithm::SwitchMinBetweenMax(m_additionalScaleFrameCount, scalingFrameMax, scaleRateMin, scaleRateMax);
+			algorithm::CountUp(&m_additionalScaleFrameCount, scalingFrameMax);
 
-			m_baseHalfScale = m_halfScale * scaleRate;
+			m_halfScale = m_baseHalfScale * scaleRate;
+
+			m_hasUpdatedHalfScale = true;
 		}
-		
+
 		/// <summary>
 		/// widthのみ拡縮
 		/// </summary>
-		inline void ScalingX(int flashFrameMax, float scaleRateMin, float scaleRateMax)
+		inline void ScalingX(int scalingFrameMax, float scaleRateMin, float scaleRateMax)
 		{
-			algorithm::CountUp(&m_flashFrameCount, flashFrameMax);
-			float scaleRate = algorithm::SwitchMinBetweenMax(m_flashFrameCount, flashFrameMax, scaleRateMin, scaleRateMax);
+			float scaleRate = algorithm::SwitchMinBetweenMax(m_additionalScaleFrameCount, scalingFrameMax, scaleRateMin, scaleRateMax);
+			algorithm::CountUp(&m_additionalScaleFrameCount, scalingFrameMax);
 
-			m_baseHalfScale.m_width = m_halfScale.m_width * scaleRate;
+			m_halfScale.m_width = m_baseHalfScale.m_width * scaleRate;
+
+			m_hasUpdatedHalfScale = true;
 		}
 
 		/// <summary>
 		/// heightのみ拡縮
 		/// </summary>
-		inline void ScalingY(int flashFrameMax, float scaleRateMin, float scaleRateMax)
+		inline void ScalingY(int scalingFrameMax, float scaleRateMin, float scaleRateMax)
 		{
-			algorithm::CountUp(&m_flashFrameCount, flashFrameMax);
-			float scaleRate = algorithm::SwitchMinBetweenMax(m_flashFrameCount, flashFrameMax, scaleRateMin, scaleRateMax);
+			float scaleRate = algorithm::SwitchMinBetweenMax(m_additionalScaleFrameCount, scalingFrameMax, scaleRateMin, scaleRateMax);
+			algorithm::CountUp(&m_additionalScaleFrameCount, scalingFrameMax);
 
-			m_baseHalfScale.m_height = m_halfScale.m_height * scaleRate;
+			m_halfScale.m_height = m_baseHalfScale.m_height * scaleRate;
+
+			m_hasUpdatedHalfScale = true;
 		}
 
 		inline void AddRotationX(const Degree& rotationX_deg)
@@ -259,6 +265,7 @@ namespace gameframework
 		Degree m_rotationZ_deg;
 		int m_flashFrameCount = 0;
 		int m_additionalScaleFrameCount = 0;
+		bool m_hasUpdatedHalfScale = false;
 		
 		/// <summary>
 		/// 矩形の頂点分のサイズ
