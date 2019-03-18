@@ -4,6 +4,22 @@ namespace gameframework
 {
 	#ifdef DIRECT_X_VERSOIN_9
 
+	DirectX9Vertices::DirectX9Vertices() {};
+
+	DirectX9Vertices::DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size) :Vertices(center, size)	{};
+
+	DirectX9Vertices::DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color)
+		: Vertices(center, size, color) {};
+
+	DirectX9Vertices::DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color, const TextureUVs& textureUVs)
+		: Vertices(center, size, color, textureUVs) {};
+
+	DirectX9Vertices::DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color, const TextureUVs& textureUVs,
+		const Degree& rotationX_deg, const Degree& rotationY_deg, const Degree& rotationZ_deg)
+		: Vertices(center, size, color, textureUVs, rotationX_deg, rotationY_deg, rotationZ_deg) {};
+
+	DirectX9Vertices::~DirectX9Vertices() {};
+
 	void DirectX9Vertices::Normalize()
 	{
 		const std::vector<D3DXVECTOR2>* pTextureUVs = m_textureUVs.Get();
@@ -23,9 +39,7 @@ namespace gameframework
 			vertex.m_pos.x += m_sizeForRender.m_width  * 0.5f * ((TextureUVs::IsRightSide(index)) ? +1.0f : -1.0f);
 			vertex.m_pos.y += m_sizeForRender.m_height * 0.5f * ((TextureUVs::IsUnderSide(index)) ? +1.0f : -1.0f);
 			vertex.m_aRGB = m_color.GetColorCode();
-			vertex.m_texUV = (*pTextureUVs)[index];
-
-			++index;
+			vertex.m_texUV = (*pTextureUVs)[index++];
 		}
 
 		RotateXYZ();

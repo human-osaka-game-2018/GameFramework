@@ -151,6 +151,7 @@
     <ClCompile Include="GameFramework\Stream\DirectX9Stream.cpp" />
     <ClCompile Include="GameFramework\TimerManager\TimerManager.cpp" />
     <ClCompile Include="GameFramework\Vertices\DirectX9Vertices.cpp" />
+    <ClCompile Include="GameFramework\Vertices\Vertices.cpp" />
     <ClCompile Include="RectSize\RectSize.cpp" />
     <ClCompile Include="RotationValue\Degree.cpp" />
     <ClCompile Include="RotationValue\Radian.cpp" />
