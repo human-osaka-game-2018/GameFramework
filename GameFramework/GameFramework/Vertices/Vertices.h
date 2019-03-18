@@ -106,7 +106,7 @@ namespace gameframework
 
 		inline void SetHalfScale(const RectSize& halfScale)
 		{
-			m_halfScale = m_baseHalfScale = halfScale;
+			m_baseHalfScale = halfScale;
 		}
 
 		inline void SetColor(const Color& color)
@@ -197,7 +197,9 @@ namespace gameframework
 			algorithm::CountUp(&m_flashFrameCount, flashFrameMax);
 			float scaleRate = algorithm::SwitchMinBetweenMax(m_flashFrameCount, flashFrameMax, scaleRateMin, scaleRateMax);
 
-			m_baseHalfScale = m_halfScale * scaleRate;
+			m_halfScale = m_baseHalfScale * scaleRate;
+
+			m_hasUpdatedHalfScale = true;
 		}
 		
 		/// <summary>
@@ -208,7 +210,9 @@ namespace gameframework
 			algorithm::CountUp(&m_flashFrameCount, flashFrameMax);
 			float scaleRate = algorithm::SwitchMinBetweenMax(m_flashFrameCount, flashFrameMax, scaleRateMin, scaleRateMax);
 
-			m_baseHalfScale.m_width = m_halfScale.m_width * scaleRate;
+			m_halfScale.m_width = m_baseHalfScale.m_width * scaleRate;
+
+			m_hasUpdatedHalfScale = true;
 		}
 
 		/// <summary>
@@ -219,7 +223,9 @@ namespace gameframework
 			algorithm::CountUp(&m_flashFrameCount, flashFrameMax);
 			float scaleRate = algorithm::SwitchMinBetweenMax(m_flashFrameCount, flashFrameMax, scaleRateMin, scaleRateMax);
 
-			m_baseHalfScale.m_height = m_halfScale.m_height * scaleRate;
+			m_halfScale.m_height = m_baseHalfScale.m_height * scaleRate;
+
+			m_hasUpdatedHalfScale = true;
 		}
 
 		inline void AddRotationX(const Degree& rotationX_deg)
@@ -259,6 +265,7 @@ namespace gameframework
 		Degree m_rotationZ_deg;
 		int m_flashFrameCount = 0;
 		int m_additionalScaleFrameCount = 0;
+		bool m_hasUpdatedHalfScale = false;
 		
 		/// <summary>
 		/// 矩形の頂点分のサイズ
