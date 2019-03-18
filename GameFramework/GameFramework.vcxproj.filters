@@ -226,6 +226,9 @@
     <ClCompile Include="Singleton\SingletonHolder\SingletonHolder.cpp">
       <Filter>Singleton\SingletonHolder</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\Vertices\Vertices.cpp">
+      <Filter>GameFramework\Vertices</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">

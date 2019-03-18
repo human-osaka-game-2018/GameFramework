@@ -66,37 +66,18 @@ namespace gameframework
 	class Vertices
 	{
 	public:
-		Vertices() 
-		{
-			DirectXParam::GetDirectXGraphicDevice()->Get(&m_pDirectXGraphicDevice);
-		}
+		Vertices();
 
-		Vertices(const D3DXVECTOR3& center, const RectSize& size)
-		{
-			SetCenterAndSize(center, size);
-		}
+		Vertices(const D3DXVECTOR3& center, const RectSize& size);
 
-		Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color)
-		{
-			SetCenterAndSizeAndColor(center, size, color);
-		}
+		Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color);
 
-		Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color, const TextureUVs& textureUVs)
-		{
-			SetCenterAndSizeAndColorAndTextureUVs(center, size, color, textureUVs);
-		}
+		Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color, const TextureUVs& textureUVs);
 
 		Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color, const TextureUVs& textureUVs,
-			const Degree& rotationX_deg, const Degree& rotationY_deg, const Degree& rotationZ_deg)
-		{
-			SetCenterAndSizeAndColorAndTextureUVs(center, size, color, textureUVs);
+			const Degree& rotationX_deg, const Degree& rotationY_deg, const Degree& rotationZ_deg);
 
-			SetRotationX(rotationX_deg);
-			SetRotationY(rotationY_deg);
-			SetRotationZ(rotationZ_deg);
-		}
-
-		~Vertices() {};
+		~Vertices();
 
 		/************************************************************************************************************SETTER*/
 
@@ -105,37 +86,15 @@ namespace gameframework
 			m_center = center;
 		}
 
-		inline void SetPosByTopLeft(const D3DXVECTOR3& topLeft, const RectSize& size)
-		{
-			m_center.x = topLeft.x * 0.5f + size.m_width;
-			m_center.y = topLeft.y * 0.5f + size.m_height;
+		void SetCenterAndSize(const D3DXVECTOR3& center, const RectSize& size);
 
-			m_baseSize = size;
-		}
+		void SetPosByTopLeft(const D3DXVECTOR3& topLeft, const RectSize& size);
 
-		inline void SetPosBybottomLeft(const D3DXVECTOR3& topLeft, const RectSize& size)
-		{
-			m_center.x = topLeft.x * 0.5f + size.m_width;
-			m_center.y = topLeft.y * 0.5f - size.m_height;
+		void SetPosBybottomLeft(const D3DXVECTOR3& topLeft, const RectSize& size);
 
-			m_baseSize = size;
-		}
+		void SetPosByTopRight(const D3DXVECTOR3& topLeft, const RectSize& size);
 
-		inline void SetPosByTopRight(const D3DXVECTOR3& topLeft, const RectSize& size)
-		{
-			m_center.x = topLeft.x * 0.5f - size.m_width;
-			m_center.y = topLeft.y * 0.5f + size.m_height;
-
-			m_baseSize = size;
-		}
-
-		inline void SetPosBybottomRight(const D3DXVECTOR3& topLeft, const RectSize& size)
-		{
-			m_center.x = topLeft.x * 0.5f - size.m_width;
-			m_center.y = topLeft.y * 0.5f - size.m_height;
-
-			m_baseSize = size;
-		}
+		void SetPosBybottomRight(const D3DXVECTOR3& topLeft, const RectSize& size);
 
 		inline void Setsize(const RectSize& size)
 		{
@@ -167,24 +126,10 @@ namespace gameframework
 			m_rotationZ_deg = rotationZ_deg;
 		}
 
-		inline void SetCenterAndSize(const D3DXVECTOR3& center, const RectSize& size)
-		{
-			SetCenter(center);
-			Setsize(size);
-		}
+		void SetCenterAndSizeAndColor(const D3DXVECTOR3& center, const RectSize& size, const Color& color);
 
-		inline void SetCenterAndSizeAndColor(const D3DXVECTOR3& center, const RectSize& size, const Color& color)
-		{
-			SetCenterAndSize(center, size);
-			SetColor(color);
-		}
-
-		inline void SetCenterAndSizeAndColorAndTextureUVs(const D3DXVECTOR3& center, const RectSize& size, const Color& color, 
-			const TextureUVs& textureUVs)
-		{
-			SetCenterAndSizeAndColor(center, size, color);
-			SetTextureUVs(textureUVs);
-		}
+		void SetCenterAndSizeAndColorAndTextureUVs(const D3DXVECTOR3& center, const RectSize& size, const Color& color,
+			const TextureUVs& textureUVs);
 
 		/************************************************************************************************************GETTER*/
 
@@ -214,11 +159,7 @@ namespace gameframework
 		/// <param name="flashFrameMax">点滅にかかるカウント数</param>
 		/// <param name="alphaMin">点滅のアルファ値の最大値</param>
 		/// <param name="alphaMax">点滅のアルファ値の最小値</param>
-		inline void Flash(int flashFrameMax, BYTE alphaMin, BYTE alphaMax)
-		{
-			m_color.m_alpha = static_cast<BYTE>(algorithm::SwitchMinBetweenMax(m_flashFrameCount, flashFrameMax, alphaMin, alphaMax));
-			algorithm::CountUp(&m_flashFrameCount, flashFrameMax);
-		}
+		void Flash(int flashFrameMax, BYTE alphaMin, BYTE alphaMax);
 		
 		/// <summary>
 		/// 矩形を拡縮させる
@@ -226,41 +167,17 @@ namespace gameframework
 		/// <param name="scalingFrameMax">拡縮にかかるカウント数</param>
 		/// <param name="scaleRateMin">拡縮の最大倍率</param>
 		/// <param name="scaleRateMax">拡縮の最小倍率</param>
-		inline void Scaling(int scalingFrameMax, float scaleRateMin, float scaleRateMax)
-		{
-			float scaleRate = algorithm::SwitchMinBetweenMax(m_additionalScaleFrameCount, scalingFrameMax, scaleRateMin, scaleRateMax);
-			algorithm::CountUp(&m_additionalScaleFrameCount, scalingFrameMax);
-
-			m_sizeForRender = m_baseSize * scaleRate;
-
-			m_hasUpdatedSize = true;
-		}
+		void Scaling(int scalingFrameMax, float scaleRateMin, float scaleRateMax);
 
 		/// <summary>
 		/// widthのみ拡縮
 		/// </summary>
-		inline void ScalingX(int scalingFrameMax, float scaleRateMin, float scaleRateMax)
-		{
-			float scaleRate = algorithm::SwitchMinBetweenMax(m_additionalScaleFrameCount, scalingFrameMax, scaleRateMin, scaleRateMax);
-			algorithm::CountUp(&m_additionalScaleFrameCount, scalingFrameMax);
-
-			m_sizeForRender.m_width = m_baseSize.m_width * scaleRate;
-
-			m_hasUpdatedSize = true;
-		}
+		void ScalingX(int scalingFrameMax, float scaleRateMin, float scaleRateMax);
 
 		/// <summary>
 		/// heightのみ拡縮
 		/// </summary>
-		inline void ScalingY(int scalingFrameMax, float scaleRateMin, float scaleRateMax)
-		{
-			float scaleRate = algorithm::SwitchMinBetweenMax(m_additionalScaleFrameCount, scalingFrameMax, scaleRateMin, scaleRateMax);
-			algorithm::CountUp(&m_additionalScaleFrameCount, scalingFrameMax);
-
-			m_sizeForRender.m_height = m_baseSize.m_height * scaleRate;
-
-			m_hasUpdatedSize = true;
-		}
+		void ScalingY(int scalingFrameMax, float scaleRateMin, float scaleRateMax);
 
 		inline void AddRotationX(const Degree& rotationX_deg)
 		{

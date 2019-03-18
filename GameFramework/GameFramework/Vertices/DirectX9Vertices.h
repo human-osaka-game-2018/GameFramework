@@ -25,24 +25,18 @@ namespace gameframework
 	class DirectX9Vertices :public Vertices
 	{
 	public:
-		DirectX9Vertices() {};
+		DirectX9Vertices();
 
-		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size) :Vertices(center, size) {};
+		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size);
 
-		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color)
-			: Vertices(center, size, color)
-		{};
+		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color);
 
-		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color, const TextureUVs& textureUVs)
-			: Vertices(center, size, color, textureUVs)
-		{};
+		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color, const TextureUVs& textureUVs);
 
 		DirectX9Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color, const TextureUVs& textureUVs,
-			const Degree& rotationX_deg, const Degree& rotationY_deg, const Degree& rotationZ_deg)
-			: Vertices(center, size, color, textureUVs, rotationX_deg, rotationY_deg, rotationZ_deg)
-		{};
+			const Degree& rotationX_deg, const Degree& rotationY_deg, const Degree& rotationZ_deg);
 
-		~DirectX9Vertices() {};
+		~DirectX9Vertices();
 		
 		/// <summary>
 		/// 描画を行う
