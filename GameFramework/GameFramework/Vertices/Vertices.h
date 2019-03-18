@@ -105,7 +105,38 @@ namespace gameframework
 			m_center = center;
 		}
 
-		inline void SetHalfScale(const RectSize& halfScale)
+		inline void SetPosByTopLeft(const D3DXVECTOR3& topLeft, const RectSize& size)
+		{
+			m_center.x = topLeft.x * 0.5f + size.m_width;
+			m_center.y = topLeft.y * 0.5f + size.m_height;
+
+			m_baseSize = size;
+		}
+
+		inline void SetPosBybottomLeft(const D3DXVECTOR3& topLeft, const RectSize& size)
+		{
+			m_center.x = topLeft.x * 0.5f + size.m_width;
+			m_center.y = topLeft.y * 0.5f - size.m_height;
+
+			m_baseSize = size;
+		}
+
+		inline void SetPosByTopRight(const D3DXVECTOR3& topLeft, const RectSize& size)
+		{
+			m_center.x = topLeft.x * 0.5f - size.m_width;
+			m_center.y = topLeft.y * 0.5f + size.m_height;
+
+			m_baseSize = size;
+		}
+
+		inline void SetPosBybottomRight(const D3DXVECTOR3& topLeft, const RectSize& size)
+		{
+			m_center.x = topLeft.x * 0.5f - size.m_width;
+			m_center.y = topLeft.y * 0.5f - size.m_height;
+
+			m_baseSize = size;
+		}
+
 		inline void Setsize(const RectSize& size)
 		{
 			m_baseSize = size;
