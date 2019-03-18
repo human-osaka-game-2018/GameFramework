@@ -418,96 +418,6 @@ TEST(ColorTest, OperatorMinusEq2) {
 	EXPECT_EQ(lhs_b, ret_b);
 }
 
-// const Color operator*(float rhs) const
-TEST(ColorTest, OperatorMultiply1) {
-	// Arrange
-	Color color(0x12, 0x22, 0x32, 0x42);
-
-	// Act
-	Color result = color * 2.0f;
-
-	// Assert
-	BYTE a = result[COMPONENTS::ALPHA];
-	EXPECT_EQ(0x24, a);
-
-	BYTE r = result[COMPONENTS::RED];
-	EXPECT_EQ(0x44, r);
-
-	BYTE g = result[COMPONENTS::GREEN];
-	EXPECT_EQ(0x64, g);
-
-	BYTE b = result[COMPONENTS::BLUE];
-	EXPECT_EQ(0x84, b);
-}
-
-// const Color operator*(float rhs) const
-TEST(ColorTest, OperatorMultiply2) {
-	// Arrange
-	Color color(0x11, 0x21, 0x31, 0x41);
-
-	// Act
-	Color result = color * 2.5;
-
-	// Assert
-	BYTE a = result[COMPONENTS::ALPHA];
-	EXPECT_EQ(0x2A, a);
-
-	BYTE r = result[COMPONENTS::RED];
-	EXPECT_EQ(0x52, r);
-
-	BYTE g = result[COMPONENTS::GREEN];
-	EXPECT_EQ(0x7A, g);
-
-	BYTE b = result[COMPONENTS::BLUE];
-	EXPECT_EQ(0xA2, b);
-}
-
-// const Color operator*(float rhs) const
-TEST(ColorTest, OperatorMultiply3) {
-	// Arrange
-	Color color(0x12, 0x34, 0x56, 0x78);
-
-	// Act
-	Color result = color * (-0.5);
-
-	// Assert
-	// 全色アンダーフローして0x00になることを確認
-	BYTE a = result[COMPONENTS::ALPHA];
-	EXPECT_EQ(0x00, a);
-
-	BYTE r = result[COMPONENTS::RED];
-	EXPECT_EQ(0x00, r);
-
-	BYTE g = result[COMPONENTS::GREEN];
-	EXPECT_EQ(0x00, g);
-
-	BYTE b = result[COMPONENTS::BLUE];
-	EXPECT_EQ(0x00, b);
-}
-
-// const Color operator*(float rhs) const
-TEST(ColorTest, OperatorMultiply4) {
-	// Arrange
-	Color color(0x12, 0x34, 0x56, 0x78);
-
-	// Act
-	Color result = color * 100.0f;
-
-	// Assert
-	// 全色オーバーフローして0xFFになることを確認
-	BYTE a = result[COMPONENTS::ALPHA];
-	EXPECT_EQ(0xFF, a);
-
-	BYTE r = result[COMPONENTS::RED];
-	EXPECT_EQ(0xFF, r);
-
-	BYTE g = result[COMPONENTS::GREEN];
-	EXPECT_EQ(0xFF, g);
-
-	BYTE b = result[COMPONENTS::BLUE];
-	EXPECT_EQ(0xFF, b);
-}
-
 // Color& operator*=(float rhs)
 TEST(ColorTest, OperatorMultiplyEq) {
 	// Arrange
@@ -543,6 +453,119 @@ TEST(ColorTest, OperatorMultiplyEq) {
 	BYTE ret_b = ret[COMPONENTS::BLUE];
 	EXPECT_EQ(lhs_b, ret_b);
 }
+
+// Color operator*(const Color& lhs, float rhs)
+TEST(ColorTest, OperatorMultiply1) {
+	// Arrange
+	Color color(0x12, 0x22, 0x32, 0x42);
+
+	// Act
+	Color result = color * 2.0f;
+
+	// Assert
+	BYTE a = result[COMPONENTS::ALPHA];
+	EXPECT_EQ(0x24, a);
+
+	BYTE r = result[COMPONENTS::RED];
+	EXPECT_EQ(0x44, r);
+
+	BYTE g = result[COMPONENTS::GREEN];
+	EXPECT_EQ(0x64, g);
+
+	BYTE b = result[COMPONENTS::BLUE];
+	EXPECT_EQ(0x84, b);
+}
+
+// Color operator*(const Color& lhs, float rhs)
+TEST(ColorTest, OperatorMultiply2) {
+	// Arrange
+	Color color(0x11, 0x21, 0x31, 0x41);
+
+	// Act
+	Color result = color * 2.5;
+
+	// Assert
+	BYTE a = result[COMPONENTS::ALPHA];
+	EXPECT_EQ(0x2A, a);
+
+	BYTE r = result[COMPONENTS::RED];
+	EXPECT_EQ(0x52, r);
+
+	BYTE g = result[COMPONENTS::GREEN];
+	EXPECT_EQ(0x7A, g);
+
+	BYTE b = result[COMPONENTS::BLUE];
+	EXPECT_EQ(0xA2, b);
+}
+
+// Color operator*(const Color& lhs, float rhs)
+TEST(ColorTest, OperatorMultiply3) {
+	// Arrange
+	Color color(0x12, 0x34, 0x56, 0x78);
+
+	// Act
+	Color result = color * (-0.5);
+
+	// Assert
+	// 全色アンダーフローして0x00になることを確認
+	BYTE a = result[COMPONENTS::ALPHA];
+	EXPECT_EQ(0x00, a);
+
+	BYTE r = result[COMPONENTS::RED];
+	EXPECT_EQ(0x00, r);
+
+	BYTE g = result[COMPONENTS::GREEN];
+	EXPECT_EQ(0x00, g);
+
+	BYTE b = result[COMPONENTS::BLUE];
+	EXPECT_EQ(0x00, b);
+}
+
+// Color operator*(const Color& lhs, float rhs)
+TEST(ColorTest, OperatorMultiply4) {
+	// Arrange
+	Color color(0x12, 0x34, 0x56, 0x78);
+
+	// Act
+	Color result = color * 100.0f;
+
+	// Assert
+	// 全色オーバーフローして0xFFになることを確認
+	BYTE a = result[COMPONENTS::ALPHA];
+	EXPECT_EQ(0xFF, a);
+
+	BYTE r = result[COMPONENTS::RED];
+	EXPECT_EQ(0xFF, r);
+
+	BYTE g = result[COMPONENTS::GREEN];
+	EXPECT_EQ(0xFF, g);
+
+	BYTE b = result[COMPONENTS::BLUE];
+	EXPECT_EQ(0xFF, b);
+}
+
+// Color operator*(float lhs, const Color& rhs)
+TEST(ColorTest, OperatorMultiply5) {
+	// Arrange
+	Color color(0x12, 0x22, 0x32, 0x42);
+
+	// Act
+	Color result = 2.0f * color;
+
+	// Assert
+	BYTE a = result[COMPONENTS::ALPHA];
+	EXPECT_EQ(0x24, a);
+
+	BYTE r = result[COMPONENTS::RED];
+	EXPECT_EQ(0x44, r);
+
+	BYTE g = result[COMPONENTS::GREEN];
+	EXPECT_EQ(0x64, g);
+
+	BYTE b = result[COMPONENTS::BLUE];
+	EXPECT_EQ(0x84, b);
+}
+
 
 // const Color operator/(int rhs) const
 TEST(ColorTest, OperatorDevide1) {

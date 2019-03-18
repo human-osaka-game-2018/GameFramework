@@ -127,18 +127,12 @@ namespace gameframework {
 		return *this;
 	}
 
-	const Color Color::operator*(float rhs) const
-	{
-		return Color(
-			Normalize(m_alpha * rhs),
-			Normalize(m_red   * rhs),
-			Normalize(m_green * rhs),
-			Normalize(m_blue  * rhs)
-		);
-	}
 	Color& Color::operator*=(float rhs)
 	{
-		(*this) = (*this) * rhs;
+		m_alpha = Normalize(m_alpha * rhs);
+		m_red = Normalize(m_red * rhs);
+		m_green = Normalize(m_green * rhs);
+		m_blue = Normalize(m_blue * rhs);
 
 		return *this;
 	}
@@ -207,6 +201,19 @@ namespace gameframework {
 	BYTE Color::Normalize(float componentValue) const
 	{
 		return Normalize(static_cast<int>(componentValue));
+	}
+
+	//-----------------------------------------------------------------
+	// Global operators
+	//-----------------------------------------------------------------
+	Color operator*(const Color& lhs, float rhs)
+	{
+		return Color(lhs) *= rhs;
+	}
+
+	Color operator*(float lhs, const Color& rhs)
+	{
+		return rhs * lhs;
 	}
 }
 

@@ -142,13 +142,6 @@ namespace gameframework
 		const Color operator-=(DWORD rhs);
 
 		/// <summary>
-		/// 引数の値でメンバを掛ける
-		/// </summary>
-		/// <param name="rhs">掛ける際の値</param>
-		/// <returns>掛けた後の結果のColorクラス</returns>
-		const Color operator*(float rhs) const;
-
-		/// <summary>
 		/// 引数の値でメンバを掛けその値を代入する
 		/// </summary>
 		/// <param name="rhs">掛ける際の値</param>
@@ -178,6 +171,10 @@ namespace gameframework
 		BYTE Normalize(int componentValue) const;
 		BYTE Normalize(float componentValue) const;
 	};
+
+
+	Color operator*(const Color& lhs, float rhs);
+	Color operator*(float lhs, const Color& rhs);
 }
 
 #endif //! COLOR_H
