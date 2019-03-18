@@ -36,7 +36,7 @@ namespace gameframework
 		/// <param name="pTexturePath">フォントのパス</param>
 		inline void Create(const TCHAR* pFontKey, const RectSize& scale, const TCHAR* pFontName, UINT thickness = 0)
 		{
-			if (!Exists(pFontKey)) return;
+			if (Exists(pFontKey)) return;
 
 			GameFrameworkFactory::Create(&m_fonts[pFontKey]);
 
