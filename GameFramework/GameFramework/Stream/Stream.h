@@ -39,8 +39,8 @@ namespace gameframework
 
 		inline void Flash(int flashFrameMax, BYTE alphaMin, BYTE alphaMax)
 		{
-			algorithm::CountUp(&m_flashFrameCount, flashFrameMax);
 			m_color.m_alpha = static_cast<BYTE>(algorithm::SwitchMinBetweenMax(m_flashFrameCount, flashFrameMax, alphaMin, alphaMax));
+			algorithm::CountUp(&m_flashFrameCount, flashFrameMax);
 		}
 
 		/// <summary>
