@@ -8,20 +8,20 @@ namespace gameframework
 	{
 		const std::vector<D3DXVECTOR2>* pTextureUVs = m_textureUVs.Get();
 
-		if (!m_hasUpdatedHalfScale)
+		if (!m_hasUpdatedSize)
 		{
-			m_halfScale = m_baseHalfScale;
+			m_sizeForRender = m_baseSize;
 
 		}
 
-		m_hasUpdatedHalfScale = false;
+		m_hasUpdatedSize = false;
 		
 		int index = 0;
 		for (auto& vertex : m_vertices)
 		{
 			vertex.m_pos = m_center;
-			vertex.m_pos.x += m_halfScale.m_width  * ((TextureUVs::IsRightSide(index)) ? +1.0f : -1.0f);
-			vertex.m_pos.y += m_halfScale.m_height * ((TextureUVs::IsUnderSide(index)) ? +1.0f : -1.0f);
+			vertex.m_pos.x += m_sizeForRender.m_width  * 0.5f * ((TextureUVs::IsRightSide(index)) ? +1.0f : -1.0f);
+			vertex.m_pos.y += m_sizeForRender.m_height * 0.5f * ((TextureUVs::IsUnderSide(index)) ? +1.0f : -1.0f);
 			vertex.m_aRGB = m_color.GetColorCode();
 			vertex.m_texUV = (*pTextureUVs)[index];
 

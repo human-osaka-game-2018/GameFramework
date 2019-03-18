@@ -71,25 +71,25 @@ namespace gameframework
 			DirectXParam::GetDirectXGraphicDevice()->Get(&m_pDirectXGraphicDevice);
 		}
 
-		Vertices(const D3DXVECTOR3& center, const RectSize& halfScale)
+		Vertices(const D3DXVECTOR3& center, const RectSize& size)
 		{
-			SetCenterAndScale(center, halfScale);
+			SetCenterAndSize(center, size);
 		}
 
-		Vertices(const D3DXVECTOR3& center, const RectSize& halfScale, const Color& color)
+		Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color)
 		{
-			SetCenterAndScaleAndColor(center, halfScale, color);
+			SetCenterAndSizeAndColor(center, size, color);
 		}
 
-		Vertices(const D3DXVECTOR3& center, const RectSize& halfScale, const Color& color, const TextureUVs& textureUVs)
+		Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color, const TextureUVs& textureUVs)
 		{
-			SetCenterAndHalfScaleAndColorAndTextureUVs(center, halfScale, color, textureUVs);
+			SetCenterAndSizeAndColorAndTextureUVs(center, size, color, textureUVs);
 		}
 
-		Vertices(const D3DXVECTOR3& center, const RectSize& halfScale, const Color& color, const TextureUVs& textureUVs,
+		Vertices(const D3DXVECTOR3& center, const RectSize& size, const Color& color, const TextureUVs& textureUVs,
 			const Degree& rotationX_deg, const Degree& rotationY_deg, const Degree& rotationZ_deg)
 		{
-			SetCenterAndHalfScaleAndColorAndTextureUVs(center, halfScale, color, textureUVs);
+			SetCenterAndSizeAndColorAndTextureUVs(center, size, color, textureUVs);
 
 			SetRotationX(rotationX_deg);
 			SetRotationY(rotationY_deg);
@@ -99,14 +99,16 @@ namespace gameframework
 		~Vertices() {};
 
 		/************************************************************************************************************SETTER*/
+
 		inline void SetCenter(const D3DXVECTOR3& center)
 		{
 			m_center = center;
 		}
 
 		inline void SetHalfScale(const RectSize& halfScale)
+		inline void Setsize(const RectSize& size)
 		{
-			m_baseHalfScale = halfScale;
+			m_baseSize = size;
 		}
 
 		inline void SetColor(const Color& color)
@@ -134,34 +136,35 @@ namespace gameframework
 			m_rotationZ_deg = rotationZ_deg;
 		}
 
-		inline void SetCenterAndScale(const D3DXVECTOR3& center, const RectSize& halfScale)
+		inline void SetCenterAndSize(const D3DXVECTOR3& center, const RectSize& size)
 		{
 			SetCenter(center);
-			SetHalfScale(halfScale);
+			Setsize(size);
 		}
 
-		inline void SetCenterAndScaleAndColor(const D3DXVECTOR3& center, const RectSize& halfScale, const Color& color)
+		inline void SetCenterAndSizeAndColor(const D3DXVECTOR3& center, const RectSize& size, const Color& color)
 		{
-			SetCenterAndScale(center, halfScale);
+			SetCenterAndSize(center, size);
 			SetColor(color);
 		}
 
-		inline void SetCenterAndHalfScaleAndColorAndTextureUVs(const D3DXVECTOR3& center, const RectSize& halfScale, const Color& color, 
+		inline void SetCenterAndSizeAndColorAndTextureUVs(const D3DXVECTOR3& center, const RectSize& size, const Color& color, 
 			const TextureUVs& textureUVs)
 		{
-			SetCenterAndScaleAndColor(center, halfScale, color);
+			SetCenterAndSizeAndColor(center, size, color);
 			SetTextureUVs(textureUVs);
 		}
 
 		/************************************************************************************************************GETTER*/
+
 		inline D3DXVECTOR3& GetCenter()
 		{
 			return	m_center;
 		}
 
-		inline RectSize& GetHalfScale()
+		inline RectSize& Getsize()
 		{
-			return m_baseHalfScale;
+			return m_baseSize;
 		}
 
 		inline Color& GetColor()
@@ -173,7 +176,7 @@ namespace gameframework
 		{
 			return m_textureUVs;
 		}
-		
+
 		/// <summary>
 		/// 矩形を点滅させる
 		/// </summary>
@@ -197,9 +200,9 @@ namespace gameframework
 			float scaleRate = algorithm::SwitchMinBetweenMax(m_additionalScaleFrameCount, scalingFrameMax, scaleRateMin, scaleRateMax);
 			algorithm::CountUp(&m_additionalScaleFrameCount, scalingFrameMax);
 
-			m_halfScale = m_baseHalfScale * scaleRate;
+			m_sizeForRender = m_baseSize * scaleRate;
 
-			m_hasUpdatedHalfScale = true;
+			m_hasUpdatedSize = true;
 		}
 
 		/// <summary>
@@ -210,9 +213,9 @@ namespace gameframework
 			float scaleRate = algorithm::SwitchMinBetweenMax(m_additionalScaleFrameCount, scalingFrameMax, scaleRateMin, scaleRateMax);
 			algorithm::CountUp(&m_additionalScaleFrameCount, scalingFrameMax);
 
-			m_halfScale.m_width = m_baseHalfScale.m_width * scaleRate;
+			m_sizeForRender.m_width = m_baseSize.m_width * scaleRate;
 
-			m_hasUpdatedHalfScale = true;
+			m_hasUpdatedSize = true;
 		}
 
 		/// <summary>
@@ -223,9 +226,9 @@ namespace gameframework
 			float scaleRate = algorithm::SwitchMinBetweenMax(m_additionalScaleFrameCount, scalingFrameMax, scaleRateMin, scaleRateMax);
 			algorithm::CountUp(&m_additionalScaleFrameCount, scalingFrameMax);
 
-			m_halfScale.m_height = m_baseHalfScale.m_height * scaleRate;
+			m_sizeForRender.m_height = m_baseSize.m_height * scaleRate;
 
-			m_hasUpdatedHalfScale = true;
+			m_hasUpdatedSize = true;
 		}
 
 		inline void AddRotationX(const Degree& rotationX_deg)
@@ -256,8 +259,8 @@ namespace gameframework
 		virtual void Normalize() = 0;
 
 		D3DXVECTOR3 m_center = { 0.0f, 0.0f, 0.0f };
-		RectSize m_baseHalfScale;
-		RectSize m_halfScale;
+		RectSize m_baseSize;
+		RectSize m_sizeForRender;
 		Color m_color;
 		TextureUVs m_textureUVs;
 		Degree m_rotationX_deg;
@@ -265,7 +268,7 @@ namespace gameframework
 		Degree m_rotationZ_deg;
 		int m_flashFrameCount = 0;
 		int m_additionalScaleFrameCount = 0;
-		bool m_hasUpdatedHalfScale = false;
+		bool m_hasUpdatedSize = false;
 		
 		/// <summary>
 		/// 矩形の頂点分のサイズ
