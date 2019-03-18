@@ -32,14 +32,15 @@ namespace gameframework
 
 		m_hasUpdatedSize = false;
 		
-		int index = 0;
 		for (auto& vertex : m_vertices)
 		{
+			int index = static_cast<int>(&vertex - &m_vertices[0]);
+
 			vertex.m_pos = m_center;
 			vertex.m_pos.x += m_sizeForRender.m_width  * 0.5f * ((TextureUVs::IsRightSide(index)) ? +1.0f : -1.0f);
 			vertex.m_pos.y += m_sizeForRender.m_height * 0.5f * ((TextureUVs::IsUnderSide(index)) ? +1.0f : -1.0f);
 			vertex.m_aRGB = m_color.GetColorCode();
-			vertex.m_texUV = (*pTextureUVs)[index++];
+			vertex.m_texUV = (*pTextureUVs)[index];
 		}
 
 		RotateXYZ();
