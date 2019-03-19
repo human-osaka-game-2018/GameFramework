@@ -1,7 +1,25 @@
 ﻿#include "TextureUVs.h"
 
+#include "Algorithm.h"
+
 namespace gameframework
 {
+	TextureUVs::TextureUVs()
+	{
+		ResizeTextureUVsForRect();
+	}
+
+	TextureUVs::TextureUVs(const D3DXVECTOR2& topLeft, const RectSize& textureSize, const RectSize& oneDivideSize, int dividesNumMax)
+	{
+		ResizeTextureUVsForRect();
+		SetTextureUVsParams(topLeft, textureSize, oneDivideSize, dividesNumMax);
+	}
+
+	TextureUVs::~TextureUVs()
+	{
+
+	}
+
 	void TextureUVs::Next()
 	{
 		//アニメーションの最大枚数を超えていたら
@@ -41,9 +59,15 @@ namespace gameframework
 
 			textureUV =
 			{
-				(m_topLeft.x + (IsRightSide(index)) ? m_oneDivideSize.m_width  : 0.0f) / m_textureSize.m_width,
-				(m_topLeft.y + (IsUnderSide(index)) ? m_oneDivideSize.m_height : 0.0f) / m_textureSize.m_height
+				(m_topLeft.x + algorithm::Tertiary(IsRightSide(index), m_oneDivideSize.m_width,  0.0f)) / m_textureSize.m_width,
+				(m_topLeft.y + algorithm::Tertiary(IsUnderSide(index), m_oneDivideSize.m_height, 0.0f)) / m_textureSize.m_height
 			};
 		}
+	}
+
+	void TextureUVs::ResizeTextureUVsForRect()
+	{
+		//矩形の頂点数分確保するこれ以上は増やさないし減らさない
+		m_textureUVs.resize(4);
 	}
 }
