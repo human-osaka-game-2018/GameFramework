@@ -22,27 +22,20 @@ namespace gameframework
 		/// <remarks>
 		/// アニメーションを使わない場合やデフォルトのTuTvを扱う場合はこちらを使う
 		/// </remarks>
-		TextureUVs() 
-		{
-			ResizeTextureUVsForRect();
-		}
+		TextureUVs();
 		
 		/// <param name="topLeft">テクスチャの左上のピクセル位置</param>
 		/// <param name="textureSize">テクスチャ一枚の大きさ</param>
 		/// <param name="oneDivideSize">統合ファイルの一区切りの大きさ</param>
 		/// <param name="dividesNumMax">アニメーション枚数</param>
-		TextureUVs(const D3DXVECTOR2& topLeft, const RectSize& textureSize, const RectSize& oneDivideSize, int dividesNumMax)
-		{
-			ResizeTextureUVsForRect();
-			SetTextureUVsParams(topLeft, textureSize, oneDivideSize, dividesNumMax);
-		}
+		TextureUVs(const D3DXVECTOR2& topLeft, const RectSize& textureSize, const RectSize& oneDivideSize, int dividesNumMax);
 
-		~TextureUVs() {};
+		~TextureUVs();
 
 		inline void SetTextureUVsParams(const D3DXVECTOR2& topLeft, const RectSize& textureSize, const RectSize& oneDivideSize, int dividesNumMax)
 		{
-			m_topLeft = topLeft;
-			m_textureSize = textureSize;
+			m_topLeft		= topLeft;
+			m_textureSize	= textureSize;
 			m_oneDivideSize = oneDivideSize;
 			m_dividesNumMax = dividesNumMax;
 		}
@@ -94,11 +87,7 @@ namespace gameframework
 		/// <summary>
 		/// テクスチャ座標を必要数分確保する
 		/// </summary>
-		inline void ResizeTextureUVsForRect()
-		{
-			//矩形の頂点数分確保するこれ以上は増やさないし減らさない
-			m_textureUVs.resize(4);
-		}
+		void ResizeTextureUVsForRect();
 
 		/// <summary>
 		/// テクスチャ座標の正規化を行う
