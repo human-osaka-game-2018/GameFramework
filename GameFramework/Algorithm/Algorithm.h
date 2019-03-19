@@ -132,6 +132,17 @@ namespace gameframework
 		/// <param name="pFunc">最大値に達したときに呼ぶ関数のポインタ</param>
 		/// <remarks>pFuncがnullptrなら何も呼ばない</remarks>
 		void CountUp_sec(float* pCnt_sec, float cntMax_sec, std::function<void(void)> pFunc = nullptr);
+
+		/// <summary>
+		/// 三項演算子
+		/// </summary>
+		template<typename T>
+		inline T Tertiary(bool isTrue, T trueReturn, T falseReturn)
+		{
+			if (isTrue) return trueReturn;
+
+			return falseReturn;
+		}
 	}
 }
 
