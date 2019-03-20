@@ -3,7 +3,7 @@
 
 #include <Windows.h>
 #include <vector>
-#include <map>
+#include <unordered_map>
 
 #include <d3dx9.h>
 
@@ -141,10 +141,10 @@ namespace gameframework
 		Color& operator/=(int rhs);
 
 	private:
-		std::map<COMPONENTS, BYTE> m_components;
+		std::unordered_map<COMPONENTS, BYTE> m_components;
 		BYTE Normalize(int componentValue) const;
 		BYTE Normalize(float componentValue) const;
-		void ParseColorCode(DWORD colorCode, std::map<COMPONENTS, BYTE>* pMap);
+		void ParseColorCode(DWORD colorCode, std::unordered_map<COMPONENTS, BYTE>* pMap);
 		void AddColorCode(DWORD colorCode, bool isPositive = true);
 	};
 

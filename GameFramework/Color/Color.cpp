@@ -35,8 +35,8 @@ namespace gameframework {
 
 	BYTE Color::operator[](COMPONENTS colorComponent) const
 	{
-		// constメンバ関数なのでstd::map::operator[]は使えない
-		// 代わりにstd::map::at()を使う
+		// constメンバ関数なのでstd::unordered_map::operator[]は使えない
+		// 代わりにstd::unordered_map::at()を使う
 		return m_components.at(colorComponent);
 	}
 
@@ -164,7 +164,7 @@ namespace gameframework {
 	/// </summary>
 	/// <param name="colorCode">カラーコード</param>
 	/// <param name="pMap">解析結果を詰めるmap</param>
-	void Color::ParseColorCode(DWORD colorCode, std::map<COMPONENTS, BYTE>* pMap)
+	void Color::ParseColorCode(DWORD colorCode, std::unordered_map<COMPONENTS, BYTE>* pMap)
 	{
 		const std::vector<COMPONENTS> components =
 		{
@@ -188,7 +188,7 @@ namespace gameframework {
 	/// <param name="isPositive">true:加算、false:減算</param>
 	void Color::AddColorCode(DWORD colorCode, bool isPositive)
 	{
-		std::map<COMPONENTS, BYTE> components;
+		std::unordered_map<COMPONENTS, BYTE> components;
 		ParseColorCode(colorCode, &components);
 
 		for (auto& component : m_components) {
