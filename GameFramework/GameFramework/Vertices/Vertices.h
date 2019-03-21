@@ -143,6 +143,13 @@ namespace gameframework
 			return m_baseSize;
 		}
 
+		inline const RectSize& GetSizeForRender() const
+		{
+			if (m_hasUpdatedSize) return m_baseSize;
+
+			return m_sizeForRender;
+		}
+
 		inline Color& GetColor()
 		{
 			return m_color;
@@ -151,6 +158,13 @@ namespace gameframework
 		inline TextureUVs& GetTextureUVs()
 		{
 			return m_textureUVs;
+		}
+
+		inline CustomVertex* GetCustomVertex()
+		{
+			Normalize();
+
+			return m_vertices;
 		}
 
 		/// <summary>
@@ -201,11 +215,6 @@ namespace gameframework
 		virtual void Render(const LPTEXTURE pTexture) = 0;
 
 	protected:
-		/// <summary>
-		/// 描画を行う際の矩形を作成する
-		/// </summary>
-		virtual void Normalize() = 0;
-
 		D3DXVECTOR3 m_center = { 0.0f, 0.0f, 0.0f };
 		RectSize m_baseSize;
 		RectSize m_sizeForRender;
@@ -218,6 +227,11 @@ namespace gameframework
 		int m_additionalScaleFrameCount = 0;
 		bool m_hasUpdatedSize = false;
 		
+		/// <summary>
+		/// 描画を行う際の矩形を作成する
+		/// </summary>
+		virtual void Normalize() = 0;
+
 		/// <summary>
 		/// 矩形の頂点分のサイズ
 		/// </summary>
