@@ -20,124 +20,16 @@ namespace gameframework
 
 	DirectX9Vertices::~DirectX9Vertices() {};
 
-	void DirectX9Vertices::Normalize()
+	void DirectX9Vertices::CreateCustomVertices()
 	{
-		const std::vector<D3DXVECTOR2>* pTextureUVs = m_textureUVs.Get();
-
 		//Renderでフラグをニュートラルにする
 		if (!m_hasUpdatedSize)
 		{
 			m_sizeForRender = m_baseSize;
 		}
 		
-		for (auto& vertex : m_vertices)
-		{
-			int index = static_cast<int>(&vertex - &m_vertices[0]);
-
-			vertex.m_pos = m_center;
-			vertex.m_pos.x += m_sizeForRender.m_width  * 0.5f * ((TextureUVs::IsRightSide(index)) ? +1.0f : -1.0f);
-			vertex.m_pos.y += m_sizeForRender.m_height * 0.5f * ((TextureUVs::IsUnderSide(index)) ? +1.0f : -1.0f);
-			vertex.m_aRGB = m_color.GetColorCode();
-			vertex.m_texUV = (*pTextureUVs)[index];
-		}
-
-		RotateXYZ();
-	}
-
-	void DirectX9Vertices::RotateXYZ()
-	{
-		//回転軸が中心からどのくらい離れているかこの関数では離れていない
-		D3DXVECTOR3 relativeRotateCenter(0.0f, 0.0f, 0.0f);
-
-		RotateX(
-			m_vertices,
-			m_rotationX_deg.Normalized(),
-			relativeRotateCenter);
-
-		RotateY(
-			m_vertices,
-			m_rotationY_deg.Normalized(),
-			relativeRotateCenter);
-
-		RotateZ(
-			m_vertices,
-			m_rotationZ_deg.Normalized(),
-			relativeRotateCenter);
-	}
-
-	void DirectX9Vertices::RotateX(CustomVertex* pCustomVertices, float deg, const D3DXVECTOR3& relativeRotateCenter) const
-	{
-		if (deg == 0.0f) return;
-
-		D3DXMATRIX rotate;
-		D3DXMatrixRotationX(&rotate, D3DXToRadian(deg));
-		Rotate(
-			pCustomVertices,
-			relativeRotateCenter,
-			rotate);
-	}
-
-	void DirectX9Vertices::RotateY(CustomVertex* pCustomVertices, float deg, const D3DXVECTOR3& relativeRotateCenter) const
-	{
-		if (deg == 0.0f) return;
-
-		D3DXMATRIX rotate;
-		D3DXMatrixRotationY(&rotate, D3DXToRadian(deg));
-		Rotate(
-			pCustomVertices,
-			relativeRotateCenter,
-			rotate);
-	}
-
-	void DirectX9Vertices::RotateZ(CustomVertex* pCustomVertices, float deg, const D3DXVECTOR3& relativeRotateCenter) const
-	{
-		if (deg == 0.0f) return;
-
-		D3DXMATRIX rotate;
-		D3DXMatrixRotationZ(&rotate, D3DXToRadian(deg));
-		Rotate(
-			pCustomVertices,
-			relativeRotateCenter,
-			rotate);
-	}
-
-	void DirectX9Vertices::Rotate(CustomVertex* pCustomVertices, const D3DXVECTOR3& relativeRotateCenter, const D3DXMATRIX& rRotate) const
-	{
-		//対角線によってすでに回転が行われている矩形の中心も割り出せる
-		D3DXVECTOR3 rectCenter((pCustomVertices[0].m_pos + pCustomVertices[2].m_pos) * 0.5f);
-
-		//回転の中心は必ずしも矩形の中心ではないので
-		D3DXVECTOR3 verticesRectCenterToOrigin[CustomVertex::RECT_VERTICES_NUM];
-		for (int i = 0; i < CustomVertex::RECT_VERTICES_NUM; ++i)
-		{
-			verticesRectCenterToOrigin[i] = pCustomVertices[i].m_pos - rectCenter;
-		};
-
-		//回転後元の位置に戻すため
-		D3DXVECTOR3 verticesRotateCenterToOrigin[CustomVertex::RECT_VERTICES_NUM];
-		for (int i = 0; i < CustomVertex::RECT_VERTICES_NUM; ++i)
-		{
-			verticesRotateCenterToOrigin[i] = verticesRectCenterToOrigin[i] - relativeRotateCenter;
-		};
-
-		for (int i = 0; i < CustomVertex::RECT_VERTICES_NUM; ++i)
-		{
-			D3DXVec3TransformCoord(
-				&pCustomVertices[i].m_pos,
-				&verticesRotateCenterToOrigin[i],
-				&rRotate);
-
-			//元の位置に戻す
-			D3DXVec3Add(
-				&pCustomVertices[i].m_pos,
-				&pCustomVertices[i].m_pos,
-				&rectCenter);
-
-			D3DXVec3Add(
-				&pCustomVertices[i].m_pos,
-				&pCustomVertices[i].m_pos,
-				&relativeRotateCenter);
-		}
+		m_vertices.Reset(m_center, m_sizeForRender, m_color, m_textureUVs);
+		m_vertices.RotateXYZ(m_rotationX_deg, m_rotationY_deg, m_rotationZ_deg);
 	}
 
 	void DirectX9Vertices::Render(const LPTEXTURE pTexture)
@@ -149,13 +41,13 @@ namespace gameframework
 
 		m_pDirectXGraphicDevice->SetTexture(0, pTexture);
 
-		Normalize();
+		CreateCustomVertices();
 		m_hasUpdatedSize = false;
 
 		m_pDirectXGraphicDevice->DrawPrimitiveUP(
 			D3DPT_TRIANGLEFAN,
 			2,
-			m_vertices,
+			m_vertices.Get(),
 			sizeof(CustomVertex));
 	}
 

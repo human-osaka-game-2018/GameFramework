@@ -6,6 +6,7 @@
 #include "Graphic.h"
 #include "Input/Input.h"
 #include "TimerManager.h"
+#include "Collision/Collision.h"
 
 /// <summary>
 /// 基礎構築に関するものをまとめた名前空間
@@ -35,6 +36,20 @@ namespace gameframework
 		{
 			m_graphic.FinishInFrame();
 			m_input.FinishInFrame();
+		}
+
+		/// <summary>
+		/// マウスカーソルが矩形の上にあるか
+		/// </summary>
+		/// <param name="vertices">矩形クラス</param>
+		/// <returns>上にあればtrue</returns>
+		inline bool IsCursorOnRect(Vertices& vertices)
+		{
+			POINT cursorPoint;
+			CursorPos(&cursorPoint);
+			D3DXVECTOR3 cursorPos(static_cast<float>(cursorPoint.x), static_cast<float>(cursorPoint.y), 0.0f);
+				
+			return collision::IsInner(vertices, cursorPos);
 		}
 
 		/// <summary>
