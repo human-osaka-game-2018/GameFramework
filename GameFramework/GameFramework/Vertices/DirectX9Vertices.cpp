@@ -24,13 +24,11 @@ namespace gameframework
 	{
 		const std::vector<D3DXVECTOR2>* pTextureUVs = m_textureUVs.Get();
 
+		//Renderでフラグをニュートラルにする
 		if (!m_hasUpdatedSize)
 		{
 			m_sizeForRender = m_baseSize;
-
 		}
-
-		m_hasUpdatedSize = false;
 		
 		for (auto& vertex : m_vertices)
 		{
@@ -152,6 +150,7 @@ namespace gameframework
 		m_pDirectXGraphicDevice->SetTexture(0, pTexture);
 
 		Normalize();
+		m_hasUpdatedSize = false;
 
 		m_pDirectXGraphicDevice->DrawPrimitiveUP(
 			D3DPT_TRIANGLEFAN,
