@@ -1,6 +1,8 @@
 ﻿#ifndef RECT_SIZE_H
 #define RECT_SIZE_H
 
+#include <Windows.h>
+
 /// <summary>
 /// 基礎構築に関するものをまとめた名前空間
 /// </summary>

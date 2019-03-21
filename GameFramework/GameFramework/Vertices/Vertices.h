@@ -11,6 +11,7 @@
 #include "Degree.h"
 #include "algorithm.h"
 #include "Texture/Texture.h"
+#include "CustomVertex.h"
 #include "DirectXGraphicDevice/DirectXGraphicDevice.h"
 #include "DirectXParam.h"
 
@@ -19,50 +20,6 @@
 /// </summary>
 namespace gameframework
 {
-	#ifdef DIRECT_X_VERSION_11
-	/// <summary>
-	/// DirectX9での頂点構造体
-	/// </summary>
-	struct CustomVertex
-	{
-	public:
-		D3DXVECTOR3 m_pos;
-
-		/// <summary>
-		/// 重みの逆数 基本1
-		/// </summary>
-		float m_rHW = 1.0f;
-
-		DWORD m_aRGB = 0xFFFFFFFF;
-
-		D3DXVECTOR2 m_texUV;
-
-		static const int RECT_VERTICES_NUM = 4;
-	};
-	#elif defined DIRECT_X_VERSOIN_9
-	/// <summary>
-	/// DirectX9での頂点構造体
-	/// </summary>
-	struct CustomVertex
-	{
-	public:
-		D3DXVECTOR3 m_pos;
-
-		/// <summary>
-		/// 重みの逆数 基本1
-		/// </summary>
-		float m_rHW = 1.0f;
-
-		DWORD m_aRGB = 0xFFFFFFFF;
-
-		D3DXVECTOR2 m_texUV;
-
-		static const int RECT_VERTICES_NUM = 4;
-	};
-	#else
-	#error "DirectXのバージョンを定義してください"
-	#endif
-
 	class Vertices
 	{
 	public:
@@ -145,7 +102,7 @@ namespace gameframework
 
 		inline const RectSize& GetSizeForRender() const
 		{
-			if (m_hasUpdatedSize) return m_baseSize;
+			if (!m_hasUpdatedSize) return m_baseSize;
 
 			return m_sizeForRender;
 		}
@@ -160,9 +117,9 @@ namespace gameframework
 			return m_textureUVs;
 		}
 
-		inline CustomVertex* GetCustomVertex()
+		inline CustomVertices& GetCustomVertex()
 		{
-			Normalize();
+			CreateCustomVertices();
 
 			return m_vertices;
 		}
@@ -230,12 +187,12 @@ namespace gameframework
 		/// <summary>
 		/// 描画を行う際の矩形を作成する
 		/// </summary>
-		virtual void Normalize() = 0;
+		virtual void CreateCustomVertices() = 0;
 
 		/// <summary>
 		/// 矩形の頂点分のサイズ
 		/// </summary>
-		CustomVertex m_vertices[4];
+		CustomVertices m_vertices;
 
 		LPDIRECT3DDEVICE m_pDirectXGraphicDevice = nullptr;
 	};
