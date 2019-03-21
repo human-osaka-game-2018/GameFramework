@@ -52,6 +52,15 @@ namespace gameframework
 		}
 		
 		/// <summary>
+		/// アニメーションでのコマが現在何番目なのかを返す
+		/// </summary>
+		/// <returns>アニメーションのコマ番号</returns>
+		inline int GetCurrentDivideNum() const
+		{
+			return m_currentDivideNum;
+		}
+
+		/// <summary>
 		/// テクスチャ座標を次にずらす
 		/// </summary>
 		/// <remarks>
