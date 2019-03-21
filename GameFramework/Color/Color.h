@@ -2,10 +2,7 @@
 #define COLOR_H
 
 #include <Windows.h>
-#include <vector>
-#include <unordered_map>
-
-#include <d3dx9.h>
+#include <memory>
 
 /// <summary>
 /// 基礎構築に関するものをまとめた名前空間
@@ -52,10 +49,16 @@ namespace gameframework
 		/// <param name="blue">青</param>
 		Color(BYTE alpha, BYTE red, BYTE green, BYTE blue);
 
-		// コピーコンストラクタ、代入演算子、デストラクタは自動生成されるものを使用する
-		Color(const Color&) = default;
-		Color& operator=(const Color&) = default;
-		~Color() = default;
+		/// <summary>
+		/// コピーコンストラクタ
+		/// </summary>
+		/// <param name="rhs">コピー元インスタンスの参照</param>
+		Color(const Color& rhs);
+
+		/// <summary>
+		/// デストラクタ
+		/// </summary>
+		~Color();
 
 		/// <summary>
 		/// カラーコードを取得する
@@ -76,6 +79,13 @@ namespace gameframework
 		/// <param name="color">平均をとるColorクラス</param>
 		/// <returns>平均のカラー</returns>
 		Color GetAverage(const Color& color) const;
+
+		/// <summary>
+		/// 代入演算子
+		/// </summary>
+		/// <param name="">右辺値</param>
+		/// <returns>代入した結果</returns>
+		Color& operator=(const Color& rhs);
 
 		/// <summary>
 		/// 添え字でアクセスできる色を変える
@@ -141,11 +151,8 @@ namespace gameframework
 		Color& operator/=(int rhs);
 
 	private:
-		std::unordered_map<COMPONENTS, BYTE> m_components;
-		BYTE Normalize(int componentValue) const;
-		BYTE Normalize(float componentValue) const;
-		void ParseColorCode(DWORD colorCode, std::unordered_map<COMPONENTS, BYTE>* pMap);
-		void AddColorCode(DWORD colorCode, bool isPositive = true);
+		class Impl;
+		std::unique_ptr<Impl> m_pImpl;
 	};
 
 

@@ -1,87 +1,208 @@
 ﻿#include "Color.h"
 
+#include <vector>
+#include <unordered_map>
+#include <functional>
+
+#include <d3dx9.h>
+
+namespace {
+	int Add(BYTE src, BYTE arg) { return src + arg; }
+	int Minus(BYTE src, BYTE arg) { return src - arg; }
+	float Multiply(BYTE src, float arg) { return src * arg; }
+	int Divide(BYTE src, int arg) { return src / arg; }
+	int Average(BYTE arg1, BYTE arg2) { return (arg1 + arg2) / 2; }
+}
+
 namespace gameframework {
+	class Color::Impl {
+	public :
+		Impl() {
+			m_components[COMPONENTS::ALPHA] = 0xFF;
+			m_components[COMPONENTS::RED] = 0xFF;
+			m_components[COMPONENTS::GREEN] = 0xFF;
+			m_components[COMPONENTS::BLUE] = 0xFF;
+		}
+
+		Impl(DWORD colorCode) {
+			ParseColorCode(colorCode);
+		}
+
+		Impl(BYTE alpha, BYTE red, BYTE green, BYTE blue) {
+			m_components[COMPONENTS::ALPHA] = alpha;
+			m_components[COMPONENTS::RED] = red;
+			m_components[COMPONENTS::GREEN] = green;
+			m_components[COMPONENTS::BLUE] = blue;
+		}
+
+		/// <summary>
+		/// 各色(int)の値を0x00～0xFFに正規化する
+		/// </summary>
+		/// <param name="componentValue">各色の値</param>
+		/// <returns>
+		/// <para>・cmponentValue ＜ 0x00の場合は0x00を返す</para>
+		/// <para>・0x00 ≦ componentValue ≦ 0xFFの場合はcomponentValueをそのまま返す</para>
+		/// <para>・0xFF ＜ componentValue 場合は0xFFを返す</para>
+		/// </returns>
+		BYTE Normalize(int componentValue) const {
+			return static_cast<BYTE>(max(min(componentValue, 255), 0));
+		}
+
+		/// <summary>
+		/// 各色(float)の値を0x00～0xFFに正規化する
+		/// </summary>
+		/// <param name="componentValue">各色の値</param>
+		/// <returns>
+		/// <para>・cmponentValue ＜ 0x00の場合は0x00を返す</para>
+		/// <para>・0x00 ≦ componentValue ≦ 0xFFの場合はcomponentValueをそのまま返す</para>
+		/// <para>・0xFF ＜ componentValue 場合は0xFFを返す</para>
+		/// </returns>
+		BYTE Normalize(float componentValue) const {
+			return Normalize(static_cast<int>(componentValue));
+		}
+
+		/// <summary>
+		/// カラーコードをparseしARGBに分解する
+		/// </summary>
+		/// <param name="colorCode">カラーコード</param>
+		void ParseColorCode(DWORD colorCode) {
+			const std::vector<COMPONENTS> components =
+			{
+				COMPONENTS::BLUE,
+				COMPONENTS::GREEN,
+				COMPONENTS::RED,
+				COMPONENTS::ALPHA
+			};
+
+			for (auto& component : components) {
+				int index = static_cast<int>(&component - &components[0]);
+				int shiftNum = CHAR_BIT * index;
+				m_components[component] = (colorCode >> shiftNum) & 0xFF;
+			}
+		}
+
+		DWORD GetColorCode() {
+			return D3DCOLOR_ARGB(
+				m_components[COMPONENTS::ALPHA],
+				m_components[COMPONENTS::RED],
+				m_components[COMPONENTS::GREEN],
+				m_components[COMPONENTS::BLUE]);
+		}
+
+		BYTE& GetComponentValue(COMPONENTS component) { return m_components[component]; }
+
+		template<class T>
+		void Calculate(T func, const Color& arg) {
+			for (auto& src : m_components) {
+				src.second = Normalize(func(src.second, arg[src.first]));
+			}
+		}
+
+		template<class T>
+		void Calculate(T func, float arg) {
+			for (auto& src : m_components) {
+				src.second = Normalize(func(src.second, arg));
+			}
+		}
+
+		template<class T>
+		void Calculate(T func, int arg) {
+			for (auto& src : m_components) {
+				src.second = Normalize(func(src.second, arg));
+			}
+		}
+
+		template<class T>
+		void Calculate(T func, DWORD arg) {
+			Calculate(func, Color(arg));
+		}
+
+	private:
+		std::unordered_map<COMPONENTS, BYTE> m_components;
+	};
+
 	//-----------------------------------------------------------------
 	// Constructors
 	//-----------------------------------------------------------------
 	Color::Color()
+		:m_pImpl(new Impl())
 	{
-		m_components[COMPONENTS::ALPHA] = 0xFF;
-		m_components[COMPONENTS::RED] = 0xFF;
-		m_components[COMPONENTS::GREEN] = 0xFF;
-		m_components[COMPONENTS::BLUE] = 0xFF;
 	}
 
 	Color::Color(DWORD colorCode)
+		:m_pImpl(new Impl(colorCode))
 	{
-		ParseColorCode(colorCode, &m_components);
 	}
 
 	Color::Color(BYTE alpha, BYTE red, BYTE green, BYTE blue)
+		:m_pImpl(new Impl(alpha, red, green, blue))
 	{
-		m_components[COMPONENTS::ALPHA] = alpha;
-		m_components[COMPONENTS::RED] = red;
-		m_components[COMPONENTS::GREEN] = green;
-		m_components[COMPONENTS::BLUE] = blue;
+	}
+
+	Color::Color(const Color& rhs)
+		:m_pImpl(new Impl(rhs.GetColorCode()))
+	{
+	}
+
+	//-----------------------------------------------------------------
+	// Destructor
+	//-----------------------------------------------------------------
+	Color::~Color()
+	{
 	}
 
 	//-----------------------------------------------------------------
 	// Public operators
 	//-----------------------------------------------------------------
+	Color& Color::operator=(const Color& rhs)
+	{
+		m_pImpl->ParseColorCode(rhs.GetColorCode());
+		return *this;
+	}
+
 	BYTE& Color::operator[](COMPONENTS colorComponent)
 	{
-		return m_components[colorComponent];
+		return m_pImpl->GetComponentValue(colorComponent);
 	}
 
 	BYTE Color::operator[](COMPONENTS colorComponent) const
 	{
-		// constメンバ関数なのでstd::unordered_map::operator[]は使えない
-		// 代わりにstd::unordered_map::at()を使う
-		return m_components.at(colorComponent);
+		return m_pImpl->GetComponentValue(colorComponent);
 	}
 
 	Color& Color::operator=(DWORD colorCode)
 	{
-		ParseColorCode(colorCode, &m_components);
+		m_pImpl->ParseColorCode(colorCode);
 		return *this;
 	}
 
 	Color& Color::operator+=(const Color& rhs)
 	{
-		for (auto& component : m_components) {
-			component.second = Normalize(component.second + rhs[component.first]);
-		}
-
+		m_pImpl->Calculate(Add, rhs);
 		return *this;
 	}
 
 	Color& Color::operator+=(DWORD rhs)
 	{
-		AddColorCode(rhs);
+		m_pImpl->Calculate(Add, rhs);
 		return *this;
 	}
 
 	Color& Color::operator-=(const Color& rhs)
 	{
-		for (auto& component : m_components) {
-			component.second = Normalize(component.second - rhs[component.first]);
-		}
-
+		m_pImpl->Calculate(Minus, rhs);
 		return *this;
 	}
 
 	Color& Color::operator-=(DWORD rhs)
 	{
-		AddColorCode(rhs, false);
+		m_pImpl->Calculate(Minus, rhs);
 		return *this;
 	}
 
 	Color& Color::operator*=(float rhs)
 	{
-		for (auto& component : m_components) {
-			component.second = Normalize(component.second * rhs);
-		}
-
+		m_pImpl->Calculate(Multiply, rhs);
 		return *this;
 	}
 
@@ -92,10 +213,7 @@ namespace gameframework {
 
 	Color& Color::operator/=(int rhs)
 	{
-		for (auto& component : m_components) {
-			component.second = Normalize(component.second / rhs);
-		}
-
+		m_pImpl->Calculate(Divide, rhs);
 		return *this;
 	}
 
@@ -104,11 +222,7 @@ namespace gameframework {
 	//-----------------------------------------------------------------
 	DWORD Color::GetColorCode() const
 	{
-		return D3DCOLOR_ARGB(
-			m_components.at(COMPONENTS::ALPHA),
-			m_components.at(COMPONENTS::RED),
-			m_components.at(COMPONENTS::GREEN),
-			m_components.at(COMPONENTS::BLUE));
+		return m_pImpl->GetColorCode();
 	}
 
 	DWORD Color::GetAverageColorCode(DWORD colorCode) const
@@ -119,83 +233,9 @@ namespace gameframework {
 
 	Color Color::GetAverage(const Color& color) const
 	{
-		Color average;
-		for (auto& component : m_components) {
-			COMPONENTS argb = component.first;
-			average[argb] = (m_components.at(argb) + color[argb]) / 2;
-		}
-
-		return average;
-	}
-
-	//-----------------------------------------------------------------
-	// Private methods
-	//-----------------------------------------------------------------
-	/// <summary>
-	/// 各色(int)の値を0x00～0xFFに正規化する
-	/// </summary>
-	/// <param name="componentValue">各色の値</param>
-	/// <returns>
-	/// <para>・cmponentValue ＜ 0x00の場合は0x00を返す</para>
-	/// <para>・0x00 ≦ componentValue ≦ 0xFFの場合はcomponentValueをそのまま返す</para>
-	/// <para>・0xFF ＜ componentValue 場合は0xFFを返す</para>
-	/// </returns>
-	BYTE Color::Normalize(int componentValue) const
-	{
-		return static_cast<BYTE>(max(min(componentValue, 255), 0));
-	}
-
-	/// <summary>
-	/// 各色(float)の値を0x00～0xFFに正規化する
-	/// </summary>
-	/// <param name="componentValue">各色の値</param>
-	/// <returns>
-	/// <para>・cmponentValue ＜ 0x00の場合は0x00を返す</para>
-	/// <para>・0x00 ≦ componentValue ≦ 0xFFの場合はcomponentValueをそのまま返す</para>
-	/// <para>・0xFF ＜ componentValue 場合は0xFFを返す</para>
-	/// </returns>
-	BYTE Color::Normalize(float componentValue) const
-	{
-		return Normalize(static_cast<int>(componentValue));
-	}
-
-	/// <summary>
-	/// カラーコードをparseしARGBに分解する
-	/// </summary>
-	/// <param name="colorCode">カラーコード</param>
-	/// <param name="pMap">解析結果を詰めるmap</param>
-	void Color::ParseColorCode(DWORD colorCode, std::unordered_map<COMPONENTS, BYTE>* pMap)
-	{
-		const std::vector<COMPONENTS> components =
-		{
-			COMPONENTS::BLUE,
-			COMPONENTS::GREEN,
-			COMPONENTS::RED,
-			COMPONENTS::ALPHA
-		};
-
-		for (auto& component : components) {
-			int index = static_cast<int>(&component - &components[0]);
-			int shiftNum = CHAR_BIT * index;
-			(*pMap)[component] = (colorCode >> shiftNum) & 0xFF;
-		}
-	}
-
-	/// <summary>
-	/// カラーコードを加える
-	/// </summary>
-	/// <param name="colorCode">カラーコード</param>
-	/// <param name="isPositive">true:加算、false:減算</param>
-	void Color::AddColorCode(DWORD colorCode, bool isPositive)
-	{
-		std::unordered_map<COMPONENTS, BYTE> components;
-		ParseColorCode(colorCode, &components);
-
-		for (auto& component : m_components) {
-			COMPONENTS color = component.first;
-			int value = components[color] * (isPositive ? 1 : -1);
-			m_components[color] = Normalize(m_components[color] + value);
-		}
+		Color ret(*this);
+		ret.m_pImpl->Calculate(Average, color);
+		return ret;
 	}
 
 	//-----------------------------------------------------------------
@@ -241,4 +281,3 @@ namespace gameframework {
 		return Color(rhs) *= lhs;
 	}
 }
-
