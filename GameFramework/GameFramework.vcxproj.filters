@@ -238,6 +238,15 @@
     <ClCompile Include="GameFramework\Vertices\CustomVertex.cpp">
       <Filter>GameFramework\Vertices</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\Collision\SideVectors.cpp">
+      <Filter>GameFramework\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Collision\VectorsVertexToPos.cpp">
+      <Filter>GameFramework\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Collision\RectVectors.cpp">
+      <Filter>GameFramework\Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -461,6 +470,15 @@
     </ClInclude>
     <ClInclude Include="GameFramework\Vertices\CustomVertex.h">
       <Filter>GameFramework\Vertices</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Collision\SideVectors.h">
+      <Filter>GameFramework\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Collision\VectorsVertexToPos.h">
+      <Filter>GameFramework\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Collision\RectVectors.h">
+      <Filter>GameFramework\Collision</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Collision\RectDegrees.h">
       <Filter>GameFramework\Collision</Filter>
