@@ -6,51 +6,24 @@ namespace gameframework
 {
 	namespace collision
 	{
-		void CreateSideVectors(D3DXVECTOR2* pSideVecs, const CustomVertex* pVertices)
+		bool IsInner(SideVectors& sideVecs, VectorsVertexToPos& vecsVToP)
 		{
-			for (int i = 0; i < CustomVertex::RECT_VERTICES_NUM; ++i)
-			{
-				//一つ先の頂点とのベクトルを作成
-				D3DXVECTOR3 vec3Tmp = pVertices[(i + 1) % 4].m_pos - pVertices[i].m_pos;
-
-				pSideVecs[i] = { vec3Tmp.x, vec3Tmp.y };
-			}
-		};
-
-		void CreateVectorsVertexToPos(D3DXVECTOR2* pVecsVToP, const CustomVertex* pVertices, const D3DXVECTOR3& pos)
-		{
-			for (int i = 0; i < CustomVertex::RECT_VERTICES_NUM; ++i)
-			{
-				D3DXVECTOR3 vec3Tmp = pos - pVertices[i].m_pos;
-
-				pVecsVToP[i] = { vec3Tmp.x, vec3Tmp.y };
-			}
-		};
-
-		bool IsInner(const D3DXVECTOR2* pSideVecs, const D3DXVECTOR2 * pVecsVToP)
-		{
-			for (int i = 0; i < CustomVertex::RECT_VERTICES_NUM; ++i)
-			{
-				//角度が正ならば+で帰ってくる
-				float degree = algorithm::D3DXVec2CalcDegree(pSideVecs[i], pVecsVToP[i]);
-
-				//負ならば辺の左側に点があるということになるので矩形の中に点は存在していない
-				if (degree < 0) return false;
-			}
+			RectDegrees rectDegrees;
+			vecsVToP.GetDegrees(&rectDegrees, static_cast<RectVectors*>(&sideVecs));
 
 			//4辺全てから見て点が右側にあるということはその点が矩形に内包されているということになる
-			return true;
+			return (rectDegrees >= Degree(0));
 		};
 
-		bool Collides(const CustomVertex* pBaseVertices, const CustomVertex* pVertices)
+		bool IsInner(Vertices& baseVertices, Vertices& vertices)
 		{
-			D3DXVECTOR2 sideVecs[CustomVertex::RECT_VERTICES_NUM];
-			CreateSideVectors(sideVecs, pBaseVertices);
+			SideVectors sideVecs(baseVertices);
 
-			for (int i = 0; i < CustomVertex::RECT_VERTICES_NUM; ++i)
+			CustomVertex* pCustomVertices = vertices.GetCustomVertex().Get();
+
+			for (int i = 0; CustomVertices::RECT_VERTICES_NUM < 4; ++i)
 			{
-				D3DXVECTOR2 vecsVToP[CustomVertex::RECT_VERTICES_NUM];
-				CreateVectorsVertexToPos(vecsVToP, pBaseVertices, pVertices[i].m_pos);
+				VectorsVertexToPos vecsVToP(baseVertices, pCustomVertices[i].m_pos);
 
 				if (IsInner(sideVecs, vecsVToP)) return true;
 			}
@@ -61,8 +34,7 @@ namespace gameframework
 
 		bool Collides(Vertices& rectA, Vertices& rectB)
 		{
-			if (Collides(rectA.GetCustomVertex(), rectB.GetCustomVertex()) ||
-				Collides(rectB.GetCustomVertex(), rectA.GetCustomVertex()))
+			if (IsInner(rectA, rectB) || IsInner(rectB, rectA))
 			{
 				return true;
 			}
@@ -72,16 +44,14 @@ namespace gameframework
 
 		bool IsInner(Vertices& rect, D3DXVECTOR3& pos)
 		{
-			D3DXVECTOR2 sideVecs[CustomVertex::RECT_VERTICES_NUM];
-			CreateSideVectors(sideVecs, rect.GetCustomVertex());
+			SideVectors sideVecs(rect);
 
-			D3DXVECTOR2 vecVToP[CustomVertex::RECT_VERTICES_NUM];
-			CreateVectorsVertexToPos(vecVToP, rect.GetCustomVertex(), pos);
+			VectorsVertexToPos vecsVToP(rect, pos);
 
-			return IsInner(sideVecs, vecVToP);
+			return IsInner(sideVecs, vecsVToP);
 		}
 
-		bool Collides(Vertices& circleA, Vertices& circleB)
+		bool CollidesCircles(Vertices& circleA, Vertices& circleB)
 		{
 			D3DXVECTOR3 vecCenterToCenter = circleA.GetCenter() - circleB.GetCenter();
 
