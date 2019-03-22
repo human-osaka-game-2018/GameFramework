@@ -133,6 +133,7 @@
     <ClCompile Include="Algorithm\Algorithm.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="GameFramework\Collision\Collision.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectX9Device.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectX9GraphicDevice.cpp" />
@@ -150,6 +151,7 @@
     <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Mouse.cpp" />
     <ClCompile Include="GameFramework\Stream\DirectX9Stream.cpp" />
     <ClCompile Include="GameFramework\TimerManager\TimerManager.cpp" />
+    <ClCompile Include="GameFramework\Vertices\CustomVertex.cpp" />
     <ClCompile Include="GameFramework\Vertices\DirectX9Vertices.cpp" />
     <ClCompile Include="GameFramework\Vertices\Vertices.cpp" />
     <ClCompile Include="RectSize\RectSize.cpp" />
@@ -167,6 +169,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="Color\Color.h" />
+    <ClInclude Include="GameFramework\Collision\Collision.h" />
+    <ClInclude Include="GameFramework\Collision\RectDegrees.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXDevice\DirectX9Device.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXDevice\DirectXDevice.h" />
     <ClInclude Include="GameFramework\DirectXParam\DirectXGraphicDevice\DirectX9GraphicDevice.h" />
@@ -200,6 +204,7 @@
     <ClInclude Include="GameFramework\Stream\DirectX9Stream.h" />
     <ClInclude Include="GameFramework\Stream\Stream.h" />
     <ClInclude Include="GameFramework\TimerManager\TimerManager.h" />
+    <ClInclude Include="GameFramework\Vertices\CustomVertex.h" />
     <ClInclude Include="GameFramework\Vertices\DirectX9Vertices.h" />
     <ClInclude Include="GameFramework\Vertices\Vertices.h" />
     <ClInclude Include="RectSize\RectSize.h" />

@@ -140,6 +140,9 @@
     <Filter Include="tstring">
       <UniqueIdentifier>{6b68c291-95ad-4f97-ade6-d6a93b55ab0d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\Collision">
+      <UniqueIdentifier>{45136f08-d803-42a7-834c-2145749843a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window\Window.cpp">
@@ -228,6 +231,9 @@
     </ClCompile>
     <ClCompile Include="GameFramework\Vertices\Vertices.cpp">
       <Filter>GameFramework\Vertices</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Collision\Collision.cpp">
+      <Filter>GameFramework\Collision</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Vertices\CustomVertex.cpp">
       <Filter>GameFramework\Vertices</Filter>
@@ -450,8 +456,14 @@
     <ClInclude Include="GameFramework\Input\DirectInput\DirectInput.h">
       <Filter>GameFramework\Input\DirectInput</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Collision\Collision.h">
+      <Filter>GameFramework\Collision</Filter>
+    </ClInclude>
     <ClInclude Include="GameFramework\Vertices\CustomVertex.h">
       <Filter>GameFramework\Vertices</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Collision\RectDegrees.h">
+      <Filter>GameFramework\Collision</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
