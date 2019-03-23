@@ -21,7 +21,7 @@ namespace gameframework
 
 			CustomVertex* pCustomVertices = vertices.GetCustomVertex().Get();
 
-			for (int i = 0; CustomVertices::RECT_VERTICES_NUM < 4; ++i)
+			for (int i = 0; i < CustomVertices::RECT_VERTICES_NUM; ++i)
 			{
 				VectorsVertexToPos vecsVToP(baseVertices, pCustomVertices[i].m_pos);
 
