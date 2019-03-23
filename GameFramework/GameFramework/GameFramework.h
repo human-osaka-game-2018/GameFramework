@@ -45,11 +45,11 @@ namespace gameframework
 		/// <returns>上にあればtrue</returns>
 		inline bool IsCursorOnRect(Vertices& vertices)
 		{
-			POINT mousePoint;
-			CursorPos(&mousePoint);
-			D3DXVECTOR3 mausePos(static_cast<float>(mousePoint.x), static_cast<float>(mousePoint.y), 0.0f);
+			POINT cursorPoint;
+			CursorPos(&cursorPoint);
+			D3DXVECTOR3 cursorPos(static_cast<float>(cursorPoint.x), static_cast<float>(cursorPoint.y), 0.0f);
 				
-			return collision::IsInner(vertices, mausePos);
+			return collision::IsInner(vertices, cursorPos);
 		}
 
 		/// <summary>
