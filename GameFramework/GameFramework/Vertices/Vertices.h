@@ -133,6 +133,15 @@ namespace gameframework
 		void Flash(int flashFrameMax, BYTE alphaMin, BYTE alphaMax);
 		
 		/// <summary>
+		/// 矩形をフェードインさせる
+		/// </summary>
+		/// <param name="fadeInFrameMax">フェードインにかかる時間</param>
+		/// <param name="orginAlpha">初めのアルファ値</param>
+		/// <param name="destAlpha">終わりのアルファ値</param>
+		void FadeIn(int fadeInFrameMax, BYTE orginAlpha, BYTE destAlpha);
+		void FadeOut(int fadeOutFrameMax, BYTE orginAlpha, BYTE destAlpha);
+
+		/// <summary>
 		/// 矩形を拡縮させる
 		/// </summary>
 		/// <param name="scalingFrameMax">拡縮にかかるカウント数</param>
@@ -181,6 +190,8 @@ namespace gameframework
 		Degree m_rotationY_deg;
 		Degree m_rotationZ_deg;
 		int m_flashFrameCount = 0;
+		int m_fadeInFrameCount = 0;
+		int m_fadeOutFrameCount = 0;
 		int m_additionalScaleFrameCount = 0;
 		bool m_hasUpdatedSize = false;
 		
