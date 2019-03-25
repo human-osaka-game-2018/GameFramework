@@ -91,6 +91,18 @@ namespace gameframework
 		algorithm::CountUp(&m_flashFrameCount, flashFrameMax);
 	}
 
+	void Vertices::FadeIn(int fadeInFrameMax, BYTE orginAlpha, BYTE destAlpha)
+	{
+		m_color.m_alpha = static_cast<BYTE>(algorithm::MinToMaxByRatio(m_fadeInFrameCount, fadeInFrameMax, orginAlpha, destAlpha));
+		algorithm::CountUp(&m_fadeInFrameCount, fadeInFrameMax);
+	}
+
+	void Vertices::FadeOut(int fadeOutFrameMax, BYTE orginAlpha, BYTE destAlpha)
+	{
+		m_color.m_alpha = static_cast<BYTE>(algorithm::SwitchMinBetweenMax(m_fadeOutFrameCount, fadeOutFrameMax, orginAlpha, destAlpha));
+		algorithm::CountUp(&m_fadeOutFrameCount, fadeOutFrameMax);
+	}
+
 	void Vertices::Scaling(int scalingFrameMax, float scaleRateMin, float scaleRateMax)
 	{
 		float scaleRate = algorithm::SwitchMinBetweenMax(m_additionalScaleFrameCount, scalingFrameMax, scaleRateMin, scaleRateMax);
