@@ -148,6 +148,11 @@
     <ClCompile Include="GameFramework\Graphic\FontManager\FontManager.cpp" />
     <ClCompile Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.cpp" />
     <ClCompile Include="GameFramework\Graphic\FontManager\Font\Font.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Behavior.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffectManager.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Particle.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Shape.cpp" />
     <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp" />
     <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp" />
     <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Keyboard.cpp" />
@@ -195,6 +200,11 @@
     <ClInclude Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.h" />
     <ClInclude Include="GameFramework\Graphic\FontManager\Font\Font.h" />
     <ClInclude Include="GameFramework\Graphic\Graphic.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Behavior.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffectManager.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Particle.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Shape.h" />
     <ClInclude Include="GameFramework\Graphic\Renderer\DirectX9Renderer.h" />
     <ClInclude Include="GameFramework\Graphic\Renderer\Renderer.h" />
     <ClInclude Include="GameFramework\Graphic\TextureManager\TextureManager.h" />
