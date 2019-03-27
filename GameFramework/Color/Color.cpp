@@ -18,10 +18,10 @@ namespace gameframework {
 	class Color::Impl {
 	public :
 		Impl() {
-			m_components[COMPONENTS::ALPHA] = 0xFF;
-			m_components[COMPONENTS::RED] = 0xFF;
-			m_components[COMPONENTS::GREEN] = 0xFF;
-			m_components[COMPONENTS::BLUE] = 0xFF;
+			m_components[COMPONENT::ALPHA] = 0xFF;
+			m_components[COMPONENT::RED] = 0xFF;
+			m_components[COMPONENT::GREEN] = 0xFF;
+			m_components[COMPONENT::BLUE] = 0xFF;
 		}
 
 		Impl(DWORD colorCode) {
@@ -29,10 +29,10 @@ namespace gameframework {
 		}
 
 		Impl(BYTE alpha, BYTE red, BYTE green, BYTE blue) {
-			m_components[COMPONENTS::ALPHA] = alpha;
-			m_components[COMPONENTS::RED] = red;
-			m_components[COMPONENTS::GREEN] = green;
-			m_components[COMPONENTS::BLUE] = blue;
+			m_components[COMPONENT::ALPHA] = alpha;
+			m_components[COMPONENT::RED] = red;
+			m_components[COMPONENT::GREEN] = green;
+			m_components[COMPONENT::BLUE] = blue;
 		}
 
 		/// <summary>
@@ -66,12 +66,12 @@ namespace gameframework {
 		/// </summary>
 		/// <param name="colorCode">カラーコード</param>
 		void ParseColorCode(DWORD colorCode) {
-			const std::vector<COMPONENTS> components =
+			const std::vector<COMPONENT> components =
 			{
-				COMPONENTS::BLUE,
-				COMPONENTS::GREEN,
-				COMPONENTS::RED,
-				COMPONENTS::ALPHA
+				COMPONENT::BLUE,
+				COMPONENT::GREEN,
+				COMPONENT::RED,
+				COMPONENT::ALPHA
 			};
 
 			for (auto& component : components) {
@@ -83,13 +83,13 @@ namespace gameframework {
 
 		DWORD GetColorCode() {
 			return D3DCOLOR_ARGB(
-				m_components[COMPONENTS::ALPHA],
-				m_components[COMPONENTS::RED],
-				m_components[COMPONENTS::GREEN],
-				m_components[COMPONENTS::BLUE]);
+				m_components[COMPONENT::ALPHA],
+				m_components[COMPONENT::RED],
+				m_components[COMPONENT::GREEN],
+				m_components[COMPONENT::BLUE]);
 		}
 
-		BYTE& GetComponentValue(COMPONENTS component) { return m_components[component]; }
+		BYTE& GetComponentValue(COMPONENT component) { return m_components[component]; }
 
 		template<class T>
 		void Calculate(T func, const Color& arg) {
@@ -118,7 +118,7 @@ namespace gameframework {
 		}
 
 	private:
-		std::unordered_map<COMPONENTS, BYTE> m_components;
+		std::unordered_map<COMPONENT, BYTE> m_components;
 	};
 
 	//-----------------------------------------------------------------
@@ -160,12 +160,12 @@ namespace gameframework {
 		return *this;
 	}
 
-	BYTE& Color::operator[](COMPONENTS colorComponent)
+	BYTE& Color::operator[](COMPONENT colorComponent)
 	{
 		return m_pImpl->GetComponentValue(colorComponent);
 	}
 
-	BYTE Color::operator[](COMPONENTS colorComponent) const
+	BYTE Color::operator[](COMPONENT colorComponent) const
 	{
 		return m_pImpl->GetComponentValue(colorComponent);
 	}

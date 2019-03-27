@@ -18,7 +18,7 @@ namespace gameframework
 		/// <summary>
 		/// 色の構成要素
 		/// </summary>
-		enum class COMPONENTS
+		enum class COMPONENT
 		{
 			ALPHA,
 			RED,
@@ -92,8 +92,8 @@ namespace gameframework
 		/// </summary>
 		/// <param name="colorComponent">アクセスする色のCOMPONENTS</param>
 		/// <returns>アクセスした色の参照</returns>>
-		BYTE& operator[](COMPONENTS colorComponent);
-		BYTE operator[](COMPONENTS colorComponent) const;
+		BYTE& operator[](COMPONENT colorComponent);
+		BYTE operator[](COMPONENT colorComponent) const;
 
 		/// <summary>
 		/// カラーコードを分解し保存する

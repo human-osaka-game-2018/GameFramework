@@ -3,7 +3,7 @@
 #include "Color.h"
 
 using namespace gameframework;
-using COMPONENTS = Color::COMPONENTS;
+using COMPONENT = Color::COMPONENT;
 
 // Color()
 TEST(ColorTest, Ctor0) {
@@ -67,16 +67,16 @@ TEST(ColorTest, GetAverage) {
 	Color ret = color1.GetAverage(color2);
 
 	// Assert
-	BYTE ret_a = ret[COMPONENTS::ALPHA];
+	BYTE ret_a = ret[COMPONENT::ALPHA];
 	EXPECT_EQ(0x09, ret_a);
 
-	BYTE ret_r = ret[COMPONENTS::RED];
+	BYTE ret_r = ret[COMPONENT::RED];
 	EXPECT_EQ(0x1B, ret_r);
 
-	BYTE ret_g = ret[COMPONENTS::GREEN];
+	BYTE ret_g = ret[COMPONENT::GREEN];
 	EXPECT_EQ(0x2D, ret_g);
 
-	BYTE ret_b = ret[COMPONENTS::BLUE];
+	BYTE ret_b = ret[COMPONENT::BLUE];
 	EXPECT_EQ(0x3F, ret_b);
 }
 
@@ -90,16 +90,16 @@ TEST(ColorTest, GetAverage2) {
 	Color ret = color1.GetAverage(color2);
 
 	// Assert
-	BYTE ret_a = ret[COMPONENTS::ALPHA];
+	BYTE ret_a = ret[COMPONENT::ALPHA];
 	EXPECT_EQ(0xFD, ret_a);
 
-	BYTE ret_r = ret[COMPONENTS::RED];
+	BYTE ret_r = ret[COMPONENT::RED];
 	EXPECT_EQ(0xFE, ret_r);
 
-	BYTE ret_g = ret[COMPONENTS::GREEN];
+	BYTE ret_g = ret[COMPONENT::GREEN];
 	EXPECT_EQ(0xFE, ret_g);
 
-	BYTE ret_b = ret[COMPONENTS::BLUE];
+	BYTE ret_b = ret[COMPONENT::BLUE];
 	EXPECT_EQ(0xFF, ret_b);
 }
 
@@ -109,10 +109,10 @@ TEST(ColorTest, OperatorIndexer1) {
 	Color color(0x56, 0x78, 0x9A, 0xBC);
 
 	// Act
-	BYTE a = color[COMPONENTS::ALPHA];
-	BYTE r = color[COMPONENTS::RED];
-	BYTE g = color[COMPONENTS::GREEN];
-	BYTE b = color[COMPONENTS::BLUE];
+	BYTE a = color[COMPONENT::ALPHA];
+	BYTE r = color[COMPONENT::RED];
+	BYTE g = color[COMPONENT::GREEN];
+	BYTE b = color[COMPONENT::BLUE];
 
 	// Assert
 	EXPECT_EQ(0x56, a);
@@ -128,7 +128,7 @@ TEST(ColorTest, OperatorIndexer2) {
 	Color color(0x56789ABC);
 
 	// Act
-	BYTE ret = color[static_cast<COMPONENTS>(4)];
+	BYTE ret = color[static_cast<COMPONENT>(4)];
 
 	// Assert
 	ASSERT_EQ(0x00, ret);
@@ -144,16 +144,16 @@ TEST(ColorTest, OperatorPlus1) {
 	Color result = color1 + color2;
 
 	// Assert
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0x24, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0x68, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0xAC, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0xF0, b);
 }
 
@@ -168,16 +168,16 @@ TEST(ColorTest, OperatorPlus2) {
 
 	// Assert
 	// 各色オーバーフローするので、最大値0xFFが設定されること
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0xFF, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0xFF, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0xFF, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0xFF, b);
 }
 
@@ -190,16 +190,16 @@ TEST(ColorTest, OperatorPlus3) {
 	Color result = color + 0x01234567;
 
 	// Assert
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0x13, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0x57, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0x9B, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0xDF, b);
 }
 
@@ -212,16 +212,16 @@ TEST(ColorTest, OperatorPlus4) {
 	Color result = 0x01234567 + color;
 
 	// Assert
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0x13, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0x57, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0x9B, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0xDF, b);
 }
 
@@ -235,16 +235,16 @@ TEST(ColorTest, OperatorMinus1) {
 	Color result = color1 - color2;
 
 	// Assert
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0x77, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0x77, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0x77, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0x77, b);
 }
 
@@ -259,16 +259,16 @@ TEST(ColorTest, OperatorMinus2) {
 
 	// Assert
 	// 各色アンダーフローするので、最小値0x00が設定されること
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0x00, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0x00, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0x00, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0x00, b);
 }
 
@@ -281,16 +281,16 @@ TEST(ColorTest, OperatorMinus3) {
 	Color result = color - 0x01234567;
 
 	// Assert
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0x11, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0x11, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0x11, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0x11, b);
 }
 
@@ -303,16 +303,16 @@ TEST(ColorTest, OperatorMinus4) {
 	Color result = 0x12345678 - color;
 
 	// Assert
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0x11, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0x11, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0x11, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0x11, b);
 }
 
@@ -327,29 +327,29 @@ TEST(ColorTest, OperatorPlusEq1) {
 
 	// Assert
 	// lhsの値が正しく更新されていることを確認
-	BYTE lhs_a = lhs[COMPONENTS::ALPHA];
+	BYTE lhs_a = lhs[COMPONENT::ALPHA];
 	EXPECT_EQ(0x24, lhs_a);
 
-	BYTE lhs_r = lhs[COMPONENTS::RED];
+	BYTE lhs_r = lhs[COMPONENT::RED];
 	EXPECT_EQ(0x68, lhs_r);
 
-	BYTE lhs_g = lhs[COMPONENTS::GREEN];
+	BYTE lhs_g = lhs[COMPONENT::GREEN];
 	EXPECT_EQ(0xAC, lhs_g);
 
-	BYTE lhs_b = lhs[COMPONENTS::BLUE];
+	BYTE lhs_b = lhs[COMPONENT::BLUE];
 	EXPECT_EQ(0xF0, lhs_b);
 
 	// 更新されたlhsと同じ値が返却されていることを確認
-	BYTE ret_a = ret[COMPONENTS::ALPHA];
+	BYTE ret_a = ret[COMPONENT::ALPHA];
 	EXPECT_EQ(lhs_a, ret_a);
 
-	BYTE ret_r = ret[COMPONENTS::RED];
+	BYTE ret_r = ret[COMPONENT::RED];
 	EXPECT_EQ(lhs_r, ret_r);
 
-	BYTE ret_g = ret[COMPONENTS::GREEN];
+	BYTE ret_g = ret[COMPONENT::GREEN];
 	EXPECT_EQ(lhs_g, ret_g);
 
-	BYTE ret_b = ret[COMPONENTS::BLUE];
+	BYTE ret_b = ret[COMPONENT::BLUE];
 	EXPECT_EQ(lhs_b, ret_b);
 }
 
@@ -363,29 +363,29 @@ TEST(ColorTest, OperatorPlusEq2) {
 
 	// Assert
 	// lhsの値が正しく更新されていることを確認
-	BYTE lhs_a = lhs[COMPONENTS::ALPHA];
+	BYTE lhs_a = lhs[COMPONENT::ALPHA];
 	EXPECT_EQ(0x24, lhs_a);
 
-	BYTE lhs_r = lhs[COMPONENTS::RED];
+	BYTE lhs_r = lhs[COMPONENT::RED];
 	EXPECT_EQ(0x68, lhs_r);
 
-	BYTE lhs_g = lhs[COMPONENTS::GREEN];
+	BYTE lhs_g = lhs[COMPONENT::GREEN];
 	EXPECT_EQ(0xAC, lhs_g);
 
-	BYTE lhs_b = lhs[COMPONENTS::BLUE];
+	BYTE lhs_b = lhs[COMPONENT::BLUE];
 	EXPECT_EQ(0xF0, lhs_b);
 
 	// 更新されたlhsと同じ値が返却されていることを確認
-	BYTE ret_a = ret[COMPONENTS::ALPHA];
+	BYTE ret_a = ret[COMPONENT::ALPHA];
 	EXPECT_EQ(lhs_a, ret_a);
 
-	BYTE ret_r = ret[COMPONENTS::RED];
+	BYTE ret_r = ret[COMPONENT::RED];
 	EXPECT_EQ(lhs_r, ret_r);
 
-	BYTE ret_g = ret[COMPONENTS::GREEN];
+	BYTE ret_g = ret[COMPONENT::GREEN];
 	EXPECT_EQ(lhs_g, ret_g);
 
-	BYTE ret_b = ret[COMPONENTS::BLUE];
+	BYTE ret_b = ret[COMPONENT::BLUE];
 	EXPECT_EQ(lhs_b, ret_b);
 }
 
@@ -400,29 +400,29 @@ TEST(ColorTest, OperatorMinusEq1) {
 
 	// Assert
 	// lhsの値が正しく更新されていることを確認
-	BYTE lhs_a = lhs[COMPONENTS::ALPHA];
+	BYTE lhs_a = lhs[COMPONENT::ALPHA];
 	EXPECT_EQ(0x01, lhs_a);
 
-	BYTE lhs_r = lhs[COMPONENTS::RED];
+	BYTE lhs_r = lhs[COMPONENT::RED];
 	EXPECT_EQ(0x23, lhs_r);
 
-	BYTE lhs_g = lhs[COMPONENTS::GREEN];
+	BYTE lhs_g = lhs[COMPONENT::GREEN];
 	EXPECT_EQ(0x45, lhs_g);
 
-	BYTE lhs_b = lhs[COMPONENTS::BLUE];
+	BYTE lhs_b = lhs[COMPONENT::BLUE];
 	EXPECT_EQ(0x67, lhs_b);
 
 	// 更新されたlhsと同じ値が返却されていることを確認
-	BYTE ret_a = ret[COMPONENTS::ALPHA];
+	BYTE ret_a = ret[COMPONENT::ALPHA];
 	EXPECT_EQ(lhs_a, ret_a);
 
-	BYTE ret_r = ret[COMPONENTS::RED];
+	BYTE ret_r = ret[COMPONENT::RED];
 	EXPECT_EQ(lhs_r, ret_r);
 
-	BYTE ret_g = ret[COMPONENTS::GREEN];
+	BYTE ret_g = ret[COMPONENT::GREEN];
 	EXPECT_EQ(lhs_g, ret_g);
 
-	BYTE ret_b = ret[COMPONENTS::BLUE];
+	BYTE ret_b = ret[COMPONENT::BLUE];
 	EXPECT_EQ(lhs_b, ret_b);
 }
 
@@ -436,29 +436,29 @@ TEST(ColorTest, OperatorMinusEq2) {
 
 	// Assert
 	// lhsの値が正しく更新されていることを確認
-	BYTE lhs_a = lhs[COMPONENTS::ALPHA];
+	BYTE lhs_a = lhs[COMPONENT::ALPHA];
 	EXPECT_EQ(0x01, lhs_a);
 
-	BYTE lhs_r = lhs[COMPONENTS::RED];
+	BYTE lhs_r = lhs[COMPONENT::RED];
 	EXPECT_EQ(0x23, lhs_r);
 
-	BYTE lhs_g = lhs[COMPONENTS::GREEN];
+	BYTE lhs_g = lhs[COMPONENT::GREEN];
 	EXPECT_EQ(0x45, lhs_g);
 
-	BYTE lhs_b = lhs[COMPONENTS::BLUE];
+	BYTE lhs_b = lhs[COMPONENT::BLUE];
 	EXPECT_EQ(0x67, lhs_b);
 
 	// 更新されたlhsと同じ値が返却されていることを確認
-	BYTE ret_a = ret[COMPONENTS::ALPHA];
+	BYTE ret_a = ret[COMPONENT::ALPHA];
 	EXPECT_EQ(lhs_a, ret_a);
 
-	BYTE ret_r = ret[COMPONENTS::RED];
+	BYTE ret_r = ret[COMPONENT::RED];
 	EXPECT_EQ(lhs_r, ret_r);
 
-	BYTE ret_g = ret[COMPONENTS::GREEN];
+	BYTE ret_g = ret[COMPONENT::GREEN];
 	EXPECT_EQ(lhs_g, ret_g);
 
-	BYTE ret_b = ret[COMPONENTS::BLUE];
+	BYTE ret_b = ret[COMPONENT::BLUE];
 	EXPECT_EQ(lhs_b, ret_b);
 }
 
@@ -472,29 +472,29 @@ TEST(ColorTest, OperatorMultiplyEq) {
 
 	// Assert
 	// lhsの値が正しく更新されていることを確認
-	BYTE lhs_a = lhs[COMPONENTS::ALPHA];
+	BYTE lhs_a = lhs[COMPONENT::ALPHA];
 	EXPECT_EQ(0x24, lhs_a);
 
-	BYTE lhs_r = lhs[COMPONENTS::RED];
+	BYTE lhs_r = lhs[COMPONENT::RED];
 	EXPECT_EQ(0x44, lhs_r);
 
-	BYTE lhs_g = lhs[COMPONENTS::GREEN];
+	BYTE lhs_g = lhs[COMPONENT::GREEN];
 	EXPECT_EQ(0x64, lhs_g);
 
-	BYTE lhs_b = lhs[COMPONENTS::BLUE];
+	BYTE lhs_b = lhs[COMPONENT::BLUE];
 	EXPECT_EQ(0x84, lhs_b);
 
 	// 更新されたlhsと同じ値が返却されていることを確認
-	BYTE ret_a = ret[COMPONENTS::ALPHA];
+	BYTE ret_a = ret[COMPONENT::ALPHA];
 	EXPECT_EQ(lhs_a, ret_a);
 
-	BYTE ret_r = ret[COMPONENTS::RED];
+	BYTE ret_r = ret[COMPONENT::RED];
 	EXPECT_EQ(lhs_r, ret_r);
 
-	BYTE ret_g = ret[COMPONENTS::GREEN];
+	BYTE ret_g = ret[COMPONENT::GREEN];
 	EXPECT_EQ(lhs_g, ret_g);
 
-	BYTE ret_b = ret[COMPONENTS::BLUE];
+	BYTE ret_b = ret[COMPONENT::BLUE];
 	EXPECT_EQ(lhs_b, ret_b);
 }
 
@@ -507,16 +507,16 @@ TEST(ColorTest, OperatorMultiply1) {
 	Color result = color * 2.0f;
 
 	// Assert
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0x24, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0x44, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0x64, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0x84, b);
 }
 
@@ -529,16 +529,16 @@ TEST(ColorTest, OperatorMultiply2) {
 	Color result = color * 2.5;
 
 	// Assert
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0x2A, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0x52, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0x7A, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0xA2, b);
 }
 
@@ -552,16 +552,16 @@ TEST(ColorTest, OperatorMultiply3) {
 
 	// Assert
 	// 全色アンダーフローして0x00になることを確認
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0x00, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0x00, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0x00, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0x00, b);
 }
 
@@ -575,16 +575,16 @@ TEST(ColorTest, OperatorMultiply4) {
 
 	// Assert
 	// 全色オーバーフローして0xFFになることを確認
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0xFF, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0xFF, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0xFF, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0xFF, b);
 }
 
@@ -597,19 +597,18 @@ TEST(ColorTest, OperatorMultiply5) {
 	Color result = 2.0f * color;
 
 	// Assert
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0x24, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0x44, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0x64, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0x84, b);
 }
-
 
 // const Color operator/(int rhs) const
 TEST(ColorTest, OperatorDevide1) {
@@ -620,16 +619,16 @@ TEST(ColorTest, OperatorDevide1) {
 	Color result = color / 2;
 
 	// Assert
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0x01, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0x09, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0x11, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0x19, b);
 }
 
@@ -642,16 +641,16 @@ TEST(ColorTest, OperatorDevide2) {
 	Color result = color / 16;
 
 	// Assert
-	BYTE a = result[COMPONENTS::ALPHA];
+	BYTE a = result[COMPONENT::ALPHA];
 	EXPECT_EQ(0x00, a);
 
-	BYTE r = result[COMPONENTS::RED];
+	BYTE r = result[COMPONENT::RED];
 	EXPECT_EQ(0x01, r);
 
-	BYTE g = result[COMPONENTS::GREEN];
+	BYTE g = result[COMPONENT::GREEN];
 	EXPECT_EQ(0x02, g);
 
-	BYTE b = result[COMPONENTS::BLUE];
+	BYTE b = result[COMPONENT::BLUE];
 	EXPECT_EQ(0x03, b);
 }
 
@@ -665,28 +664,28 @@ TEST(ColorTest, OperatorDevideEQ1) {
 
 	// Assert
 	// lhsの値が正しく更新されていることを確認
-	BYTE lhs_a = lhs[COMPONENTS::ALPHA];
+	BYTE lhs_a = lhs[COMPONENT::ALPHA];
 	EXPECT_EQ(0x22, lhs_a);
 
-	BYTE lhs_r = lhs[COMPONENTS::RED];
+	BYTE lhs_r = lhs[COMPONENT::RED];
 	EXPECT_EQ(0x10, lhs_r);
 
-	BYTE lhs_g = lhs[COMPONENTS::GREEN];
+	BYTE lhs_g = lhs[COMPONENT::GREEN];
 	EXPECT_EQ(0x05, lhs_g);
 
-	BYTE lhs_b = lhs[COMPONENTS::BLUE];
+	BYTE lhs_b = lhs[COMPONENT::BLUE];
 	EXPECT_EQ(0x3C, lhs_b);
 
 	// 更新されたlhsと同じ値が返却されていることを確認
-	BYTE ret_a = ret[COMPONENTS::ALPHA];
+	BYTE ret_a = ret[COMPONENT::ALPHA];
 	EXPECT_EQ(lhs_a, ret_a);
 
-	BYTE ret_r = ret[COMPONENTS::RED];
+	BYTE ret_r = ret[COMPONENT::RED];
 	EXPECT_EQ(lhs_r, ret_r);
 
-	BYTE ret_g = ret[COMPONENTS::GREEN];
+	BYTE ret_g = ret[COMPONENT::GREEN];
 	EXPECT_EQ(lhs_g, ret_g);
 
-	BYTE ret_b = ret[COMPONENTS::BLUE];
+	BYTE ret_b = ret[COMPONENT::BLUE];
 	EXPECT_EQ(lhs_b, ret_b);
 }
