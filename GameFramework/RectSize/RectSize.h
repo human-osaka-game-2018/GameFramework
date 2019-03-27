@@ -65,6 +65,26 @@ namespace gameframework
 		}
 
 		/// <summary>
+		/// 引数のサイズと自身のサイズを足しその値を返す
+		/// </summary>
+		/// <param name="rhs">自身と足す値</param>
+		/// <returns>足した結果のRectSize構造体</returns>
+		const RectSize operator+(float rhs) const
+		{
+			return RectSize(m_width + rhs, m_height + rhs);
+		}
+
+		/// <summary>
+		/// 引数のサイズと自身のサイズを引きその値を返す
+		/// </summary>
+		/// <param name="rhs">自身と引く値</param>
+		/// <returns>引いた結果のRectSize構造体</returns>
+		const RectSize operator-(float rhs) const
+		{
+			return RectSize(m_width - rhs, m_height - rhs);
+		}
+
+		/// <summary>
 		/// 引数のサイズと自身のサイズを引きその値を返す
 		/// </summary>
 		/// <param name="rhs">自身と引くRectSize構造体</param>
@@ -92,6 +112,66 @@ namespace gameframework
 		const RectSize operator*(float rhs) const
 		{
 			return RectSize(m_width * rhs, m_height * rhs);
+		}
+
+		/// <summary>
+		/// 引数の値でメンバを割った後代入する
+		/// </summary>
+		/// <param name="rhs">割る値</param>
+		/// <returns>thisの参照</returns>
+		RectSize& operator/=(float rhs)
+		{
+			return (*this) = (*this) / rhs;
+		}
+
+		/// <summary>
+		/// 引数の値でメンバを掛けた後代入する
+		/// </summary>
+		/// <param name="rhs">掛ける値</param>
+		/// <returns>thisの参照</returns>
+		RectSize& operator*=(float rhs)
+		{
+			return (*this) = (*this) * rhs;
+		}
+
+		/// <summary>
+		/// 引数の値でメンバを足した後代入する
+		/// </summary>
+		/// <param name="rhs">足す値</param>
+		/// <returns>thisの参照</returns>
+		RectSize& operator+=(const RectSize& rhs)
+		{
+			return (*this) = (*this) + rhs;
+		}
+
+		/// <summary>
+		/// 引数の値でメンバを足した後代入する
+		/// </summary>
+		/// <param name="rhs">足す値</param>
+		/// <returns>thisの参照</returns>
+		RectSize& operator+=(float rhs)
+		{
+			return (*this) = (*this) + rhs;
+		}
+
+		/// <summary>
+		/// 引数の値でメンバを引いた後代入する
+		/// </summary>
+		/// <param name="rhs">引く値</param>
+		/// <returns>thisの参照</returns>
+		RectSize& operator-=(const RectSize& rhs)
+		{
+			return (*this) = (*this) - rhs;
+		}
+
+		/// <summary>
+		/// 引数の値でメンバを引いた後代入する
+		/// </summary>
+		/// <param name="rhs">引く値</param>
+		/// <returns>thisの参照</returns>
+		RectSize& operator-=(float rhs)
+		{
+			return (*this) = (*this) - rhs;
 		}
 	};
 }
