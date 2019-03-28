@@ -20,7 +20,7 @@ namespace gameframework
 		/// <summary>
 		/// 色の構成要素
 		/// </summary>
-		enum class COMPONENTS
+		enum class COMPONENT
 		{
 			ALPHA,
 			RED,
@@ -82,22 +82,22 @@ namespace gameframework
 		/// <summary>
 		/// 添え字でアクセスできる色を変える
 		/// </summary>
-		/// <param name="colorComponent">アクセスする色のCOMPONENTS</param>
+		/// <param name="colorComponent">アクセスする色のCOMPONENT</param>
 		/// <returns>アクセスした色の参照</returns>>
-		BYTE& operator[](COMPONENTS colorComponent)
+		BYTE& operator[](COMPONENT colorComponent)
 		{
 			switch (colorComponent)
 			{
-			case COMPONENTS::ALPHA:
+			case COMPONENT::ALPHA:
 				return m_alpha;
 
-			case COMPONENTS::RED:
+			case COMPONENT::RED:
 				return m_red;
 
-			case COMPONENTS::GREEN:
+			case COMPONENT::GREEN:
 				return m_green;
 
-			case COMPONENTS::BLUE:
+			case COMPONENT::BLUE:
 				return m_blue;
 
 			default:
@@ -120,12 +120,12 @@ namespace gameframework
 		/// </remarks>
 		Color& operator=(DWORD colorCode)
 		{
-			const std::vector<COMPONENTS> components =
+			const std::vector<COMPONENT> components =
 			{
-				COMPONENTS::BLUE,
-				COMPONENTS::GREEN,
-				COMPONENTS::RED,
-				COMPONENTS::ALPHA
+				COMPONENT::BLUE,
+				COMPONENT::GREEN,
+				COMPONENT::RED,
+				COMPONENT::ALPHA
 			};
 
 			for (auto& component : components) {
