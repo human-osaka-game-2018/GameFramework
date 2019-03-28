@@ -8,6 +8,15 @@
 /// </summary>
 namespace gameframework
 {
+	enum DIM
+	{
+		DIM_LEFT,
+		DIM_RIGHT,
+		DIM_SUB_1,
+		DIM_SUB_2,
+		DIM_MAX
+	};
+
 	/**
 	* @brief 入力デバイスの基底クラス
 	*/
