@@ -42,7 +42,7 @@ namespace gameframework
 		/// </summary>
 		inline void FinishInFrame()
 		{
-			m_pDirectInput->PrepareInFrame();
+			m_pDirectInput->FinishInFrame();
 		}
 
 		/// <summary>
