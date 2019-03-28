@@ -21,15 +21,6 @@ namespace gameframework
 	class DirectX8Mouse :public Direct8InputDevice
 	{
 	public:
-		enum DIM
-		{
-			DIM_LEFT,
-			DIM_RIGHT,
-			DIM_SUB_1,
-			DIM_SUB_2,
-			DIM_MAX
-		};
-
 		DirectX8Mouse()
 		{
 			Create();
