@@ -36,7 +36,7 @@ namespace gameframework
 		/// </summary>
 		inline void FinishInFrame()
 		{
-			m_mouse.PrepareInFrame();
+			m_mouse.FinishInFrame();
 			m_keyboard.FinishInFrame();
 		}
 
