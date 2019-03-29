@@ -65,6 +65,8 @@ namespace gameframework
 			if (!Exists(pTextureKey)) return;
 
 			m_textures[pTextureKey]->Release();
+			
+			m_textures.erase(pTextureKey);
 		}
 
 		/// <summary>
