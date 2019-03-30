@@ -149,6 +149,15 @@
     <Filter Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect">
       <UniqueIdentifier>{e8657455-3ebe-497f-9666-ff99ad01bd1c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler">
+      <UniqueIdentifier>{cc0b61d8-18ff-4d82-93d1-f898ec5dd6de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler">
+      <UniqueIdentifier>{c7b69101-2ac9-4f4a-8a69-c429629a7512}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NodeSystem">
+      <UniqueIdentifier>{143fb478-6e7c-4c82-b34c-92c4a9bf06d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window\Window.cpp">
@@ -257,6 +266,9 @@
       <Filter>GameFramework\Graphic\GraphicEffectManager</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect.cpp">
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.cpp">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler</Filter>
+    </ClCompile>
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Shape.cpp">
@@ -508,16 +520,25 @@
       <Filter>GameFramework\Graphic\GraphicEffectManager</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect.h">
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler</Filter>
+    </ClInclude>
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Shape.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Behavior.h">
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\PartScheduler.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler</Filter>
+    </ClInclude>
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Particle.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeSystem\NodeSystem.h">
+      <Filter>NodeSystem</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

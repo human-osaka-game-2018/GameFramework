@@ -150,9 +150,11 @@
     <ClCompile Include="GameFramework\Graphic\FontManager\Font\Font.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Behavior.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffectManager.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Particle.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Shape.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\PartScheduler.cpp" />
     <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp" />
     <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp" />
     <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Keyboard.cpp" />
@@ -202,9 +204,11 @@
     <ClInclude Include="GameFramework\Graphic\Graphic.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Behavior.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffectManager.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Particle.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Shape.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\PartScheduler.h" />
     <ClInclude Include="GameFramework\Graphic\Renderer\DirectX9Renderer.h" />
     <ClInclude Include="GameFramework\Graphic\Renderer\Renderer.h" />
     <ClInclude Include="GameFramework\Graphic\TextureManager\TextureManager.h" />
@@ -223,6 +227,7 @@
     <ClInclude Include="GameFramework\Vertices\CustomVertex.h" />
     <ClInclude Include="GameFramework\Vertices\DirectX9Vertices.h" />
     <ClInclude Include="GameFramework\Vertices\Vertices.h" />
+    <ClInclude Include="NodeSystem\NodeSystem.h" />
     <ClInclude Include="RectSize\RectSize.h" />
     <ClInclude Include="RotationValue\Degree.h" />
     <ClInclude Include="RotationValue\Radian.h" />
