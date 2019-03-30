@@ -152,8 +152,8 @@
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Behavior.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffectManager.cpp" />
-    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Particle.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\PartScheduler.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\Part.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Shape\Shape.cpp" />
     <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp" />
     <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp" />
@@ -205,8 +205,8 @@
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffectManager.h" />
-    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Particle.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\PartScheduler.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\Part.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Shape\Shape.h" />
     <ClInclude Include="GameFramework\Graphic\Renderer\DirectX9Renderer.h" />
     <ClInclude Include="GameFramework\Graphic\Renderer\Renderer.h" />
