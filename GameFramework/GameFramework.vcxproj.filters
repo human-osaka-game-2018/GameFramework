@@ -292,8 +292,9 @@
     </ClCompile>
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Particle.cpp">
-      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\Part.cpp">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler\Part</Filter>
+    </ClCompile>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -410,9 +411,6 @@
     </ClInclude>
     <ClInclude Include="GameFramework\Stream\DirectX9Stream.h">
       <Filter>GameFramework\Stream</Filter>
-    </ClInclude>
-    <ClInclude Include="tstring\tstring.h">
-      <Filter>tstring</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\DirectXParam\DirectXParamFactory\DirectXParamFactory.h">
       <Filter>GameFramework\DirectXParam\DirectXParamFactory</Filter>
@@ -553,11 +551,14 @@
     </ClInclude>
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClInclude>
-    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Particle.h">
-      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\Part.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler\Part</Filter>
     </ClInclude>
     <ClInclude Include="NodeSystem\NodeSystem.h">
       <Filter>NodeSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="tstring\tstring.h">
+      <Filter>tstring</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
