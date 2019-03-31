@@ -1,5 +1,5 @@
-﻿#ifndef SCALING_FADE_IN_OUT_CIRCLE_H
-#define SCALING_FADE_IN_OUT_CIRCLE_H
+﻿#ifndef SCALING_FADE_IN_OUT_SQUARE_H
+#define SCALING_FADE_IN_OUT_SQUARE_H
 
 #include <tchar.h>
 
@@ -39,4 +39,4 @@ namespace gameframework
 	};
 }
 
-#endif //!SCALING_FADE_IN_OUT_CIRCLE_H
+#endif //!SCALING_FADE_IN_OUT_SQUARE_H

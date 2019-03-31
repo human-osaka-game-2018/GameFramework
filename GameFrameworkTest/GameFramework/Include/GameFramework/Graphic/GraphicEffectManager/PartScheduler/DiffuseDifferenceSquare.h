@@ -1,5 +1,5 @@
-﻿#ifndef DIFFUSE_STAR_H
-#define DIFFUSE_STAR_H
+﻿#ifndef DIFFUSE_DIFFERENCE_SQUARE_H
+#define DIFFUSE_DIFFERENCE_SQUARE_H
 
 #include <tchar.h>
 
@@ -45,4 +45,4 @@ namespace gameframework
 	};
 }
 
-#endif //!DIFFUSE_STAR_H
+#endif //!DIFFUSE_DIFFERENCE_SQUARE_H

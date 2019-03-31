@@ -1,5 +1,5 @@
-﻿#ifndef FOLLOW_UP_CURSOR_EFFECT_H
-#define FOLLOW_UP_CURSOR_EFFECT_H
+﻿#ifndef FOLLOW_UP_CURSOR_SQUARE_H
+#define FOLLOW_UP_CURSOR_SQUARE_H
 
 #include <tchar.h>
 
@@ -48,4 +48,4 @@ namespace gameframework
 	};
 }
 
-#endif //!FOLLOW_UP_CURSOR_EFFECT_H
+#endif //!FOLLOW_UP_CURSOR_SQUARE_H
