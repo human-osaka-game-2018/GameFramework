@@ -148,10 +148,10 @@
     <ClCompile Include="GameFramework\Graphic\FontManager\FontManager.cpp" />
     <ClCompile Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.cpp" />
     <ClCompile Include="GameFramework\Graphic\FontManager\Font\Font.cpp" />
-    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Behavior.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffectManager.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect\GraphicEffect.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\PartScheduler.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\Part.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Shape\Shape.cpp" />
@@ -202,9 +202,9 @@
     <ClInclude Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.h" />
     <ClInclude Include="GameFramework\Graphic\FontManager\Font\Font.h" />
     <ClInclude Include="GameFramework\Graphic\Graphic.h" />
-    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffectManager.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect\GraphicEffect.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\PartScheduler.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\Part.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Shape\Shape.h" />

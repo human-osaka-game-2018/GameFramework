@@ -274,7 +274,6 @@
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffectManager.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager</Filter>
     </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect.cpp">
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Shape\Shape.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\Shape</Filter>
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.cpp">
@@ -283,14 +282,13 @@
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Behavior.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
     </ClCompile>
-      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect\GraphicEffect.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\PartScheduler.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler</Filter>
     </ClCompile>
-      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\Part.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler\Part</Filter>
@@ -532,7 +530,6 @@
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffectManager.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager</Filter>
     </ClInclude>
-    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect.h">
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Shape\Shape.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\Shape</Filter>
     </ClInclude>
@@ -542,14 +539,13 @@
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Behavior.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
     </ClInclude>
-      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect\GraphicEffect.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\PartScheduler.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler</Filter>
     </ClInclude>
-      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\Part.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler\Part</Filter>

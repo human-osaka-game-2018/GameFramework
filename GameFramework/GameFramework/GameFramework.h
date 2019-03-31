@@ -211,6 +211,39 @@ namespace gameframework
 		}
 
 		/// <summary>
+		/// エフェクトの登録
+		/// </summary>
+		/// <param name="pGraphicEffect">登録するエフェクトのポインタ</param>
+		void RegisterGraphicEffect(GraphicEffect* pGraphicEffect)
+		{
+			m_graphic.RegisterEffect(pGraphicEffect);
+		}
+
+		/// <summary>
+		/// エフェクトの全開放
+		/// </summary>
+		void ReleaseAllGraphicEffect()
+		{
+			m_graphic.ReleaseAllEffect();
+		}
+
+		/// <summary>
+		/// 全てのエフェクトを更新する
+		/// </summary>
+		void UpdateGraphicEfects()
+		{
+			m_graphic.UpdateEfects();
+		}
+
+		/// <summary>
+		/// 全てのエフェクトを描画する
+		/// </summary>
+		void RenderGraphicEffects()
+		{
+			m_graphic.RenderEffects();
+		}
+
+		/// <summary>
 		/// 引数に渡したボタンが押された瞬間か
 		/// </summary>
 		/// <param name="key">ボタンの列挙体</param>
