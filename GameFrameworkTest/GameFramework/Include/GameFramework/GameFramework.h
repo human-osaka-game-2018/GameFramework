@@ -1,12 +1,12 @@
 ﻿#ifndef GAME_FRAMEWORK_H
 #define GAME_FRAMEWORK_H
 
-#include "Singleton.h"
+#include "../Singleton.h"
 
-#include "Graphic.h"
+#include "Graphic/Graphic.h"
 #include "Input/Input.h"
 #include "TimerManager.h"
-#include "Collision/Collision.h"
+#include "../Collision.h"
 
 /// <summary>
 /// 基礎構築に関するものをまとめた名前空間
@@ -48,7 +48,7 @@ namespace gameframework
 			POINT cursorPoint;
 			CursorPos(&cursorPoint);
 			D3DXVECTOR3 cursorPos(static_cast<float>(cursorPoint.x), static_cast<float>(cursorPoint.y), 0.0f);
-				
+
 			return collision::IsInner(vertices, cursorPos);
 		}
 
@@ -230,7 +230,7 @@ namespace gameframework
 		/// <summary>
 		/// 全てのエフェクトを更新する
 		/// </summary>
-		void UpdateGraphicEfects()
+		void UpdateGraphicEffects()
 		{
 			m_graphic.UpdateEffects();
 		}

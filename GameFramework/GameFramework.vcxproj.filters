@@ -276,23 +276,51 @@
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Shape\Shape.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Shape\SizeDifferenceSquare.cpp">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\Shape</Filter>
+    </ClCompile>
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Behavior.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Flash.cpp">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\FollowUpCursor.cpp">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Scaling.cpp">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect\GraphicEffect.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\RotationZ.cpp">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\ColorChange.cpp">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Diffuse.cpp">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
+    </ClCompile>
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\PartScheduler.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\DiffuseDifferenceSquare.cpp">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler\Part</Filter>
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\Part.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler\Part</Filter>
     </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\ScalingFadeInOutSquare.cpp">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler\Part</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\FollowUpCursorSquare.cpp">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler\Part</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -533,21 +561,49 @@
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Shape\Shape.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\Shape</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Shape\SizeDifferenceSquare.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\Shape</Filter>
+    </ClInclude>
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Behavior.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Flash.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\FollowUpCursor.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Scaling.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect\GraphicEffect.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\RotationZ.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\ColorChange.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Diffuse.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
+    </ClInclude>
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\PartScheduler.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler</Filter>
     </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\DiffuseDifferenceSquare.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler\Part</Filter>
     </ClInclude>
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\Part.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler\Part</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\ScalingFadeInOutSquare.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler\Part</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\FollowUpCursorSquare.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler\Part</Filter>
     </ClInclude>
     <ClInclude Include="NodeSystem\NodeSystem.h">

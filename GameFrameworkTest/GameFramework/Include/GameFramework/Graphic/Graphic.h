@@ -3,13 +3,12 @@
 
 #include <Windows.h>
 
-#include "GameFrameworkFactory.h"
-#include "Texture/Texture.h"
-#include "TextureManager/TextureManager.h"
-#include "Renderer/Renderer.h"
-#include "ColorBlender/ColorBlender.h"
-#include "FontManager/FontManager.h"
-#include "Part/Part.h"
+#include "../GameFrameworkFactory.h"
+#include "Texture.h"
+#include "TextureManager.h"
+#include "Renderer.h"
+#include "ColorBlender.h"
+#include "FontManager.h"
 #include "GraphicEffectManager/GraphicEffectManager.h"
 
 /// <summary>
@@ -23,7 +22,7 @@ namespace gameframework
 	class Graphic
 	{
 	public:
-		Graphic() 
+		Graphic()
 		{
 			GameFrameworkFactory::Create(&m_pRenderer);
 			GameFrameworkFactory::Create(&m_pColorBlender);
