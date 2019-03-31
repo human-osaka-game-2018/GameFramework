@@ -230,7 +230,7 @@ namespace gameframework
 		/// <summary>
 		/// 全てのエフェクトを更新する
 		/// </summary>
-		void UpdateEfects()
+		void UpdateEffects()
 		{
 			m_graphicEffectManager.Update();
 		}

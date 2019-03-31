@@ -232,7 +232,7 @@ namespace gameframework
 		/// </summary>
 		void UpdateGraphicEfects()
 		{
-			m_graphic.UpdateEfects();
+			m_graphic.UpdateEffects();
 		}
 
 		/// <summary>
