@@ -92,7 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>false</ConformanceMode>
       <PreprocessorDefinitions>DIRECTINPUT_VERSION=0x0800;DIRECT_X_VERSOIN_9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)GameFramework\Singleton;$(SolutionDir)GameFramework\GameFramework\Stream;$(SolutionDir)GameFramework\tstring;$(SolutionDir)GameFramework\GameFramework\Vertices;$(SolutionDir)GameFramework\GameFramework\Graphic;$(SolutionDir)GameFramework\GameFramework\Input\InputDevice;$(SolutionDir)GameFramework\Algorithm;$(SolutionDir)GameFramework\GameFramework\Input\DirectInput;$(SolutionDir)GameFramework\TextureUVs;$(SolutionDir)GameFramework\Color;$(SolutionDir)GameFramework\GameFramework\GameFrameworkFactory;$(SolutionDir)GameFramework\GameFramework\TimerManager;$(SolutionDir)GameFramework\Window;$(SolutionDir)GameFramework\RectSize;$(SolutionDir)GameFramework\GameFramework\DirectXParam;$(SolutionDir)GameFramework\RotationValue;$(SolutionDir)GameFramework\GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GameFramework\Graphic\GraphicEffectManager\PartScheduler;GameFramework\Graphic\GraphicEffectManager;NodeSystem;GameFramework\Graphic\GraphicEffectManager\Shape;GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler;Singleton;GameFramework\Stream;tstring;GameFramework\Vertices;GameFramework\Graphic;GameFramework\Input\InputDevice;Algorithm;GameFramework\Input\DirectInput;TextureUVs;Color;GameFramework\GameFrameworkFactory;GameFramework\TimerManager;Window;RectSize;GameFramework\DirectXParam;RotationValue;GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>d3dx9.lib;d3d9.lib;dinput8.lib;dxguid.lib;winmm.lib;libfbxsdk-mt.lib;SoundLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -121,7 +121,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>false</ConformanceMode>
       <PreprocessorDefinitions>DIRECTINPUT_VERSION=0x0800;DIRECT_X_VERSOIN_9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)GameFramework\Singleton;$(SolutionDir)GameFramework\GameFramework\Stream;$(SolutionDir)GameFramework\tstring;$(SolutionDir)GameFramework\GameFramework\Vertices;$(SolutionDir)GameFramework\GameFramework\Graphic;$(SolutionDir)GameFramework\GameFramework\Input\InputDevice;$(SolutionDir)GameFramework\Algorithm;$(SolutionDir)GameFramework\GameFramework\Input\DirectInput;$(SolutionDir)GameFramework\TextureUVs;$(SolutionDir)GameFramework\Color;$(SolutionDir)GameFramework\GameFramework\GameFrameworkFactory;$(SolutionDir)GameFramework\GameFramework\TimerManager;$(SolutionDir)GameFramework\Window;$(SolutionDir)GameFramework\RectSize;$(SolutionDir)GameFramework\GameFramework\DirectXParam;$(SolutionDir)GameFramework\RotationValue;$(SolutionDir)GameFramework\GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GameFramework\Graphic\GraphicEffectManager\PartScheduler;GameFramework\Graphic\GraphicEffectManager;NodeSystem;GameFramework\Graphic\GraphicEffectManager\Shape;GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler;Singleton;GameFramework\Stream;tstring;GameFramework\Vertices;GameFramework\Graphic;GameFramework\Input\InputDevice;Algorithm;GameFramework\Input\DirectInput;TextureUVs;Color;GameFramework\GameFrameworkFactory;GameFramework\TimerManager;Window;RectSize;GameFramework\DirectXParam;RotationValue;GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -150,11 +150,21 @@
     <ClCompile Include="GameFramework\Graphic\FontManager\Font\Font.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Behavior.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\ColorChange.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Diffuse.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Flash.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\FollowUpCursor.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\RotationZ.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Scaling.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffectManager.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect\GraphicEffect.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\PartScheduler.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\DiffuseDifferenceSquare.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\FollowUpCursorSquare.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\Part.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\ScalingFadeInOutSquare.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Shape\Shape.cpp" />
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\Shape\SizeDifferenceSquare.cpp" />
     <ClCompile Include="GameFramework\Graphic\Renderer\DirectX9Renderer.cpp" />
     <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp" />
     <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Keyboard.cpp" />
@@ -203,11 +213,22 @@
     <ClInclude Include="GameFramework\Graphic\FontManager\Font\Font.h" />
     <ClInclude Include="GameFramework\Graphic\Graphic.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Behavior.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\ColorChange.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Diffuse.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Flash.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\FollowUpCursor.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\RotationZ.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Scaling.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffectManager.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\GraphicEffect\GraphicEffect.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\PartScheduler.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\DiffuseDifferenceSquare.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\FollowUpCursorSquare.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\Part.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\ScalingFadeInOutSquare.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Shape\Shape.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\Shape\SizeDifferenceSquare.h" />
     <ClInclude Include="GameFramework\Graphic\Renderer\DirectX9Renderer.h" />
     <ClInclude Include="GameFramework\Graphic\Renderer\Renderer.h" />
     <ClInclude Include="GameFramework\Graphic\TextureManager\TextureManager.h" />
