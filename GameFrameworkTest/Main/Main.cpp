@@ -48,7 +48,7 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR szStr, INT iCmdSh
 			rGameFramework.RegisterGraphicEffect(new HoldEffect());
 		}
 
-		rGameFramework.UpdateGraphicEfects();
+		rGameFramework.UpdateGraphicEffects();
 		rGameFramework.RenderGraphicEffects();
 
 		cursor.Update();
