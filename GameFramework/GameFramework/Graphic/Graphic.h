@@ -144,20 +144,24 @@ namespace gameframework
 		}
 
 		/// <summary>
-		/// フォントの作成
+		/// フォントを作成する
 		/// </summary>
 		/// <param name="pFontKey">フォントにつけるキー</param>
-		/// <param name="pTexturePath">フォントのパス</param>
+		/// <param name="scale">文字サイズ</param>
+		/// <param name="pFontName">フォントの名前</param>
+		/// <param name="thickness">文字の太さ</param>
 		inline void CreateFont(const TCHAR* pFontKey, const RectSize& scale, const TCHAR* pFontName, UINT thickness = 0)
 		{
 			m_fontManager.Create(pFontKey, scale, pFontName, thickness);
 		}
 
 		/// <summary>
-		/// フォントを再読み込み
+		/// フォントを再作成する
 		/// </summary>
 		/// <param name="pFontKey">フォントにつけるキー</param>
-		/// <param name="pTexturePath">フォントのパス</param>
+		/// <param name="scale">文字サイズ</param>
+		/// <param name="pFontName">フォントの名前</param>
+		/// <param name="thickness">文字の太さ</param>
 		inline void ResetFont(const TCHAR* pFontKey, const RectSize& scale, const TCHAR* pFontName, UINT thickness = 0)
 		{
 			m_fontManager.Reset(pFontKey, scale, pFontName, thickness);
