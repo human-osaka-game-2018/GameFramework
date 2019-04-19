@@ -157,8 +157,8 @@ namespace gameframework
 		/// <summary>
 		/// 一フレームの経過秒を用いてカウントアップし,最大値に達すると引数の関数を呼び,カウンタを0に戻す
 		/// </summary>
-		/// <param name="pCnt">[in,out]カウンタのポインタ(秒)</param>
-		/// <param name="cntMax">カウントの最大値(秒)</param>
+		/// <param name="pCnt_sec">[in,out]カウンタのポインタ(秒)</param>
+		/// <param name="cntMax_sec">カウントの最大値(秒)</param>
 		/// <param name="pFunc">最大値に達したときに呼ぶ関数のポインタ</param>
 		/// <remarks>pFuncがnullptrなら何も呼ばない</remarks>
 		void CountUp_sec(float* pCnt_sec, float cntMax_sec, std::function<void(void)> pFunc = nullptr);
