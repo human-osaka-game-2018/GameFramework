@@ -92,9 +92,6 @@
     <ClCompile Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.cpp">
       <Filter>GameFramework\Graphic\ColorBlender</Filter>
     </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\FontManager\FontManager.cpp">
-      <Filter>GameFramework\Graphic\FontManager</Filter>
-    </ClCompile>
     <ClCompile Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.cpp">
       <Filter>GameFramework\Graphic\FontManager\Font</Filter>
     </ClCompile>
@@ -516,9 +513,6 @@
     <ClInclude Include="GameFramework\Stream\DirectX9Stream.h">
       <Filter>GameFramework\Stream</Filter>
     </ClInclude>
-    <ClInclude Include="tstring\tstring.h">
-      <Filter>GameFramework\tstring</Filter>
-    </ClInclude>
     <ClInclude Include="GameFramework\DirectXParam\DirectXParamFactory\DirectXParamFactory.h">
       <Filter>GameFramework\DirectXParam\DirectXParamFactory</Filter>
     </ClInclude>
@@ -612,5 +606,6 @@
     <ClInclude Include="tstring\tstring.h">
       <Filter>tstring</Filter>
     </ClInclude>
+    <ClInclude Include="tstring\tstring.h" />
   </ItemGroup>
 </Project>

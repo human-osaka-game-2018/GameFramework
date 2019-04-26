@@ -145,7 +145,6 @@
     <ClCompile Include="GameFramework\DirectXParam\DirectXInputDevice\DirectXInputDevice.cpp" />
     <ClCompile Include="GameFramework\DirectXParam\DirectXParam.cpp" />
     <ClCompile Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.cpp" />
-    <ClCompile Include="GameFramework\Graphic\FontManager\FontManager.cpp" />
     <ClCompile Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.cpp" />
     <ClCompile Include="GameFramework\Graphic\FontManager\Font\Font.cpp" />
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\BehaviorScheduler.cpp" />
