@@ -77,6 +77,8 @@ namespace gameframework
 
 				delete i.second;
 			}
+
+			m_fonts.clear();
 		}
 		
 		/// <summary>
