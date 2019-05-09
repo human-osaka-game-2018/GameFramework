@@ -208,9 +208,6 @@
     <ClCompile Include="GameFramework\Graphic\ColorBlender\DirectX9ColorBlender.cpp">
       <Filter>GameFramework\Graphic\ColorBlender</Filter>
     </ClCompile>
-    <ClCompile Include="GameFramework\Graphic\FontManager\FontManager.cpp">
-      <Filter>GameFramework\Graphic\FontManager</Filter>
-    </ClCompile>
     <ClCompile Include="GameFramework\Graphic\FontManager\Font\DirectX9Font.cpp">
       <Filter>GameFramework\Graphic\FontManager\Font</Filter>
     </ClCompile>
@@ -318,6 +315,9 @@
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\PartScheduler\Part\FollowUpCursorSquare.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\PartScheduler\Part</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Locale.cpp">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -607,5 +607,8 @@
       <Filter>tstring</Filter>
     </ClInclude>
     <ClInclude Include="tstring\tstring.h" />
+    <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Locale.h">
+      <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -99,7 +99,7 @@ namespace gameframework
 
 	void Vertices::FadeOut(int fadeOutFrameMax, BYTE orginAlpha, BYTE destAlpha)
 	{
-		m_color.m_alpha = static_cast<BYTE>(algorithm::SwitchMinBetweenMax(m_fadeOutFrameCount, fadeOutFrameMax, orginAlpha, destAlpha));
+		m_color.m_alpha = static_cast<BYTE>(algorithm::MinToMaxByRatio(m_fadeOutFrameCount, fadeOutFrameMax, orginAlpha, destAlpha));
 		algorithm::CountUp(&m_fadeOutFrameCount, fadeOutFrameMax);
 	}
 
