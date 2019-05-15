@@ -167,6 +167,9 @@
     <Filter Include="GameFramework\Input\XInput">
       <UniqueIdentifier>{8db5660e-5356-4fc1-a8dd-83c76a009ee4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\Sound">
+      <UniqueIdentifier>{79389dad-ec55-46e2-9222-ae39d2c7853b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window\Window.cpp">
@@ -327,6 +330,12 @@
     </ClCompile>
     <ClCompile Include="GameFramework\Input\XInput\XinputManager.cpp">
       <Filter>GameFramework\Input\XInput</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Sound\Sound.cpp">
+      <Filter>GameFramework\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Sound\WriteDebugLog.cpp">
+      <Filter>GameFramework\Sound</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -624,6 +633,12 @@
     </ClInclude>
     <ClInclude Include="GameFramework\Input\XInput\XinputManager.h">
       <Filter>GameFramework\Input\XInput</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Sound\Sound.h">
+      <Filter>GameFramework\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Sound\WriteDebugLog.h">
+      <Filter>GameFramework\Sound</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

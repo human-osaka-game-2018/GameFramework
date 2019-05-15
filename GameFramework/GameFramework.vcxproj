@@ -70,11 +70,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(FBXSDK_DIR)include;$(DXSDK_DIR)Include;$(SolutionDir)GameFramework\SoundLib\Debug_x64\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(FBXSDK_DIR)include;$(DXSDK_DIR)Include;$(SolutionDir)GameFramework\SoundLib\Include;$(IncludePath)</IncludePath>
     <LibraryPath>$(FBXSDK_DIR)lib\vs2015\x64\debug;$(DXSDK_DIR)Lib\x64;$(SolutionDir)GameFramework\SoundLib\Debug_x64\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)GameFramework\SoundLib\Release_x64\Include;$(FBXSDK_DIR)include;$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)GameFramework\SoundLib\Include;$(FBXSDK_DIR)include;$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
     <LibraryPath>$(FBXSDK_DIR)lib\vs2015\x64\debug;$(DXSDK_DIR)Lib\x64;$(SolutionDir)GameFramework\SoundLib\Release_x64\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -92,7 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>false</ConformanceMode>
       <PreprocessorDefinitions>DIRECTINPUT_VERSION=0x0800;DIRECT_X_VERSOIN_9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>GameFramework\Graphic\GraphicEffectManager\PartScheduler;GameFramework\Graphic\GraphicEffectManager;NodeSystem;GameFramework\Graphic\GraphicEffectManager\Shape;GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler;Singleton;GameFramework\Stream;tstring;GameFramework\Vertices;GameFramework\Graphic;GameFramework\Input\InputDevice;Algorithm;GameFramework\Input\DirectInput;TextureUVs;Color;GameFramework\GameFrameworkFactory;GameFramework\TimerManager;Window;RectSize;GameFramework\DirectXParam;RotationValue;GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GameFramework\Graphic\GraphicEffectManager\PartScheduler;GameFramework\Graphic\GraphicEffectManager;NodeSystem;GameFramework\Graphic\GraphicEffectManager\Shape;GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler;Singleton;GameFramework\Stream;tstring;GameFramework\Vertices;GameFramework\Sound;GameFramework\Graphic;GameFramework\Input\InputDevice;Algorithm;GameFramework\Input\DirectInput;TextureUVs;Color;GameFramework\GameFrameworkFactory;GameFramework\TimerManager;Window;RectSize;GameFramework\DirectXParam;RotationValue;GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -123,7 +123,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>false</ConformanceMode>
       <PreprocessorDefinitions>DIRECTINPUT_VERSION=0x0800;DIRECT_X_VERSOIN_9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>GameFramework\Graphic\GraphicEffectManager\PartScheduler;GameFramework\Graphic\GraphicEffectManager;NodeSystem;GameFramework\Graphic\GraphicEffectManager\Shape;GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler;Singleton;GameFramework\Stream;tstring;GameFramework\Vertices;GameFramework\Graphic;GameFramework\Input\InputDevice;Algorithm;GameFramework\Input\DirectInput;TextureUVs;Color;GameFramework\GameFrameworkFactory;GameFramework\TimerManager;Window;RectSize;GameFramework\DirectXParam;RotationValue;GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GameFramework\Graphic\GraphicEffectManager\PartScheduler;GameFramework\Graphic\GraphicEffectManager;NodeSystem;GameFramework\Graphic\GraphicEffectManager\Shape;GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler;Singleton;GameFramework\Stream;tstring;GameFramework\Vertices;GameFramework\Sound;GameFramework\Graphic;GameFramework\Input\InputDevice;Algorithm;GameFramework\Input\DirectInput;TextureUVs;Color;GameFramework\GameFrameworkFactory;GameFramework\TimerManager;Window;RectSize;GameFramework\DirectXParam;RotationValue;GameFramework\Graphic\TextureManager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
@@ -175,6 +175,8 @@
     <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Mouse.cpp" />
     <ClCompile Include="GameFramework\Input\XInput\XinputDevice.cpp" />
     <ClCompile Include="GameFramework\Input\XInput\XinputManager.cpp" />
+    <ClCompile Include="GameFramework\Sound\Sound.cpp" />
+    <ClCompile Include="GameFramework\Sound\WriteDebugLog.cpp" />
     <ClCompile Include="GameFramework\Stream\DirectX9Stream.cpp" />
     <ClCompile Include="GameFramework\TimerManager\TimerManager.cpp" />
     <ClCompile Include="GameFramework\Vertices\CustomVertex.cpp" />
@@ -250,6 +252,8 @@
     <ClInclude Include="GameFramework\Input\InputDevice\InputDevice.h" />
     <ClInclude Include="GameFramework\Input\XInput\XinputDevice.h" />
     <ClInclude Include="GameFramework\Input\XInput\XinputManager.h" />
+    <ClInclude Include="GameFramework\Sound\Sound.h" />
+    <ClInclude Include="GameFramework\Sound\WriteDebugLog.h" />
     <ClInclude Include="GameFramework\Stream\DirectX9Stream.h" />
     <ClInclude Include="GameFramework\Stream\Stream.h" />
     <ClInclude Include="GameFramework\TimerManager\TimerManager.h" />
