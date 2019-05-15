@@ -173,6 +173,8 @@
     <ClCompile Include="GameFramework\Graphic\TextureManager\Texture\DirectX9Texture.cpp" />
     <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Keyboard.cpp" />
     <ClCompile Include="GameFramework\Input\InputDevice\DirectX8Mouse.cpp" />
+    <ClCompile Include="GameFramework\Input\XInput\XinputDevice.cpp" />
+    <ClCompile Include="GameFramework\Input\XInput\XinputManager.cpp" />
     <ClCompile Include="GameFramework\Stream\DirectX9Stream.cpp" />
     <ClCompile Include="GameFramework\TimerManager\TimerManager.cpp" />
     <ClCompile Include="GameFramework\Vertices\CustomVertex.cpp" />
@@ -246,6 +248,8 @@
     <ClInclude Include="GameFramework\Input\InputDevice\DirectX8Keyboard.h" />
     <ClInclude Include="GameFramework\Input\InputDevice\DirectX8Mouse.h" />
     <ClInclude Include="GameFramework\Input\InputDevice\InputDevice.h" />
+    <ClInclude Include="GameFramework\Input\XInput\XinputDevice.h" />
+    <ClInclude Include="GameFramework\Input\XInput\XinputManager.h" />
     <ClInclude Include="GameFramework\Stream\DirectX9Stream.h" />
     <ClInclude Include="GameFramework\Stream\Stream.h" />
     <ClInclude Include="GameFramework\TimerManager\TimerManager.h" />

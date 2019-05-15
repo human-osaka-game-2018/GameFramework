@@ -164,6 +164,9 @@
     <Filter Include="NodeSystem">
       <UniqueIdentifier>{143fb478-6e7c-4c82-b34c-92c4a9bf06d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFramework\Input\XInput">
+      <UniqueIdentifier>{8db5660e-5356-4fc1-a8dd-83c76a009ee4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window\Window.cpp">
@@ -318,6 +321,12 @@
     </ClCompile>
     <ClCompile Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Locale.cpp">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\XInput\XinputDevice.cpp">
+      <Filter>GameFramework\Input\XInput</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFramework\Input\XInput\XinputManager.cpp">
+      <Filter>GameFramework\Input\XInput</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -609,6 +618,12 @@
     <ClInclude Include="tstring\tstring.h" />
     <ClInclude Include="GameFramework\Graphic\GraphicEffectManager\BehaviorScheduler\Behavior\Locale.h">
       <Filter>GameFramework\Graphic\GraphicEffectManager\GraphicEffect\BehaviorScheduler\Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\XInput\XinputDevice.h">
+      <Filter>GameFramework\Input\XInput</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFramework\Input\XInput\XinputManager.h">
+      <Filter>GameFramework\Input\XInput</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
