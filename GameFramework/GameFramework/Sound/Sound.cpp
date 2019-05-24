@@ -213,7 +213,7 @@ void Sound::SetFrequencyRatio(float ratio, SoundType type)
 	for (auto keyData : m_keyData) 
 	{
 		if (type != keyData.Type && type != ALL_TYPE) continue;
-		m_soundsManager.SetFrequencyRatio(keyData.Key, ratio);
+		SetFrequencyRatio(keyData.Key, ratio);
 	}
 }
 
@@ -236,7 +236,7 @@ void Sound::SetVolume(int vol, SoundType type)
 	for (auto keyData : m_keyData) 
 	{
 		if (type != keyData.Type && type != ALL_TYPE) continue;
-		m_soundsManager.SetVolume(keyData.Key, vol);
+		SetVolume(vol, keyData.Key);
 	}
 }
 
