@@ -28,6 +28,33 @@ namespace gameframework
 		return;
 	}
 
+	void Window::Create(const TCHAR* pAppName, WNDCLASSEX* pWndclass, const WNDPROC pWndProc)
+	{
+		pWndclass->lpszClassName = pAppName;
+		RegisterWindowClass(pWndProc, pWndclass);
+
+		HINSTANCE hInstance = GetModuleHandle(nullptr);
+		WindowParam::SetInstanceHandle(hInstance);
+
+		RectSize windowSize;
+		WindowParam::GetWindowSize(&windowSize);
+
+		HWND hWnd = CreateWindow(
+			pAppName, pAppName,
+			WS_OVERLAPPEDWINDOW | WS_VISIBLE,
+			CW_USEDEFAULT, CW_USEDEFAULT,
+			static_cast<int>(windowSize.m_width), static_cast<int>(windowSize.m_height),
+			NULL, NULL,
+			hInstance,
+			NULL);
+
+		WindowParam::SetWindowHandle(hWnd);
+
+		ResizeWindow();
+
+		return;
+	}
+
 	void Window::RegisterWindowClass(const TCHAR* pAppName, const WNDPROC pWndProc)
 	{
 		WNDCLASSEX wndclass;
@@ -54,6 +81,13 @@ namespace gameframework
 		wndclass.cbClsExtra = wndclass.cbWndExtra = 0;
 
 		RegisterClassEx(&wndclass);
+	}
+
+	void Window::RegisterWindowClass(const WNDPROC pWndProc ,WNDCLASSEX* pWndclass)
+	{
+		pWndclass->lpfnWndProc = (pWndProc) ? pWndProc : DefaultWndProc;
+		
+		RegisterClassEx(pWndclass);
 	}
 
 	void Window::ResizeWindow() const
