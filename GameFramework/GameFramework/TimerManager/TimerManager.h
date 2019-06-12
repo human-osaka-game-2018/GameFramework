@@ -162,7 +162,10 @@ namespace gameframework
 		class Timer
 		{
 		public:
-			Timer() {};
+			Timer() :m_startTime((std::chrono::system_clock::time_point::min)()), m_sysTimeWhenStopped(m_startTime),
+				m_timeWhenStopped((DebugDiffTime::min)()), m_elapsedTime(m_timeWhenStopped)
+			{};
+
 			~Timer() {};
 
 			/// <summary>

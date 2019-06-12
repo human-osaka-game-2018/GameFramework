@@ -80,7 +80,7 @@ namespace gameframework
 		if (currentFrameSyncTime_msec - m_prevFrameSyncTime_msec < 1000 / m_fPS) return false;
 
 		//一フレームにかかった時間をdeltaTime_secのため取得する
-		m_processTimeAtPrevFrame_msec = m_prevFrameSyncTime_msec - currentFrameSyncTime_msec;
+		m_processTimeAtPrevFrame_msec = currentFrameSyncTime_msec - m_prevFrameSyncTime_msec;
 
 		m_prevFrameSyncTime_msec = currentFrameSyncTime_msec;
 

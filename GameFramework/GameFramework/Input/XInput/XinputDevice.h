@@ -286,7 +286,7 @@ private:
 	//! デバイスの状態確認用
 	DWORD XINPUT_INFO = -1;
 	
-	const int INCLINATION_THRESHOLD_VALUE = MAX_THUMB_VALUE * 0.5;
+	const int INCLINATION_THRESHOLD_VALUE = MAX_THUMB_VALUE / 2;
 	
 	/// <summary>
 	/// XinputDeviceでゲームパッドデバイスの取得
